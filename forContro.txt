@@ -1,0 +1,33 @@
+private void button1_Click(object sender, EventArgs e)
+        {
+            string strVal = "Texto";
+            int cont = 1; 
+          foreach (Control txt in panel1.Controls.Cast<Control>().OrderBy(c => c.TabIndex))
+                {
+                if (txt is TextBox && txt.Tag == null)
+                {
+                    //txt.Text = strVal;
+                    txt.Tag = cont.ToString(); 
+                }
+                              
+                if (cont >= 6)
+                    break;
+
+                cont++;
+            }
+            int soma = 0;
+            int val;
+            cont = 1; 
+            foreach (Control txt in panel1.Controls.Cast<Control>().OrderBy(c => c.TabIndex))
+            {
+                val = Convert.ToInt32(txt.Tag);
+                if (txt is TextBox && (val>0 &&val<=cont))
+                    soma += Convert.ToInt32(txt.Text); 
+                
+                if (cont >= 6)
+                    break;
+                cont++;
+            }
+            MessageBox.Show(soma.ToString()); 
+
+        }

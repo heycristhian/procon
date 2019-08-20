@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="datImpNotas" targetNamespace="http://tempuri.org/datImpNotas.xsd" xmlns:mstns="http://tempuri.org/datImpNotas.xsd" xmlns="http://tempuri.org/datImpNotas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="datImpNotas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="datImpNotas" msprop:Generator_UserDSName="datImpNotas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtbNota" msprop:Generator_TableClassName="dtbNotaDataTable" msprop:Generator_TableVarName="tabledtbNota" msprop:Generator_RowChangedName="dtbNotaRowChanged" msprop:Generator_TablePropName="dtbNota" msprop:Generator_RowDeletingName="dtbNotaRowDeleting" msprop:Generator_RowChangingName="dtbNotaRowChanging" msprop:Generator_RowEvHandlerName="dtbNotaRowChangeEventHandler" msprop:Generator_RowDeletedName="dtbNotaRowDeleted" msprop:Generator_RowClassName="dtbNotaRow" msprop:Generator_UserTableName="dtbNota" msprop:Generator_RowEvArgName="dtbNotaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ordem" msprop:Generator_ColumnVarNameInTable="columnOrdem" msprop:Generator_ColumnPropNameInRow="Ordem" msprop:Generator_ColumnPropNameInTable="OrdemColumn" msprop:Generator_UserColumnName="Ordem" type="xs:int" minOccurs="0" />
+              <xs:element name="Competidor" msprop:Generator_ColumnVarNameInTable="columnCompetidor" msprop:Generator_ColumnPropNameInRow="Competidor" msprop:Generator_ColumnPropNameInTable="CompetidorColumn" msprop:Generator_UserColumnName="Competidor" type="xs:string" minOccurs="0" />
+              <xs:element name="Touro" msprop:Generator_ColumnVarNameInTable="columnTouro" msprop:Generator_ColumnPropNameInRow="Touro" msprop:Generator_ColumnPropNameInTable="TouroColumn" msprop:Generator_UserColumnName="Touro" type="xs:string" minOccurs="0" />
+              <xs:element name="NotaCompetidor" msprop:Generator_ColumnVarNameInTable="columnNotaCompetidor" msprop:Generator_ColumnPropNameInRow="NotaCompetidor" msprop:Generator_ColumnPropNameInTable="NotaCompetidorColumn" msprop:Generator_UserColumnName="NotaCompetidor" type="xs:string" minOccurs="0" />
+              <xs:element name="NotaTouro" msprop:Generator_ColumnVarNameInTable="columnNotaTouro" msprop:Generator_ColumnPropNameInRow="NotaTouro" msprop:Generator_ColumnPropNameInTable="NotaTouroColumn" msprop:Generator_UserColumnName="NotaTouro" type="xs:string" minOccurs="0" />
+              <xs:element name="NotaTotal" msprop:Generator_ColumnVarNameInTable="columnNotaTotal" msprop:Generator_ColumnPropNameInRow="NotaTotal" msprop:Generator_ColumnPropNameInTable="NotaTotalColumn" msprop:Generator_UserColumnName="NotaTotal" type="xs:string" minOccurs="0" />
+              <xs:element name="Tropeiro" msprop:Generator_ColumnVarNameInTable="columnTropeiro" msprop:Generator_ColumnPropNameInRow="Tropeiro" msprop:Generator_ColumnPropNameInTable="TropeiroColumn" msprop:Generator_UserColumnName="Tropeiro" type="xs:string" minOccurs="0" />
+              <xs:element name="Bateria" msprop:Generator_ColumnVarNameInTable="columnBateria" msprop:Generator_ColumnPropNameInRow="Bateria" msprop:Generator_ColumnPropNameInTable="BateriaColumn" msprop:Generator_UserColumnName="Bateria" type="xs:string" minOccurs="0" />
+              <xs:element name="Lado" msprop:Generator_ColumnVarNameInTable="columnLado" msprop:Generator_ColumnPropNameInRow="Lado" msprop:Generator_ColumnPropNameInTable="LadoColumn" msprop:Generator_UserColumnName="Lado" type="xs:string" minOccurs="0" />
+              <xs:element name="Dia" msprop:Generator_ColumnVarNameInTable="columnDia" msprop:Generator_ColumnPropNameInRow="Dia" msprop:Generator_ColumnPropNameInTable="DiaColumn" msprop:Generator_UserColumnName="Dia" type="xs:string" minOccurs="0" />
+              <xs:element name="Cidade" msprop:Generator_ColumnVarNameInTable="columnCidade" msprop:Generator_ColumnPropNameInRow="Cidade" msprop:Generator_ColumnPropNameInTable="CidadeColumn" msprop:Generator_UserColumnName="Cidade" type="xs:string" minOccurs="0" />
+              <xs:element name="NumEtapa" msprop:Generator_ColumnVarNameInTable="columnNumEtapa" msprop:Generator_ColumnPropNameInRow="NumEtapa" msprop:Generator_ColumnPropNameInTable="NumEtapaColumn" msprop:Generator_UserColumnName="NumEtapa" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

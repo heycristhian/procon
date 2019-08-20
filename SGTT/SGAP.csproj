@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D37EED0-9D72-4107-993D-DD1B16D59A12}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SGAP</RootNamespace>
+    <AssemblyName>SGAP</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.10.8\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.10.8\lib\net452\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="NReco.PhantomJS, Version=1.0.4.0, Culture=neutral, PublicKeyToken=f160d8c5e2ae66b6, processorArchitecture=MSIL">
+      <HintPath>..\packages\NReco.PhantomJS.1.0.4\lib\net40\NReco.PhantomJS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xceed.Words.NET, Version=1.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.3.0\lib\net40\Xceed.Words.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\frmCopiaBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCopiaBackup.Designer.cs">
+      <DependentUpon>frmCopiaBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAtendimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAtendimento.designer.cs">
+      <DependentUpon>frmAtendimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCidade.designer.cs">
+      <DependentUpon>frmCidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConsumidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConsumidor.designer.cs">
+      <DependentUpon>frmConsumidor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEncaminhamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEncaminhamento.Designer.cs">
+      <DependentUpon>frmEncaminhamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEntidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEntidade.Designer.cs">
+      <DependentUpon>frmEntidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFornecedor.designer.cs">
+      <DependentUpon>frmFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMenu.designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMovimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMovimento.Designer.cs">
+      <DependentUpon>frmMovimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProblemaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProblemaPrincipal.Designer.cs">
+      <DependentUpon>frmProblemaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRestauraBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRestauraBackup.Designer.cs">
+      <DependentUpon>frmRestauraBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTipoAtendimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTipoAtendimento.Designer.cs">
+      <DependentUpon>frmTipoAtendimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTipoReclamacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTipoReclamacao.Designer.cs">
+      <DependentUpon>frmTipoReclamacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funcoes\FloatExtends.cs" />
+    <Compile Include="Funcoes\FuncGeral.cs" />
+    <Compile Include="Funcoes\GridViewToExcel.cs" />
+    <Compile Include="Funcoes\OrderListView.cs" />
+    <Compile Include="Funcoes\StringExtends.cs" />
+    <Compile Include="Funcoes\ToolModeladas.cs" />
+    <Compile Include="Modelo\Atendimento.cs" />
+    <Compile Include="Modelo\Cidade.cs" />
+    <Compile Include="Modelo\Consumidor.cs" />
+    <Compile Include="Modelo\Encaminhamento.cs" />
+    <Compile Include="Modelo\Entidade.cs" />
+    <Compile Include="Modelo\Fornecedor.cs" />
+    <Compile Include="Modelo\Movimento.cs" />
+    <Compile Include="Modelo\ProblemaPrincipal.cs" />
+    <Compile Include="Modelo\SGAPContexto.cs" />
+    <Compile Include="Modelo\TipoAtendimento.cs" />
+    <Compile Include="Modelo\TipoReclamacao.cs" />
+    <Compile Include="Modelo\ValidaCpf.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmCopiaBackup.resx">
+      <DependentUpon>frmCopiaBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAtendimento.resx">
+      <DependentUpon>frmAtendimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCidade.resx">
+      <DependentUpon>frmCidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConsumidor.resx">
+      <DependentUpon>frmConsumidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEncaminhamento.resx">
+      <DependentUpon>frmEncaminhamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEntidade.resx">
+      <DependentUpon>frmEntidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFornecedor.resx">
+      <DependentUpon>frmFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMovimento.resx">
+      <DependentUpon>frmMovimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProblemaPrincipal.resx">
+      <DependentUpon>frmProblemaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRestauraBackup.resx">
+      <DependentUpon>frmRestauraBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTipoAtendimento.resx">
+      <DependentUpon>frmTipoAtendimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTipoReclamacao.resx">
+      <DependentUpon>frmTipoReclamacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\PhantomJS.2.1.1\tools\phantomjs\phantomjs.exe">
+      <Link>phantomjs.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="phantomjs-license.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\bd64x.png" />
+    <None Include="Resources\close16x.png" />
+    <None Include="Resources\save50x.png" />
+    <None Include="Resources\done50x.png" />
+    <None Include="Resources\folder20x.png" />
+    <None Include="Resources\folder28x.png" />
+    <None Include="Resources\remover.png" />
+    <None Include="Resources\salvar.png" />
+    <None Include="Resources\cancelar.png" />
+    <None Include="Resources\modificar.png" />
+    <None Include="Resources\novo.png" />
+    <None Include="Resources\pesquisar.png" />
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
