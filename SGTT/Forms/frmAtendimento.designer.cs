@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,21 +44,6 @@
             this.cmbConsumidor = new System.Windows.Forms.ComboBox();
             this.txtnumeroProcon = new System.Windows.Forms.TextBox();
             this.dgvAtendimento = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoAtendimentoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoReclamacaoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroProcon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoAtendimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.consumidorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.consumidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fornecedorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoReclamacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.problemaPrincipalID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.problemaPrincipal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reclamacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataEncerramento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbProblema = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -77,6 +62,21 @@
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.lbMovimentar = new System.Windows.Forms.Label();
             this.lbEncaminhar = new System.Windows.Forms.Label();
+            this.id2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoAtendimentoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoReclamacaoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroProcon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoAtendimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.consumidorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.consumidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fornecedorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoReclamacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.problemaPrincipalID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.problemaPrincipal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reclamacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataEncerramento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtendimento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProblema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddFornecedor)).BeginInit();
@@ -223,7 +223,7 @@
             this.dgvAtendimento.BackgroundColor = System.Drawing.Color.White;
             this.dgvAtendimento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAtendimento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
+            this.id2,
             this.tipoAtendimentoID,
             this.tipoReclamacaoID,
             this.numeroProcon,
@@ -244,150 +244,6 @@
             this.dgvAtendimento.Size = new System.Drawing.Size(653, 438);
             this.dgvAtendimento.TabIndex = 16;
             this.dgvAtendimento.DoubleClick += new System.EventHandler(this.dgvAtendimento_DoubleClick);
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.id.Visible = false;
-            // 
-            // tipoAtendimentoID
-            // 
-            this.tipoAtendimentoID.DataPropertyName = "tipoAtendimentoID";
-            this.tipoAtendimentoID.HeaderText = "Atendimento ID";
-            this.tipoAtendimentoID.Name = "tipoAtendimentoID";
-            this.tipoAtendimentoID.ReadOnly = true;
-            this.tipoAtendimentoID.Visible = false;
-            // 
-            // tipoReclamacaoID
-            // 
-            this.tipoReclamacaoID.DataPropertyName = "tipoReclamacaoID";
-            this.tipoReclamacaoID.HeaderText = "Reclamacao ID";
-            this.tipoReclamacaoID.Name = "tipoReclamacaoID";
-            this.tipoReclamacaoID.ReadOnly = true;
-            this.tipoReclamacaoID.Visible = false;
-            // 
-            // numeroProcon
-            // 
-            this.numeroProcon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.numeroProcon.DataPropertyName = "numeroProcon";
-            this.numeroProcon.HeaderText = "Nº Atend.";
-            this.numeroProcon.Name = "numeroProcon";
-            this.numeroProcon.ReadOnly = true;
-            this.numeroProcon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.numeroProcon.Width = 53;
-            // 
-            // tipoAtendimento
-            // 
-            this.tipoAtendimento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.tipoAtendimento.DataPropertyName = "tipoAtendimento";
-            this.tipoAtendimento.HeaderText = "Atendimento";
-            this.tipoAtendimento.Name = "tipoAtendimento";
-            this.tipoAtendimento.ReadOnly = true;
-            this.tipoAtendimento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tipoAtendimento.Width = 72;
-            // 
-            // consumidorID
-            // 
-            this.consumidorID.DataPropertyName = "consumidorID";
-            this.consumidorID.HeaderText = "ConsumidorID";
-            this.consumidorID.Name = "consumidorID";
-            this.consumidorID.ReadOnly = true;
-            this.consumidorID.Visible = false;
-            // 
-            // consumidor
-            // 
-            this.consumidor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.consumidor.DataPropertyName = "nomeConsumidor";
-            this.consumidor.HeaderText = "Consumidor";
-            this.consumidor.Name = "consumidor";
-            this.consumidor.ReadOnly = true;
-            this.consumidor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.consumidor.Width = 68;
-            // 
-            // fornecedorID
-            // 
-            this.fornecedorID.DataPropertyName = "fornecedorID";
-            this.fornecedorID.HeaderText = "FornecedorID";
-            this.fornecedorID.Name = "fornecedorID";
-            this.fornecedorID.ReadOnly = true;
-            this.fornecedorID.Visible = false;
-            // 
-            // fornecedor
-            // 
-            this.fornecedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.fornecedor.DataPropertyName = "nomeFornecedor";
-            this.fornecedor.HeaderText = "Fornecedor";
-            this.fornecedor.Name = "fornecedor";
-            this.fornecedor.ReadOnly = true;
-            this.fornecedor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.fornecedor.Width = 67;
-            // 
-            // tipoReclamacao
-            // 
-            this.tipoReclamacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.tipoReclamacao.DataPropertyName = "tipoReclamacao";
-            this.tipoReclamacao.HeaderText = "Reclamação";
-            this.tipoReclamacao.Name = "tipoReclamacao";
-            this.tipoReclamacao.ReadOnly = true;
-            this.tipoReclamacao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tipoReclamacao.Width = 73;
-            // 
-            // problemaPrincipalID
-            // 
-            this.problemaPrincipalID.DataPropertyName = "problemaPrincipalID";
-            this.problemaPrincipalID.HeaderText = "ProblemaPrincipalID";
-            this.problemaPrincipalID.Name = "problemaPrincipalID";
-            this.problemaPrincipalID.ReadOnly = true;
-            this.problemaPrincipalID.Visible = false;
-            // 
-            // problemaPrincipal
-            // 
-            this.problemaPrincipal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.problemaPrincipal.DataPropertyName = "problemaPrincipal";
-            this.problemaPrincipal.HeaderText = "Problema Principal";
-            this.problemaPrincipal.Name = "problemaPrincipal";
-            this.problemaPrincipal.ReadOnly = true;
-            this.problemaPrincipal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.problemaPrincipal.Width = 90;
-            // 
-            // reclamacao
-            // 
-            this.reclamacao.DataPropertyName = "reclamacao";
-            this.reclamacao.HeaderText = "Reclamação";
-            this.reclamacao.Name = "reclamacao";
-            this.reclamacao.ReadOnly = true;
-            this.reclamacao.Visible = false;
-            // 
-            // dataInicio
-            // 
-            this.dataInicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataInicio.DataPropertyName = "dataInicio";
-            dataGridViewCellStyle15.Format = "d";
-            dataGridViewCellStyle15.NullValue = null;
-            this.dataInicio.DefaultCellStyle = dataGridViewCellStyle15;
-            this.dataInicio.HeaderText = "Início";
-            this.dataInicio.Name = "dataInicio";
-            this.dataInicio.ReadOnly = true;
-            this.dataInicio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataInicio.Width = 40;
-            // 
-            // dataEncerramento
-            // 
-            this.dataEncerramento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataEncerramento.DataPropertyName = "dataEncerramento";
-            dataGridViewCellStyle16.Format = "d";
-            dataGridViewCellStyle16.NullValue = null;
-            this.dataEncerramento.DefaultCellStyle = dataGridViewCellStyle16;
-            this.dataEncerramento.HeaderText = "Encerramento";
-            this.dataEncerramento.Name = "dataEncerramento";
-            this.dataEncerramento.ReadOnly = true;
-            this.dataEncerramento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataEncerramento.Width = 79;
             // 
             // cmbProblema
             // 
@@ -635,6 +491,151 @@
             this.lbEncaminhar.MouseEnter += new System.EventHandler(this.lbEncaminhar_MouseEnter);
             this.lbEncaminhar.MouseLeave += new System.EventHandler(this.lbEncaminhar_MouseLeave);
             // 
+            // id2
+            // 
+            this.id2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id2.DataPropertyName = "id2";
+            this.id2.HeaderText = "ID";
+            this.id2.Name = "id2";
+            this.id2.ReadOnly = true;
+            this.id2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.id2.Visible = false;
+            this.id2.Width = 24;
+            // 
+            // tipoAtendimentoID
+            // 
+            this.tipoAtendimentoID.DataPropertyName = "tipoAtendimentoID";
+            this.tipoAtendimentoID.HeaderText = "Atendimento ID";
+            this.tipoAtendimentoID.Name = "tipoAtendimentoID";
+            this.tipoAtendimentoID.ReadOnly = true;
+            this.tipoAtendimentoID.Visible = false;
+            // 
+            // tipoReclamacaoID
+            // 
+            this.tipoReclamacaoID.DataPropertyName = "tipoReclamacaoID";
+            this.tipoReclamacaoID.HeaderText = "Reclamacao ID";
+            this.tipoReclamacaoID.Name = "tipoReclamacaoID";
+            this.tipoReclamacaoID.ReadOnly = true;
+            this.tipoReclamacaoID.Visible = false;
+            // 
+            // numeroProcon
+            // 
+            this.numeroProcon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.numeroProcon.DataPropertyName = "numeroProcon";
+            this.numeroProcon.HeaderText = "Nº Atend.";
+            this.numeroProcon.Name = "numeroProcon";
+            this.numeroProcon.ReadOnly = true;
+            this.numeroProcon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.numeroProcon.Width = 59;
+            // 
+            // tipoAtendimento
+            // 
+            this.tipoAtendimento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.tipoAtendimento.DataPropertyName = "tipoAtendimento";
+            this.tipoAtendimento.HeaderText = "Atendimento";
+            this.tipoAtendimento.Name = "tipoAtendimento";
+            this.tipoAtendimento.ReadOnly = true;
+            this.tipoAtendimento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tipoAtendimento.Width = 72;
+            // 
+            // consumidorID
+            // 
+            this.consumidorID.DataPropertyName = "consumidorID";
+            this.consumidorID.HeaderText = "ConsumidorID";
+            this.consumidorID.Name = "consumidorID";
+            this.consumidorID.ReadOnly = true;
+            this.consumidorID.Visible = false;
+            // 
+            // consumidor
+            // 
+            this.consumidor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.consumidor.DataPropertyName = "nomeConsumidor";
+            this.consumidor.HeaderText = "Consumidor";
+            this.consumidor.Name = "consumidor";
+            this.consumidor.ReadOnly = true;
+            this.consumidor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.consumidor.Width = 68;
+            // 
+            // fornecedorID
+            // 
+            this.fornecedorID.DataPropertyName = "fornecedorID";
+            this.fornecedorID.HeaderText = "FornecedorID";
+            this.fornecedorID.Name = "fornecedorID";
+            this.fornecedorID.ReadOnly = true;
+            this.fornecedorID.Visible = false;
+            // 
+            // fornecedor
+            // 
+            this.fornecedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fornecedor.DataPropertyName = "nomeFornecedor";
+            this.fornecedor.HeaderText = "Fornecedor";
+            this.fornecedor.Name = "fornecedor";
+            this.fornecedor.ReadOnly = true;
+            this.fornecedor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.fornecedor.Width = 67;
+            // 
+            // tipoReclamacao
+            // 
+            this.tipoReclamacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.tipoReclamacao.DataPropertyName = "tipoReclamacao";
+            this.tipoReclamacao.HeaderText = "Reclamação";
+            this.tipoReclamacao.Name = "tipoReclamacao";
+            this.tipoReclamacao.ReadOnly = true;
+            this.tipoReclamacao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tipoReclamacao.Width = 73;
+            // 
+            // problemaPrincipalID
+            // 
+            this.problemaPrincipalID.DataPropertyName = "problemaPrincipalID";
+            this.problemaPrincipalID.HeaderText = "ProblemaPrincipalID";
+            this.problemaPrincipalID.Name = "problemaPrincipalID";
+            this.problemaPrincipalID.ReadOnly = true;
+            this.problemaPrincipalID.Visible = false;
+            // 
+            // problemaPrincipal
+            // 
+            this.problemaPrincipal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.problemaPrincipal.DataPropertyName = "problemaPrincipal";
+            this.problemaPrincipal.HeaderText = "Problema Principal";
+            this.problemaPrincipal.Name = "problemaPrincipal";
+            this.problemaPrincipal.ReadOnly = true;
+            this.problemaPrincipal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.problemaPrincipal.Width = 90;
+            // 
+            // reclamacao
+            // 
+            this.reclamacao.DataPropertyName = "reclamacao";
+            this.reclamacao.HeaderText = "Reclamação";
+            this.reclamacao.Name = "reclamacao";
+            this.reclamacao.ReadOnly = true;
+            this.reclamacao.Visible = false;
+            // 
+            // dataInicio
+            // 
+            this.dataInicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataInicio.DataPropertyName = "dataInicio";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataInicio.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataInicio.HeaderText = "Início";
+            this.dataInicio.Name = "dataInicio";
+            this.dataInicio.ReadOnly = true;
+            this.dataInicio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataInicio.Width = 40;
+            // 
+            // dataEncerramento
+            // 
+            this.dataEncerramento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataEncerramento.DataPropertyName = "dataEncerramento";
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataEncerramento.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataEncerramento.HeaderText = "Encerramento";
+            this.dataEncerramento.Name = "dataEncerramento";
+            this.dataEncerramento.ReadOnly = true;
+            this.dataEncerramento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataEncerramento.Width = 79;
+            // 
             // frmAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -723,7 +724,7 @@
         public System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Label lbMovimentar;
         private System.Windows.Forms.Label lbEncaminhar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id2;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoAtendimentoID;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoReclamacaoID;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroProcon;

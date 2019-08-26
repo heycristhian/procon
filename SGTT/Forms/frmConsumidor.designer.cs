@@ -36,7 +36,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -48,7 +47,6 @@
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.txtTelefoneCom = new System.Windows.Forms.TextBox();
             this.txtCelular = new System.Windows.Forms.TextBox();
-            this.txtWhats = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtRg = new System.Windows.Forms.TextBox();
             this.txtCpf = new System.Windows.Forms.TextBox();
@@ -77,6 +75,8 @@
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.picProblema = new System.Windows.Forms.PictureBox();
+            this.txtOrgaoEmissor = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsumidor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProblema)).BeginInit();
             this.SuspendLayout();
@@ -95,7 +95,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 67);
+            this.label3.Location = new System.Drawing.Point(218, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 16);
             this.label3.TabIndex = 2;
@@ -125,7 +125,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(218, 67);
+            this.label6.Location = new System.Drawing.Point(13, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 16);
             this.label6.TabIndex = 5;
@@ -161,16 +161,6 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "Celular:";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(420, 127);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 16);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "WhatsApp:";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -195,7 +185,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(627, 127);
+            this.label13.Location = new System.Drawing.Point(420, 127);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(37, 16);
             this.label13.TabIndex = 12;
@@ -223,11 +213,11 @@
             // txtEndereco
             // 
             this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.Location = new System.Drawing.Point(15, 86);
+            this.txtEndereco.Location = new System.Drawing.Point(221, 86);
             this.txtEndereco.MaxLength = 40;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(150, 22);
-            this.txtEndereco.TabIndex = 2;
+            this.txtEndereco.TabIndex = 5;
             // 
             // txtBairro
             // 
@@ -241,11 +231,11 @@
             // txtCep
             // 
             this.txtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCep.Location = new System.Drawing.Point(219, 86);
+            this.txtCep.Location = new System.Drawing.Point(14, 86);
             this.txtCep.MaxLength = 9;
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(150, 22);
-            this.txtCep.TabIndex = 5;
+            this.txtCep.TabIndex = 2;
             this.txtCep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCep_KeyPress);
             this.txtCep.Leave += new System.EventHandler(this.txtCep_Leave);
             // 
@@ -282,17 +272,6 @@
             this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             this.txtCelular.Leave += new System.EventHandler(this.txtCelular_Leave);
             // 
-            // txtWhats
-            // 
-            this.txtWhats.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWhats.Location = new System.Drawing.Point(423, 146);
-            this.txtWhats.MaxLength = 14;
-            this.txtWhats.Name = "txtWhats";
-            this.txtWhats.Size = new System.Drawing.Size(150, 22);
-            this.txtWhats.TabIndex = 9;
-            this.txtWhats.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWhats_KeyPress);
-            this.txtWhats.Leave += new System.EventHandler(this.txtWhats_Leave);
-            // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -316,11 +295,11 @@
             // txtCpf
             // 
             this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCpf.Location = new System.Drawing.Point(630, 146);
+            this.txtCpf.Location = new System.Drawing.Point(423, 146);
             this.txtCpf.MaxLength = 14;
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(150, 22);
-            this.txtCpf.TabIndex = 12;
+            this.txtCpf.TabIndex = 9;
             this.txtCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpf_KeyPress);
             this.txtCpf.Leave += new System.EventHandler(this.txtCpf_Leave);
             // 
@@ -635,12 +614,33 @@
             this.picProblema.TabStop = false;
             this.picProblema.Click += new System.EventHandler(this.picProblema_Click);
             // 
+            // txtOrgaoEmissor
+            // 
+            this.txtOrgaoEmissor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrgaoEmissor.Location = new System.Drawing.Point(630, 146);
+            this.txtOrgaoEmissor.MaxLength = 14;
+            this.txtOrgaoEmissor.Name = "txtOrgaoEmissor";
+            this.txtOrgaoEmissor.Size = new System.Drawing.Size(150, 22);
+            this.txtOrgaoEmissor.TabIndex = 12;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(627, 127);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(101, 16);
+            this.label10.TabIndex = 103;
+            this.label10.Text = "Orgão Emissor:";
+            // 
             // frmConsumidor
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(795, 526);
             this.ControlBox = false;
+            this.Controls.Add(this.txtOrgaoEmissor);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.picProblema);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPesquisar);
@@ -655,7 +655,6 @@
             this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.txtRg);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtWhats);
             this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.txtTelefoneCom);
             this.Controls.Add(this.txtTelefone);
@@ -667,7 +666,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -698,7 +696,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -710,7 +707,6 @@
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.TextBox txtTelefoneCom;
         private System.Windows.Forms.TextBox txtCelular;
-        private System.Windows.Forms.TextBox txtWhats;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtRg;
         private System.Windows.Forms.TextBox txtCpf;
@@ -739,5 +735,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rg;
         private System.Windows.Forms.DataGridViewTextBoxColumn cpf;
         private System.Windows.Forms.PictureBox picProblema;
+        private System.Windows.Forms.TextBox txtOrgaoEmissor;
+        private System.Windows.Forms.Label label10;
     }
 }

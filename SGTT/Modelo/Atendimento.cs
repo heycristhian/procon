@@ -13,10 +13,6 @@ namespace SGAP.Modelo
 
     public class Atendimento
     {
-        public Atendimento()
-        {
-
-        }        
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -24,6 +20,14 @@ namespace SGAP.Modelo
 
         public int numeroProcon { get; set; }
 
+        [StringLength(150)]
+        public string reclamacao { get; set; }
+
+        public DateTime dataInicio { get; set; }
+
+        public DateTime dataEncerramento { get; set; }
+
+        //CHAVES ESTRANGEIRAS
         public int consumidorID { get; set; }
         virtual public Consumidor Consumidor { get; set; }
 
@@ -38,13 +42,6 @@ namespace SGAP.Modelo
 
         public int problemaPrincipalID { get; set; }
         virtual public ProblemaPrincipal ProblemaPrincipal { get; set; }
-
-        [StringLength(150)]
-        public string reclamacao { get; set; }
-
-        public DateTime dataInicio { get; set; }
-
-        public DateTime dataEncerramento { get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using SGCRP.Forms;
+﻿using SGAP.Modelo;
+using SGCRP.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +35,14 @@ namespace SGAP.Forms
 
             MdiClient ctlMDI = (MdiClient)this.Controls[this.Controls.Count - 1];
             ctlMDI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+
+            SGAPContexto contexto = new SGAPContexto();
+            Cidade cidade = new Cidade();
+
+            cidade.descricao = "Assis";
+            cidade.uf = "SP";
+
+            contexto.Cidade.Add(cidade);
         }
 
         private void cidadeToolStripMenuItem_Click(object sender, EventArgs e)

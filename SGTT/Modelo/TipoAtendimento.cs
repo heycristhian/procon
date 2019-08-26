@@ -12,10 +12,6 @@ namespace SGAP.Modelo
 
     public class TipoAtendimento
     {
-        public TipoAtendimento()
-        {
-
-        }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }

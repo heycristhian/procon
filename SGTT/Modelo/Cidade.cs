@@ -20,7 +20,7 @@ namespace SGAP.Modelo
         public int id { get; set; }
 
         [Required]
-        [StringLength(30)]
+        [StringLength(255)]
         public string descricao { get; set; }
 
         [Required]

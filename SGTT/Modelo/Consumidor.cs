@@ -44,7 +44,7 @@ namespace SGAP.Modelo
         public string celular { get; set; }
 
         [StringLength(14)]
-        public string whatsApp { get; set; }
+        public string orgaoEmissor { get; set; }
 
         [StringLength(50)]
         public string email { get; set; }

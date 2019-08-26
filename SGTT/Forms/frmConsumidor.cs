@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.Entity;
 using SGAP.Funcoes;
 using SGAP.Modelo;
+using Correios.Net;
 
 namespace SGAP.Forms
 {
@@ -36,7 +37,7 @@ namespace SGAP.Forms
             txtTelefone.Enabled = status;
             txtTelefoneCom.Enabled = status;
             txtCelular.Enabled = status;
-            txtWhats.Enabled = status;
+            txtOrgaoEmissor.Enabled = status;
             txtEmail.Enabled = status;
             txtRg.Enabled = status;
             txtCpf.Enabled = status;
@@ -61,9 +62,6 @@ namespace SGAP.Forms
                 if (status == false)
                     sentinela++;
                 status = FuncGeral.tratamentoTel(txtCelular);
-                if (status == false)
-                    sentinela++;
-                status = FuncGeral.tratamentoTel(txtWhats);
                 if (status == false)
                     sentinela++;
                 status = FuncGeral.validarEmail(txtEmail);
@@ -92,9 +90,6 @@ namespace SGAP.Forms
                 status = FuncGeral.tratamentoTel(txtCelular);
                 if (status == false)
                     sentinela++;
-                status = FuncGeral.tratamentoTel(txtWhats);
-                if (status == false)
-                    sentinela++;
                 status = FuncGeral.validarEmail(txtEmail);
                 if (status == false)
                     sentinela++;
@@ -117,7 +112,7 @@ namespace SGAP.Forms
             txtTelefone.Text = "";
             txtTelefoneCom.Text = "";
             txtCelular.Text = "";
-            txtWhats.Text = "";
+            txtOrgaoEmissor.Text = "";
             txtEmail.Text = "";
             txtRg.Text = "";
             txtCpf.Text = "";
@@ -174,7 +169,7 @@ namespace SGAP.Forms
                 txtTelefone.Text = dgvConsumidor.SelectedRows[0].Cells["fone"].Value.ToString();
                 txtTelefoneCom.Text = dgvConsumidor.SelectedRows[0].Cells["foneComercial"].Value.ToString();
                 txtCelular.Text = dgvConsumidor.SelectedRows[0].Cells["celular"].Value.ToString();
-                txtWhats.Text = dgvConsumidor.SelectedRows[0].Cells["whatsapp"].Value.ToString();
+                txtOrgaoEmissor.Text = dgvConsumidor.SelectedRows[0].Cells["orgaoEmissor"].Value.ToString();
                 txtEmail.Text = dgvConsumidor.SelectedRows[0].Cells["email"].Value.ToString();
                 txtRg.Text = dgvConsumidor.SelectedRows[0].Cells["rg"].Value.ToString();
                 txtCpf.Text = dgvConsumidor.SelectedRows[0].Cells["cpf"].Value.ToString();
@@ -275,7 +270,7 @@ namespace SGAP.Forms
                             consumidor.fone = txtTelefone.Text;
                             consumidor.foneComercial = txtTelefoneCom.Text;
                             consumidor.celular = txtCelular.Text;
-                            consumidor.whatsApp = txtWhats.Text;
+                            consumidor.orgaoEmissor = txtOrgaoEmissor.Text;
                             consumidor.email = txtEmail.Text;
                             consumidor.rg = txtRg.Text;
                             consumidor.cpf = txtCpf.Text;
@@ -457,6 +452,15 @@ namespace SGAP.Forms
         private void txtCep_Leave(object sender, EventArgs e)
         {
             FuncGeral.tratamentoCep(txtCep);
+
+            string cep = String.Join("", System.Text.RegularExpressions.Regex.Split(txtCep.Text, @"[^\d]"));            
+
+            Address address = SearchZip.GetAddress("sp");
+            if (address.Zip != null)
+            {
+                txtEndereco.Text = address.Street;
+            }
+            else txtCep.Text = "";
         }
 
         private void txtTelefone_Leave(object sender, EventArgs e)
@@ -517,11 +521,6 @@ namespace SGAP.Forms
         private void txtCelular_Leave(object sender, EventArgs e)
         {
             FuncGeral.tratamentoTel(txtCelular);
-        }
-
-        private void txtWhats_Leave(object sender, EventArgs e)
-        {
-            FuncGeral.tratamentoTel(txtWhats);
         }
 
         private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
