@@ -150,6 +150,12 @@
     <Compile Include="Forms\frmFornecedor.designer.cs">
       <DependentUpon>frmFornecedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,7 @@
     <Compile Include="Modelo\Encaminhamento.cs" />
     <Compile Include="Modelo\Entidade.cs" />
     <Compile Include="Modelo\Fornecedor.cs" />
+    <Compile Include="Modelo\Login.cs" />
     <Compile Include="Modelo\Movimento.cs" />
     <Compile Include="Modelo\ProblemaPrincipal.cs" />
     <Compile Include="Modelo\SGAPContexto.cs" />
@@ -226,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmFornecedor.resx">
       <DependentUpon>frmFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
@@ -305,6 +315,17 @@
     <Content Include="phantomjs-license.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\procon1.jpg" />
+    <None Include="Resources\procon.jpg" />
+    <None Include="Resources\password25px.png" />
+    <None Include="Resources\user25px.png" />
+    <None Include="Resources\group25px.png" />
+    <None Include="Resources\group15px.png" />
+    <None Include="Resources\password15px.png" />
+    <None Include="Resources\password13px.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\loginProcon1.png" />
+    <None Include="Resources\loginProcon.png" />
     <None Include="Resources\bd64x.png" />
     <None Include="Resources\close16x.png" />
     <None Include="Resources\save50x.png" />

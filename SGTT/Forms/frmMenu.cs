@@ -14,9 +14,18 @@ namespace SGAP.Forms
 {
     public partial class frmMenu : Form
     {
+        public string usuario { get; set; }
+
         public frmMenu()
         {
+            this.Hide();
             InitializeComponent();
+
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
+
+            this.Show();
+
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -25,7 +34,7 @@ namespace SGAP.Forms
             result = MessageBox.Show("Deseja sair?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             if(result == DialogResult.Yes)
             {
-                this.Dispose();
+                this.Close();
             }             
         }
 
@@ -34,15 +43,10 @@ namespace SGAP.Forms
             menuStrip1.ForeColor = Color.White;
 
             MdiClient ctlMDI = (MdiClient)this.Controls[this.Controls.Count - 1];
-            ctlMDI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            ctlMDI.BackColor = System.Drawing.Color.White;
 
-            SGAPContexto contexto = new SGAPContexto();
-            Cidade cidade = new Cidade();
+            lblUsuario.Text = usuario;
 
-            cidade.descricao = "Assis";
-            cidade.uf = "SP";
-
-            contexto.Cidade.Add(cidade);
         }
 
         private void cidadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,6 +141,6 @@ namespace SGAP.Forms
         {
             frmRestauraBackup rest = new frmRestauraBackup();
             rest.ShowDialog();
-        }
+        }        
     }
 }
