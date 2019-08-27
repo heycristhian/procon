@@ -59,7 +59,6 @@ namespace SGAP.Modelo
         public string site { get; set; }
 
         [StringLength(18)]
-        [Required]
         public string cnpj { get; set; }
     }
 }

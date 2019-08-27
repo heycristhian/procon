@@ -62,7 +62,7 @@
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.lbMovimentar = new System.Windows.Forms.Label();
             this.lbEncaminhar = new System.Windows.Forms.Label();
-            this.id2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoAtendimentoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoReclamacaoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroProcon = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -223,7 +223,7 @@
             this.dgvAtendimento.BackgroundColor = System.Drawing.Color.White;
             this.dgvAtendimento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAtendimento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id2,
+            this.id,
             this.tipoAtendimentoID,
             this.tipoReclamacaoID,
             this.numeroProcon,
@@ -491,16 +491,16 @@
             this.lbEncaminhar.MouseEnter += new System.EventHandler(this.lbEncaminhar_MouseEnter);
             this.lbEncaminhar.MouseLeave += new System.EventHandler(this.lbEncaminhar_MouseLeave);
             // 
-            // id2
+            // id
             // 
-            this.id2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id2.DataPropertyName = "id2";
-            this.id2.HeaderText = "ID";
-            this.id2.Name = "id2";
-            this.id2.ReadOnly = true;
-            this.id2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.id2.Visible = false;
-            this.id2.Width = 24;
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.id.Visible = false;
+            this.id.Width = 24;
             // 
             // tipoAtendimentoID
             // 
@@ -724,7 +724,7 @@
         public System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Label lbMovimentar;
         private System.Windows.Forms.Label lbEncaminhar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoAtendimentoID;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoReclamacaoID;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroProcon;

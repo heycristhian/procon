@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using SGAP.Funcoes;
+using SGAP.Modelo;
 
 namespace SGAP.Forms
 {
@@ -16,12 +17,24 @@ namespace SGAP.Forms
     {
         Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
 
+        frmMenu menu = new frmMenu("aux");
+
         public frmAtendimento()
+        {
+            InitializeComponent();
+            this.MinimizeBox = false;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+        }
+
+        public frmAtendimento(frmMenu frmMenu)
         {           
             InitializeComponent();            
             this.MinimizeBox = false;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;                      
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
+            menu = frmMenu;
         }
 
  
@@ -220,6 +233,24 @@ namespace SGAP.Forms
             habilitaCampos(true);
             txtId.Text = "-1";
             txtnumeroProcon.Focus();
+
+            Atendimento atendimento = new Atendimento();
+            SGAPContexto contexto = new SGAPContexto();
+            atendimento = contexto.Atendimento.OrderByDescending(x => x.id).FirstOrDefault(x => x.usuario.Equals(menu.usuario));
+            
+            if(atendimento == null)
+            {
+                txtnumeroProcon.Text = "001-" + DateTime.Now.Year + "-" + menu.usuario;
+            }
+            else if(atendimento.dataInicio.Month != DateTime.Now.Month)
+            {
+                txtnumeroProcon.Text = "001-" + DateTime.Now.Year + "-" + menu.usuario;
+            }
+            else
+            {
+                txtnumeroProcon.Text = (Convert.ToInt32(atendimento.numeroProcon.Substring(0, 3)) + 1).ToString("000") + "-" + DateTime.Now.Year + "-" + menu.usuario;
+            }
+
         }
 
         private void lbEditar_Click(object sender, EventArgs e)
@@ -260,7 +291,7 @@ namespace SGAP.Forms
                         atendimento = contexto.Atendimento.Find(id);
                     }
                     atendimento.id = id;
-                    atendimento.numeroProcon = Convert.ToInt32(txtnumeroProcon.Text);
+                    atendimento.numeroProcon = txtnumeroProcon.Text;
                     atendimento.consumidorID = Convert.ToInt32(cmbConsumidor.SelectedValue);
                     atendimento.fornecedorID = Convert.ToInt32(cmbFornecedor.SelectedValue);
                     atendimento.tipoAtendimentoID = Convert.ToInt32(cmbTipoAtendimento.SelectedValue);
@@ -269,28 +300,19 @@ namespace SGAP.Forms
                     atendimento.reclamacao = txtDescricaoProblema.Text;
                     atendimento.dataInicio = dtpInicio.Value;
                     atendimento.dataEncerramento = dtpEncerramento.Value;
+                    atendimento.usuario = menu.usuario;
 
                     if (atendimento.id == -1)
                     {
-                        //fazendo teste se existe o numero de atendimento no banco! (não está funcionando, ta retornando false
-                        bool teste = contexto.Atendimento.ToList().Exists(p => p.numeroProcon.ToString().Equals(txtnumeroProcon.Text.ToString().Trim()));
-
-                        if (teste)
-                        {
-                            MessageBox.Show("Número de atendimento já cadastrada!", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txtnumeroProcon.Focus();
-
-                        }
-                        else
-                        {
-                            contexto.Atendimento.Add(atendimento);
-                            contexto.SaveChanges();
-                            MessageBox.Show("Dados gravados com sucesso", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            limparCampos();
-                            habilitaCampos(false);
-                            dgvAtendimento.DataSource = "";
-                            dgvAtendimento.DataSource = contexto.Atendimento.ToList();
-                        }
+                        
+                        contexto.Atendimento.Add(atendimento);
+                        contexto.SaveChanges();
+                        MessageBox.Show("Dados gravados com sucesso", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limparCampos();
+                        habilitaCampos(false);
+                        dgvAtendimento.DataSource = "";
+                        dgvAtendimento.DataSource = contexto.Atendimento.ToList();
+                        
                     }
 
                     else
@@ -458,10 +480,6 @@ namespace SGAP.Forms
 
         private void txtnumeroProcon_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
-            {
-                e.Handled = true;
-            }
         }
 
         private void lbMovimentar_MouseEnter(object sender, EventArgs e)

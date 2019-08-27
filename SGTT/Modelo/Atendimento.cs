@@ -18,7 +18,7 @@ namespace SGAP.Modelo
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
-        public int numeroProcon { get; set; }
+        public string numeroProcon { get; set; }
 
         [StringLength(150)]
         public string reclamacao { get; set; }
@@ -26,6 +26,8 @@ namespace SGAP.Modelo
         public DateTime dataInicio { get; set; }
 
         public DateTime dataEncerramento { get; set; }
+
+        public string usuario { get; set; }
 
         //CHAVES ESTRANGEIRAS
         public int consumidorID { get; set; }

@@ -451,16 +451,16 @@ namespace SGAP.Forms
 
         private void txtCep_Leave(object sender, EventArgs e)
         {
-            FuncGeral.tratamentoCep(txtCep);
+            //FuncGeral.tratamentoCep(txtCep);
 
-            string cep = String.Join("", System.Text.RegularExpressions.Regex.Split(txtCep.Text, @"[^\d]"));            
+            //string cep = String.Join("", System.Text.RegularExpressions.Regex.Split(txtCep.Text, @"[^\d]"));            
 
-            Address address = SearchZip.GetAddress("sp");
-            if (address.Zip != null)
-            {
-                txtEndereco.Text = address.Street;
-            }
-            else txtCep.Text = "";
+            //Address address = SearchZip.GetAddress("sp");
+            //if (address.Zip != null)
+            //{
+            //    txtEndereco.Text = address.Street;
+            //}
+            //else txtCep.Text = "";
         }
 
         private void txtTelefone_Leave(object sender, EventArgs e)

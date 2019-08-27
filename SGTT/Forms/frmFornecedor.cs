@@ -299,7 +299,7 @@ namespace SGAP.Forms
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException)
             {
-                MessageBox.Show("Os campos Razão Social e CNPJ são obrigatórios!", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("O campo Razão Social é obrigatório!", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }

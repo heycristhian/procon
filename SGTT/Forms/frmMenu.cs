@@ -21,7 +21,7 @@ namespace SGAP.Forms
             this.Hide();
             InitializeComponent();
 
-            frmLogin login = new frmLogin();
+            frmLogin login = new frmLogin(this);
             login.ShowDialog();
 
             this.Show();
@@ -50,7 +50,7 @@ namespace SGAP.Forms
             MdiClient ctlMDI = (MdiClient)this.Controls[this.Controls.Count - 1];
             ctlMDI.BackColor = System.Drawing.Color.White;
 
-            lblUsuario.Text = usuario;
+            tssUser.Text += usuario;
 
         }
 
@@ -100,7 +100,7 @@ namespace SGAP.Forms
 
         private void novoAtendimentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAtendimento frmAtend = new frmAtendimento();
+            frmAtendimento frmAtend = new frmAtendimento(this);
             frmAtend.MdiParent = this;
             frmAtend.Show();
         } 
@@ -146,6 +146,6 @@ namespace SGAP.Forms
         {
             frmRestauraBackup rest = new frmRestauraBackup();
             rest.ShowDialog();
-        }        
+        }
     }
 }
