@@ -13,11 +13,23 @@ namespace SGAP.Forms
 {
     public partial class frmLogin : Form
     {
+        frmMenu menu;
+
         public frmLogin()
         {
             InitializeComponent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
         }
+
+        public frmLogin(frmMenu frmMenu)
+        {
+            InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            string aux = "verificacao";
+            menu = new frmMenu(aux);
+            menu = frmMenu;
+        }
+
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
@@ -90,7 +102,8 @@ namespace SGAP.Forms
                 MessageBox.Show("O usuário ou senha são inválidos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
-            {                
+            {
+                menu.usuario = verificaLogin.usuario;
                 this.Close();                
             }
         }

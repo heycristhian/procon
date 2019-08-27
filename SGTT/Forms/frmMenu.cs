@@ -28,6 +28,11 @@ namespace SGAP.Forms
 
         }
 
+        public frmMenu(string aux)
+        {
+            InitializeComponent();
+        }
+
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult result;
