@@ -39,29 +39,10 @@
             this.dtpEncerramento = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtDescricaoProblema = new System.Windows.Forms.TextBox();
             this.cmbFornecedor = new System.Windows.Forms.ComboBox();
             this.cmbConsumidor = new System.Windows.Forms.ComboBox();
             this.txtnumeroProcon = new System.Windows.Forms.TextBox();
             this.dgvAtendimento = new System.Windows.Forms.DataGridView();
-            this.cmbProblema = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cmbTipoAtendimento = new System.Windows.Forms.ComboBox();
-            this.cmbTipoReclamacao = new System.Windows.Forms.ComboBox();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbRemover = new System.Windows.Forms.Label();
-            this.lbSalvar = new System.Windows.Forms.Label();
-            this.lbCancelar = new System.Windows.Forms.Label();
-            this.lbEditar = new System.Windows.Forms.Label();
-            this.lbNovo = new System.Windows.Forms.Label();
-            this.picProblema = new System.Windows.Forms.PictureBox();
-            this.picAddFornecedor = new System.Windows.Forms.PictureBox();
-            this.picAddConsumidor = new System.Windows.Forms.PictureBox();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.lbMovimentar = new System.Windows.Forms.Label();
-            this.lbEncaminhar = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoAtendimentoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoReclamacaoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +58,26 @@
             this.reclamacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataEncerramento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbProblema = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbTipoAtendimento = new System.Windows.Forms.ComboBox();
+            this.cmbTipoReclamacao = new System.Windows.Forms.ComboBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.lbMovimentar = new System.Windows.Forms.Label();
+            this.lbEncaminhar = new System.Windows.Forms.Label();
+            this.lblExpandirDescricao = new System.Windows.Forms.Label();
+            this.lbRemover = new System.Windows.Forms.Label();
+            this.lbSalvar = new System.Windows.Forms.Label();
+            this.lbCancelar = new System.Windows.Forms.Label();
+            this.lbEditar = new System.Windows.Forms.Label();
+            this.lbNovo = new System.Windows.Forms.Label();
+            this.picProblema = new System.Windows.Forms.PictureBox();
+            this.picAddFornecedor = new System.Windows.Forms.PictureBox();
+            this.picAddConsumidor = new System.Windows.Forms.PictureBox();
+            this.txtDescricaoProblema = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtendimento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProblema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddFornecedor)).BeginInit();
@@ -171,16 +172,6 @@
             this.label8.TabIndex = 9;
             this.label8.Text = "Encerramento:";
             // 
-            // txtDescricaoProblema
-            // 
-            this.txtDescricaoProblema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricaoProblema.Location = new System.Drawing.Point(15, 381);
-            this.txtDescricaoProblema.MaxLength = 100;
-            this.txtDescricaoProblema.Multiline = true;
-            this.txtDescricaoProblema.Name = "txtDescricaoProblema";
-            this.txtDescricaoProblema.Size = new System.Drawing.Size(248, 117);
-            this.txtDescricaoProblema.TabIndex = 7;
-            // 
             // cmbFornecedor
             // 
             this.cmbFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -244,252 +235,6 @@
             this.dgvAtendimento.Size = new System.Drawing.Size(653, 438);
             this.dgvAtendimento.TabIndex = 16;
             this.dgvAtendimento.DoubleClick += new System.EventHandler(this.dgvAtendimento_DoubleClick);
-            // 
-            // cmbProblema
-            // 
-            this.cmbProblema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbProblema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbProblema.FormattingEnabled = true;
-            this.cmbProblema.Location = new System.Drawing.Point(15, 201);
-            this.cmbProblema.Name = "cmbProblema";
-            this.cmbProblema.Size = new System.Drawing.Size(248, 24);
-            this.cmbProblema.TabIndex = 4;
-            this.cmbProblema.Click += new System.EventHandler(this.cmbProblema_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 64);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(117, 16);
-            this.label9.TabIndex = 72;
-            this.label9.Text = "Tipo Atendimento:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 124);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(120, 16);
-            this.label10.TabIndex = 73;
-            this.label10.Text = "Tipo Reclamação:";
-            // 
-            // cmbTipoAtendimento
-            // 
-            this.cmbTipoAtendimento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoAtendimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipoAtendimento.FormattingEnabled = true;
-            this.cmbTipoAtendimento.Location = new System.Drawing.Point(15, 83);
-            this.cmbTipoAtendimento.Name = "cmbTipoAtendimento";
-            this.cmbTipoAtendimento.Size = new System.Drawing.Size(248, 24);
-            this.cmbTipoAtendimento.TabIndex = 2;
-            this.cmbTipoAtendimento.Click += new System.EventHandler(this.cmbTipoAtendimento_Click);
-            // 
-            // cmbTipoReclamacao
-            // 
-            this.cmbTipoReclamacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoReclamacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipoReclamacao.FormattingEnabled = true;
-            this.cmbTipoReclamacao.Location = new System.Drawing.Point(15, 143);
-            this.cmbTipoReclamacao.Name = "cmbTipoReclamacao";
-            this.cmbTipoReclamacao.Size = new System.Drawing.Size(248, 24);
-            this.cmbTipoReclamacao.TabIndex = 3;
-            this.cmbTipoReclamacao.SelectedIndexChanged += new System.EventHandler(this.cmbTipoReclamacao_SelectedIndexChanged);
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(882, 83);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 20);
-            this.txtId.TabIndex = 77;
-            this.txtId.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label1.Location = new System.Drawing.Point(326, 121);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 16);
-            this.label1.TabIndex = 81;
-            this.label1.Text = "Buscar:";
-            // 
-            // lbRemover
-            // 
-            this.lbRemover.AutoSize = true;
-            this.lbRemover.BackColor = System.Drawing.Color.White;
-            this.lbRemover.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRemover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
-            this.lbRemover.Image = global::SGAP.Properties.Resources.remover;
-            this.lbRemover.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbRemover.Location = new System.Drawing.Point(601, 28);
-            this.lbRemover.MinimumSize = new System.Drawing.Size(64, 75);
-            this.lbRemover.Name = "lbRemover";
-            this.lbRemover.Size = new System.Drawing.Size(64, 75);
-            this.lbRemover.TabIndex = 87;
-            this.lbRemover.Text = "Remover \n(F3)";
-            this.lbRemover.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbRemover.Click += new System.EventHandler(this.lbRemover_Click);
-            this.lbRemover.MouseEnter += new System.EventHandler(this.lbRemover_MouseEnter);
-            this.lbRemover.MouseLeave += new System.EventHandler(this.lbRemover_MouseLeave);
-            // 
-            // lbSalvar
-            // 
-            this.lbSalvar.AutoSize = true;
-            this.lbSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
-            this.lbSalvar.Image = global::SGAP.Properties.Resources.salvar;
-            this.lbSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbSalvar.Location = new System.Drawing.Point(52, 501);
-            this.lbSalvar.MinimumSize = new System.Drawing.Size(64, 75);
-            this.lbSalvar.Name = "lbSalvar";
-            this.lbSalvar.Size = new System.Drawing.Size(64, 75);
-            this.lbSalvar.TabIndex = 10;
-            this.lbSalvar.Text = "Salvar \n(F4)";
-            this.lbSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbSalvar.Click += new System.EventHandler(this.lbSalvar_Click);
-            this.lbSalvar.MouseEnter += new System.EventHandler(this.lbSalvar_MouseEnter);
-            this.lbSalvar.MouseLeave += new System.EventHandler(this.lbSalvar_MouseLeave);
-            // 
-            // lbCancelar
-            // 
-            this.lbCancelar.AutoSize = true;
-            this.lbCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
-            this.lbCancelar.Image = global::SGAP.Properties.Resources.cancelar;
-            this.lbCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbCancelar.Location = new System.Drawing.Point(158, 501);
-            this.lbCancelar.MinimumSize = new System.Drawing.Size(64, 75);
-            this.lbCancelar.Name = "lbCancelar";
-            this.lbCancelar.Size = new System.Drawing.Size(64, 75);
-            this.lbCancelar.TabIndex = 85;
-            this.lbCancelar.Text = "Cancelar \n(F5)";
-            this.lbCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbCancelar.Click += new System.EventHandler(this.lbCancelar_Click);
-            this.lbCancelar.MouseEnter += new System.EventHandler(this.lbCancelar_MouseEnter);
-            this.lbCancelar.MouseLeave += new System.EventHandler(this.lbCancelar_MouseLeave);
-            // 
-            // lbEditar
-            // 
-            this.lbEditar.AutoSize = true;
-            this.lbEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
-            this.lbEditar.Image = global::SGAP.Properties.Resources.modificar;
-            this.lbEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbEditar.Location = new System.Drawing.Point(531, 28);
-            this.lbEditar.MinimumSize = new System.Drawing.Size(64, 75);
-            this.lbEditar.Name = "lbEditar";
-            this.lbEditar.Size = new System.Drawing.Size(64, 75);
-            this.lbEditar.TabIndex = 84;
-            this.lbEditar.Text = "Editar \n(F2)";
-            this.lbEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbEditar.Click += new System.EventHandler(this.lbEditar_Click);
-            this.lbEditar.DragLeave += new System.EventHandler(this.lbNovo_MouseEnter);
-            this.lbEditar.MouseEnter += new System.EventHandler(this.lbEditar_MouseEnter);
-            this.lbEditar.MouseLeave += new System.EventHandler(this.lbEditar_MouseLeave);
-            // 
-            // lbNovo
-            // 
-            this.lbNovo.AutoSize = true;
-            this.lbNovo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNovo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
-            this.lbNovo.Image = global::SGAP.Properties.Resources.novo;
-            this.lbNovo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbNovo.Location = new System.Drawing.Point(463, 28);
-            this.lbNovo.MinimumSize = new System.Drawing.Size(62, 75);
-            this.lbNovo.Name = "lbNovo";
-            this.lbNovo.Size = new System.Drawing.Size(62, 75);
-            this.lbNovo.TabIndex = 83;
-            this.lbNovo.Text = "Novo \n(F1)";
-            this.lbNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbNovo.Click += new System.EventHandler(this.lbNovo_Click);
-            this.lbNovo.MouseEnter += new System.EventHandler(this.lbNovo_MouseEnter);
-            this.lbNovo.MouseLeave += new System.EventHandler(this.lbNovo_MouseLeave);
-            // 
-            // picProblema
-            // 
-            this.picProblema.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picProblema.Image = global::SGAP.Properties.Resources.add;
-            this.picProblema.Location = new System.Drawing.Point(269, 201);
-            this.picProblema.Name = "picProblema";
-            this.picProblema.Size = new System.Drawing.Size(28, 28);
-            this.picProblema.TabIndex = 79;
-            this.picProblema.TabStop = false;
-            this.picProblema.Click += new System.EventHandler(this.picProblema_Click);
-            // 
-            // picAddFornecedor
-            // 
-            this.picAddFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picAddFornecedor.Image = global::SGAP.Properties.Resources.add;
-            this.picAddFornecedor.Location = new System.Drawing.Point(269, 314);
-            this.picAddFornecedor.Name = "picAddFornecedor";
-            this.picAddFornecedor.Size = new System.Drawing.Size(28, 28);
-            this.picAddFornecedor.TabIndex = 78;
-            this.picAddFornecedor.TabStop = false;
-            this.picAddFornecedor.Click += new System.EventHandler(this.picAddFornecedor_Click);
-            // 
-            // picAddConsumidor
-            // 
-            this.picAddConsumidor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picAddConsumidor.Image = global::SGAP.Properties.Resources.add;
-            this.picAddConsumidor.Location = new System.Drawing.Point(269, 256);
-            this.picAddConsumidor.Name = "picAddConsumidor";
-            this.picAddConsumidor.Size = new System.Drawing.Size(28, 28);
-            this.picAddConsumidor.TabIndex = 76;
-            this.picAddConsumidor.TabStop = false;
-            this.picAddConsumidor.Click += new System.EventHandler(this.picAddConsumidor_Click);
-            // 
-            // txtPesquisar
-            // 
-            this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisar.Location = new System.Drawing.Point(329, 140);
-            this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(336, 22);
-            this.txtPesquisar.TabIndex = 88;
-            this.txtPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisar_KeyPress);
-            // 
-            // lbMovimentar
-            // 
-            this.lbMovimentar.AutoSize = true;
-            this.lbMovimentar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(203)))), ((int)(((byte)(248)))));
-            this.lbMovimentar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbMovimentar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMovimentar.Location = new System.Drawing.Point(715, 132);
-            this.lbMovimentar.MaximumSize = new System.Drawing.Size(101, 23);
-            this.lbMovimentar.MinimumSize = new System.Drawing.Size(120, 30);
-            this.lbMovimentar.Name = "lbMovimentar";
-            this.lbMovimentar.Size = new System.Drawing.Size(120, 30);
-            this.lbMovimentar.TabIndex = 89;
-            this.lbMovimentar.Text = "MOVIMENTAR (F6)";
-            this.lbMovimentar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbMovimentar.Click += new System.EventHandler(this.lbMovimentar_Click);
-            this.lbMovimentar.MouseEnter += new System.EventHandler(this.lbMovimentar_MouseEnter);
-            this.lbMovimentar.MouseLeave += new System.EventHandler(this.lbMovimentar_MouseLeave);
-            // 
-            // lbEncaminhar
-            // 
-            this.lbEncaminhar.AutoSize = true;
-            this.lbEncaminhar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(203)))), ((int)(((byte)(248)))));
-            this.lbEncaminhar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbEncaminhar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEncaminhar.Location = new System.Drawing.Point(841, 132);
-            this.lbEncaminhar.MaximumSize = new System.Drawing.Size(101, 23);
-            this.lbEncaminhar.MinimumSize = new System.Drawing.Size(120, 30);
-            this.lbEncaminhar.Name = "lbEncaminhar";
-            this.lbEncaminhar.Size = new System.Drawing.Size(120, 30);
-            this.lbEncaminhar.TabIndex = 90;
-            this.lbEncaminhar.Text = "ENCAMINHAR (F7)";
-            this.lbEncaminhar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbEncaminhar.Click += new System.EventHandler(this.lbEncaminhar_Click);
-            this.lbEncaminhar.MouseEnter += new System.EventHandler(this.lbEncaminhar_MouseEnter);
-            this.lbEncaminhar.MouseLeave += new System.EventHandler(this.lbEncaminhar_MouseLeave);
             // 
             // id
             // 
@@ -636,6 +381,275 @@
             this.dataEncerramento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dataEncerramento.Width = 79;
             // 
+            // cmbProblema
+            // 
+            this.cmbProblema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProblema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProblema.FormattingEnabled = true;
+            this.cmbProblema.Location = new System.Drawing.Point(15, 201);
+            this.cmbProblema.Name = "cmbProblema";
+            this.cmbProblema.Size = new System.Drawing.Size(248, 24);
+            this.cmbProblema.TabIndex = 4;
+            this.cmbProblema.Click += new System.EventHandler(this.cmbProblema_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(12, 64);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(117, 16);
+            this.label9.TabIndex = 72;
+            this.label9.Text = "Tipo Atendimento:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(12, 124);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(120, 16);
+            this.label10.TabIndex = 73;
+            this.label10.Text = "Tipo Reclamação:";
+            // 
+            // cmbTipoAtendimento
+            // 
+            this.cmbTipoAtendimento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoAtendimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoAtendimento.FormattingEnabled = true;
+            this.cmbTipoAtendimento.Location = new System.Drawing.Point(15, 83);
+            this.cmbTipoAtendimento.Name = "cmbTipoAtendimento";
+            this.cmbTipoAtendimento.Size = new System.Drawing.Size(248, 24);
+            this.cmbTipoAtendimento.TabIndex = 2;
+            this.cmbTipoAtendimento.Click += new System.EventHandler(this.cmbTipoAtendimento_Click);
+            // 
+            // cmbTipoReclamacao
+            // 
+            this.cmbTipoReclamacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoReclamacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoReclamacao.FormattingEnabled = true;
+            this.cmbTipoReclamacao.Location = new System.Drawing.Point(15, 143);
+            this.cmbTipoReclamacao.Name = "cmbTipoReclamacao";
+            this.cmbTipoReclamacao.Size = new System.Drawing.Size(248, 24);
+            this.cmbTipoReclamacao.TabIndex = 3;
+            this.cmbTipoReclamacao.SelectedIndexChanged += new System.EventHandler(this.cmbTipoReclamacao_SelectedIndexChanged);
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(882, 83);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 77;
+            this.txtId.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label1.Location = new System.Drawing.Point(326, 121);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 16);
+            this.label1.TabIndex = 81;
+            this.label1.Text = "Buscar:";
+            // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisar.Location = new System.Drawing.Point(329, 140);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(336, 22);
+            this.txtPesquisar.TabIndex = 88;
+            this.txtPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisar_KeyPress);
+            // 
+            // lbMovimentar
+            // 
+            this.lbMovimentar.AutoSize = true;
+            this.lbMovimentar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(203)))), ((int)(((byte)(248)))));
+            this.lbMovimentar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbMovimentar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMovimentar.Location = new System.Drawing.Point(715, 132);
+            this.lbMovimentar.MaximumSize = new System.Drawing.Size(101, 23);
+            this.lbMovimentar.MinimumSize = new System.Drawing.Size(120, 30);
+            this.lbMovimentar.Name = "lbMovimentar";
+            this.lbMovimentar.Size = new System.Drawing.Size(120, 30);
+            this.lbMovimentar.TabIndex = 89;
+            this.lbMovimentar.Text = "MOVIMENTAR (F6)";
+            this.lbMovimentar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbMovimentar.Click += new System.EventHandler(this.lbMovimentar_Click);
+            this.lbMovimentar.MouseEnter += new System.EventHandler(this.lbMovimentar_MouseEnter);
+            this.lbMovimentar.MouseLeave += new System.EventHandler(this.lbMovimentar_MouseLeave);
+            // 
+            // lbEncaminhar
+            // 
+            this.lbEncaminhar.AutoSize = true;
+            this.lbEncaminhar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(203)))), ((int)(((byte)(248)))));
+            this.lbEncaminhar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbEncaminhar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEncaminhar.Location = new System.Drawing.Point(841, 132);
+            this.lbEncaminhar.MaximumSize = new System.Drawing.Size(101, 23);
+            this.lbEncaminhar.MinimumSize = new System.Drawing.Size(120, 30);
+            this.lbEncaminhar.Name = "lbEncaminhar";
+            this.lbEncaminhar.Size = new System.Drawing.Size(120, 30);
+            this.lbEncaminhar.TabIndex = 90;
+            this.lbEncaminhar.Text = "ENCAMINHAR (F7)";
+            this.lbEncaminhar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbEncaminhar.Click += new System.EventHandler(this.lbEncaminhar_Click);
+            this.lbEncaminhar.MouseEnter += new System.EventHandler(this.lbEncaminhar_MouseEnter);
+            this.lbEncaminhar.MouseLeave += new System.EventHandler(this.lbEncaminhar_MouseLeave);
+            // 
+            // lblExpandirDescricao
+            // 
+            this.lblExpandirDescricao.AutoSize = true;
+            this.lblExpandirDescricao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblExpandirDescricao.Font = new System.Drawing.Font("Decker", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpandirDescricao.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblExpandirDescricao.Location = new System.Drawing.Point(141, 456);
+            this.lblExpandirDescricao.Name = "lblExpandirDescricao";
+            this.lblExpandirDescricao.Size = new System.Drawing.Size(122, 16);
+            this.lblExpandirDescricao.TabIndex = 91;
+            this.lblExpandirDescricao.Text = "Expandir descrição";
+            this.lblExpandirDescricao.Click += new System.EventHandler(this.lblExpandirDescricao_Click);
+            // 
+            // lbRemover
+            // 
+            this.lbRemover.AutoSize = true;
+            this.lbRemover.BackColor = System.Drawing.Color.White;
+            this.lbRemover.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRemover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
+            this.lbRemover.Image = global::SGAP.Properties.Resources.remover;
+            this.lbRemover.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbRemover.Location = new System.Drawing.Point(601, 28);
+            this.lbRemover.MinimumSize = new System.Drawing.Size(64, 75);
+            this.lbRemover.Name = "lbRemover";
+            this.lbRemover.Size = new System.Drawing.Size(64, 75);
+            this.lbRemover.TabIndex = 87;
+            this.lbRemover.Text = "Remover \n(F3)";
+            this.lbRemover.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lbRemover.Click += new System.EventHandler(this.lbRemover_Click);
+            this.lbRemover.MouseEnter += new System.EventHandler(this.lbRemover_MouseEnter);
+            this.lbRemover.MouseLeave += new System.EventHandler(this.lbRemover_MouseLeave);
+            // 
+            // lbSalvar
+            // 
+            this.lbSalvar.AutoSize = true;
+            this.lbSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
+            this.lbSalvar.Image = global::SGAP.Properties.Resources.salvar;
+            this.lbSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbSalvar.Location = new System.Drawing.Point(52, 501);
+            this.lbSalvar.MinimumSize = new System.Drawing.Size(64, 75);
+            this.lbSalvar.Name = "lbSalvar";
+            this.lbSalvar.Size = new System.Drawing.Size(64, 75);
+            this.lbSalvar.TabIndex = 10;
+            this.lbSalvar.Text = "Salvar \n(F4)";
+            this.lbSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lbSalvar.Click += new System.EventHandler(this.lbSalvar_Click);
+            this.lbSalvar.MouseEnter += new System.EventHandler(this.lbSalvar_MouseEnter);
+            this.lbSalvar.MouseLeave += new System.EventHandler(this.lbSalvar_MouseLeave);
+            // 
+            // lbCancelar
+            // 
+            this.lbCancelar.AutoSize = true;
+            this.lbCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
+            this.lbCancelar.Image = global::SGAP.Properties.Resources.cancelar;
+            this.lbCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbCancelar.Location = new System.Drawing.Point(158, 501);
+            this.lbCancelar.MinimumSize = new System.Drawing.Size(64, 75);
+            this.lbCancelar.Name = "lbCancelar";
+            this.lbCancelar.Size = new System.Drawing.Size(64, 75);
+            this.lbCancelar.TabIndex = 85;
+            this.lbCancelar.Text = "Cancelar \n(F5)";
+            this.lbCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lbCancelar.Click += new System.EventHandler(this.lbCancelar_Click);
+            this.lbCancelar.MouseEnter += new System.EventHandler(this.lbCancelar_MouseEnter);
+            this.lbCancelar.MouseLeave += new System.EventHandler(this.lbCancelar_MouseLeave);
+            // 
+            // lbEditar
+            // 
+            this.lbEditar.AutoSize = true;
+            this.lbEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
+            this.lbEditar.Image = global::SGAP.Properties.Resources.modificar;
+            this.lbEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbEditar.Location = new System.Drawing.Point(531, 28);
+            this.lbEditar.MinimumSize = new System.Drawing.Size(64, 75);
+            this.lbEditar.Name = "lbEditar";
+            this.lbEditar.Size = new System.Drawing.Size(64, 75);
+            this.lbEditar.TabIndex = 84;
+            this.lbEditar.Text = "Editar \n(F2)";
+            this.lbEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lbEditar.Click += new System.EventHandler(this.lbEditar_Click);
+            this.lbEditar.DragLeave += new System.EventHandler(this.lbNovo_MouseEnter);
+            this.lbEditar.MouseEnter += new System.EventHandler(this.lbEditar_MouseEnter);
+            this.lbEditar.MouseLeave += new System.EventHandler(this.lbEditar_MouseLeave);
+            // 
+            // lbNovo
+            // 
+            this.lbNovo.AutoSize = true;
+            this.lbNovo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNovo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
+            this.lbNovo.Image = global::SGAP.Properties.Resources.novo;
+            this.lbNovo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbNovo.Location = new System.Drawing.Point(463, 28);
+            this.lbNovo.MinimumSize = new System.Drawing.Size(62, 75);
+            this.lbNovo.Name = "lbNovo";
+            this.lbNovo.Size = new System.Drawing.Size(62, 75);
+            this.lbNovo.TabIndex = 83;
+            this.lbNovo.Text = "Novo \n(F1)";
+            this.lbNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lbNovo.Click += new System.EventHandler(this.lbNovo_Click);
+            this.lbNovo.MouseEnter += new System.EventHandler(this.lbNovo_MouseEnter);
+            this.lbNovo.MouseLeave += new System.EventHandler(this.lbNovo_MouseLeave);
+            // 
+            // picProblema
+            // 
+            this.picProblema.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picProblema.Image = global::SGAP.Properties.Resources.add;
+            this.picProblema.Location = new System.Drawing.Point(269, 201);
+            this.picProblema.Name = "picProblema";
+            this.picProblema.Size = new System.Drawing.Size(28, 28);
+            this.picProblema.TabIndex = 79;
+            this.picProblema.TabStop = false;
+            this.picProblema.Click += new System.EventHandler(this.picProblema_Click);
+            // 
+            // picAddFornecedor
+            // 
+            this.picAddFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picAddFornecedor.Image = global::SGAP.Properties.Resources.add;
+            this.picAddFornecedor.Location = new System.Drawing.Point(269, 314);
+            this.picAddFornecedor.Name = "picAddFornecedor";
+            this.picAddFornecedor.Size = new System.Drawing.Size(28, 28);
+            this.picAddFornecedor.TabIndex = 78;
+            this.picAddFornecedor.TabStop = false;
+            this.picAddFornecedor.Click += new System.EventHandler(this.picAddFornecedor_Click);
+            // 
+            // picAddConsumidor
+            // 
+            this.picAddConsumidor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picAddConsumidor.Image = global::SGAP.Properties.Resources.add;
+            this.picAddConsumidor.Location = new System.Drawing.Point(269, 256);
+            this.picAddConsumidor.Name = "picAddConsumidor";
+            this.picAddConsumidor.Size = new System.Drawing.Size(28, 28);
+            this.picAddConsumidor.TabIndex = 76;
+            this.picAddConsumidor.TabStop = false;
+            this.picAddConsumidor.Click += new System.EventHandler(this.picAddConsumidor_Click);
+            // 
+            // txtDescricaoProblema
+            // 
+            this.txtDescricaoProblema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricaoProblema.Location = new System.Drawing.Point(15, 381);
+            this.txtDescricaoProblema.MaxLength = 8000;
+            this.txtDescricaoProblema.Multiline = true;
+            this.txtDescricaoProblema.Name = "txtDescricaoProblema";
+            this.txtDescricaoProblema.Size = new System.Drawing.Size(248, 72);
+            this.txtDescricaoProblema.TabIndex = 7;
+            // 
             // frmAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -644,6 +658,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(994, 654);
+            this.Controls.Add(this.lblExpandirDescricao);
             this.Controls.Add(this.lbEncaminhar);
             this.Controls.Add(this.lbMovimentar);
             this.Controls.Add(this.txtPesquisar);
@@ -702,7 +717,6 @@
         public System.Windows.Forms.DataGridView dgvAtendimento;
         public System.Windows.Forms.DateTimePicker dtpInicio;
         public System.Windows.Forms.DateTimePicker dtpEncerramento;
-        public System.Windows.Forms.TextBox txtDescricaoProblema;
         public System.Windows.Forms.ComboBox cmbFornecedor;
         public System.Windows.Forms.ComboBox cmbConsumidor;
         public System.Windows.Forms.TextBox txtnumeroProcon;
@@ -739,5 +753,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reclamacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEncerramento;
+        private System.Windows.Forms.Label lblExpandirDescricao;
+        public System.Windows.Forms.TextBox txtDescricaoProblema;
     }
 }

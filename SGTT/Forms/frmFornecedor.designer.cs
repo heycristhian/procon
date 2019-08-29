@@ -57,18 +57,6 @@
             this.txtContato = new System.Windows.Forms.TextBox();
             this.txtFantasia = new System.Windows.Forms.TextBox();
             this.dgvFornecedor = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.picCidade = new System.Windows.Forms.PictureBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.lbSalvar = new System.Windows.Forms.Label();
-            this.lbCancelar = new System.Windows.Forms.Label();
-            this.lbRemover = new System.Windows.Forms.Label();
-            this.lbEditar = new System.Windows.Forms.Label();
-            this.lbNovo = new System.Windows.Forms.Label();
-            this.lbFechar = new System.Windows.Forms.Label();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fantasia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +72,18 @@
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.site = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.picCidade = new System.Windows.Forms.PictureBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lbSalvar = new System.Windows.Forms.Label();
+            this.lbCancelar = new System.Windows.Forms.Label();
+            this.lbRemover = new System.Windows.Forms.Label();
+            this.lbEditar = new System.Windows.Forms.Label();
+            this.lbNovo = new System.Windows.Forms.Label();
+            this.lbFechar = new System.Windows.Forms.Label();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -216,11 +216,11 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(63, 95);
+            this.label13.Location = new System.Drawing.Point(31, 98);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 16);
+            this.label13.Size = new System.Drawing.Size(76, 16);
             this.label13.TabIndex = 38;
-            this.label13.Text = "CNPJ:";
+            this.label13.Text = "CNPJ/CPF:";
             // 
             // label12
             // 
@@ -398,6 +398,144 @@
             this.dgvFornecedor.Size = new System.Drawing.Size(597, 340);
             this.dgvFornecedor.TabIndex = 63;
             this.dgvFornecedor.DoubleClick += new System.EventHandler(this.dgvFornecedor_DoubleClick);
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.id.Visible = false;
+            // 
+            // razaoSocial
+            // 
+            this.razaoSocial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.razaoSocial.DataPropertyName = "razaoSocial";
+            this.razaoSocial.HeaderText = "Razão Social";
+            this.razaoSocial.Name = "razaoSocial";
+            this.razaoSocial.ReadOnly = true;
+            this.razaoSocial.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.razaoSocial.Width = 68;
+            // 
+            // fantasia
+            // 
+            this.fantasia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fantasia.DataPropertyName = "fantasia";
+            this.fantasia.HeaderText = "Nome Fantasia";
+            this.fantasia.Name = "fantasia";
+            this.fantasia.ReadOnly = true;
+            this.fantasia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.fantasia.Width = 76;
+            // 
+            // contato
+            // 
+            this.contato.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.contato.DataPropertyName = "contato";
+            this.contato.HeaderText = "Contato";
+            this.contato.Name = "contato";
+            this.contato.ReadOnly = true;
+            this.contato.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.contato.Width = 50;
+            // 
+            // endereco
+            // 
+            this.endereco.DataPropertyName = "endereco";
+            this.endereco.HeaderText = "Endereço";
+            this.endereco.Name = "endereco";
+            this.endereco.ReadOnly = true;
+            this.endereco.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.endereco.Visible = false;
+            // 
+            // bairro
+            // 
+            this.bairro.DataPropertyName = "bairro";
+            this.bairro.HeaderText = "Bairro";
+            this.bairro.Name = "bairro";
+            this.bairro.ReadOnly = true;
+            this.bairro.Visible = false;
+            // 
+            // cidadeID
+            // 
+            this.cidadeID.DataPropertyName = "cidadeID";
+            this.cidadeID.HeaderText = "CidadeID";
+            this.cidadeID.Name = "cidadeID";
+            this.cidadeID.ReadOnly = true;
+            this.cidadeID.Visible = false;
+            // 
+            // nomeCidade
+            // 
+            this.nomeCidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nomeCidade.DataPropertyName = "nomeCidade";
+            this.nomeCidade.HeaderText = "Cidade";
+            this.nomeCidade.Name = "nomeCidade";
+            this.nomeCidade.ReadOnly = true;
+            this.nomeCidade.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.nomeCidade.Width = 46;
+            // 
+            // cep
+            // 
+            this.cep.DataPropertyName = "cep";
+            this.cep.HeaderText = "CEP";
+            this.cep.Name = "cep";
+            this.cep.ReadOnly = true;
+            this.cep.Visible = false;
+            // 
+            // fone
+            // 
+            this.fone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fone.DataPropertyName = "fone";
+            this.fone.HeaderText = "Tel.";
+            this.fone.Name = "fone";
+            this.fone.ReadOnly = true;
+            this.fone.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.fone.Width = 31;
+            // 
+            // celular
+            // 
+            this.celular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.celular.DataPropertyName = "celular";
+            this.celular.HeaderText = "Celular";
+            this.celular.Name = "celular";
+            this.celular.ReadOnly = true;
+            this.celular.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.celular.Width = 45;
+            // 
+            // whatsapp
+            // 
+            this.whatsapp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.whatsapp.DataPropertyName = "whatsapp";
+            this.whatsapp.HeaderText = "WhatsApp";
+            this.whatsapp.Name = "whatsapp";
+            this.whatsapp.ReadOnly = true;
+            this.whatsapp.Visible = false;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "E-mail";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Visible = false;
+            // 
+            // site
+            // 
+            this.site.DataPropertyName = "site";
+            this.site.HeaderText = "Site";
+            this.site.Name = "site";
+            this.site.ReadOnly = true;
+            this.site.Visible = false;
+            // 
+            // cnpj
+            // 
+            this.cnpj.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cnpj.DataPropertyName = "cnpj";
+            this.cnpj.HeaderText = "CNPJ";
+            this.cnpj.Name = "cnpj";
+            this.cnpj.ReadOnly = true;
+            this.cnpj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cnpj.Width = 40;
             // 
             // tabControl1
             // 
@@ -602,146 +740,6 @@
             this.label15.Size = new System.Drawing.Size(53, 16);
             this.label15.TabIndex = 100;
             this.label15.Text = "Buscar:";
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.id.Visible = false;
-            this.id.Width = 24;
-            // 
-            // razaoSocial
-            // 
-            this.razaoSocial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.razaoSocial.DataPropertyName = "razaoSocial";
-            this.razaoSocial.HeaderText = "Razão Social";
-            this.razaoSocial.Name = "razaoSocial";
-            this.razaoSocial.ReadOnly = true;
-            this.razaoSocial.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.razaoSocial.Width = 76;
-            // 
-            // fantasia
-            // 
-            this.fantasia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.fantasia.DataPropertyName = "fantasia";
-            this.fantasia.HeaderText = "Nome Fantasia";
-            this.fantasia.Name = "fantasia";
-            this.fantasia.ReadOnly = true;
-            this.fantasia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.fantasia.Width = 76;
-            // 
-            // contato
-            // 
-            this.contato.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.contato.DataPropertyName = "contato";
-            this.contato.HeaderText = "Contato";
-            this.contato.Name = "contato";
-            this.contato.ReadOnly = true;
-            this.contato.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.contato.Width = 50;
-            // 
-            // endereco
-            // 
-            this.endereco.DataPropertyName = "endereco";
-            this.endereco.HeaderText = "Endereço";
-            this.endereco.Name = "endereco";
-            this.endereco.ReadOnly = true;
-            this.endereco.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.endereco.Visible = false;
-            // 
-            // bairro
-            // 
-            this.bairro.DataPropertyName = "bairro";
-            this.bairro.HeaderText = "Bairro";
-            this.bairro.Name = "bairro";
-            this.bairro.ReadOnly = true;
-            this.bairro.Visible = false;
-            // 
-            // cidadeID
-            // 
-            this.cidadeID.DataPropertyName = "cidadeID";
-            this.cidadeID.HeaderText = "CidadeID";
-            this.cidadeID.Name = "cidadeID";
-            this.cidadeID.ReadOnly = true;
-            this.cidadeID.Visible = false;
-            // 
-            // nomeCidade
-            // 
-            this.nomeCidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nomeCidade.DataPropertyName = "nomeCidade";
-            this.nomeCidade.HeaderText = "Cidade";
-            this.nomeCidade.Name = "nomeCidade";
-            this.nomeCidade.ReadOnly = true;
-            this.nomeCidade.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.nomeCidade.Width = 46;
-            // 
-            // cep
-            // 
-            this.cep.DataPropertyName = "cep";
-            this.cep.HeaderText = "CEP";
-            this.cep.Name = "cep";
-            this.cep.ReadOnly = true;
-            this.cep.Visible = false;
-            // 
-            // fone
-            // 
-            this.fone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.fone.DataPropertyName = "fone";
-            this.fone.HeaderText = "Tel.";
-            this.fone.Name = "fone";
-            this.fone.ReadOnly = true;
-            this.fone.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.fone.Width = 31;
-            // 
-            // celular
-            // 
-            this.celular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.celular.DataPropertyName = "celular";
-            this.celular.HeaderText = "Celular";
-            this.celular.Name = "celular";
-            this.celular.ReadOnly = true;
-            this.celular.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.celular.Width = 45;
-            // 
-            // whatsapp
-            // 
-            this.whatsapp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.whatsapp.DataPropertyName = "whatsapp";
-            this.whatsapp.HeaderText = "WhatsApp";
-            this.whatsapp.Name = "whatsapp";
-            this.whatsapp.ReadOnly = true;
-            this.whatsapp.Visible = false;
-            this.whatsapp.Width = 82;
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "E-mail";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Visible = false;
-            // 
-            // site
-            // 
-            this.site.DataPropertyName = "site";
-            this.site.HeaderText = "Site";
-            this.site.Name = "site";
-            this.site.ReadOnly = true;
-            this.site.Visible = false;
-            // 
-            // cnpj
-            // 
-            this.cnpj.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cnpj.DataPropertyName = "cnpj";
-            this.cnpj.HeaderText = "CNPJ";
-            this.cnpj.Name = "cnpj";
-            this.cnpj.ReadOnly = true;
-            this.cnpj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cnpj.Width = 40;
             // 
             // frmFornecedor
             // 

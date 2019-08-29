@@ -20,7 +20,6 @@ namespace SGAP.Modelo
 
         public string numeroProcon { get; set; }
 
-        [StringLength(150)]
         public string reclamacao { get; set; }
 
         public DateTime dataInicio { get; set; }

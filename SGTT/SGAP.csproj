@@ -180,6 +180,12 @@
     <Compile Include="Forms\frmRestauraBackup.Designer.cs">
       <DependentUpon>frmRestauraBackup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmTexto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTexto.Designer.cs">
+      <DependentUpon>frmTexto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmTipoAtendimento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     <EmbeddedResource Include="Forms\frmRestauraBackup.resx">
       <DependentUpon>frmRestauraBackup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTexto.resx">
+      <DependentUpon>frmTexto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTipoAtendimento.resx">
       <DependentUpon>frmTipoAtendimento.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,6 +324,7 @@
     <Content Include="phantomjs-license.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\close 19px.png" />
     <None Include="Resources\procon1.jpg" />
     <None Include="Resources\procon.jpg" />
     <None Include="Resources\password25px.png" />

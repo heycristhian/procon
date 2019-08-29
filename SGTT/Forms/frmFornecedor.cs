@@ -52,9 +52,6 @@ namespace SGAP.Forms
             {
                 int sentinela = 0;
                 bool status = false;
-                status = txtRazaoSocial.Text != "";
-                if (status == false)
-                    sentinela++;
                 status = FuncGeral.tratamentoCpnjFornecedor(txtCnpj);
                 if (status == false)
                     sentinela++;
@@ -241,66 +238,74 @@ namespace SGAP.Forms
 
         private void lbSalvar_Click(object sender, EventArgs e)
         {
-            try
+            if(txtRazaoSocial.Text != "")
             {
-                Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
-                DialogResult result;
-
-                if(validarTextBox() == 0)
+                try
                 {
-                    result = MessageBox.Show("Confirma gravação dos dados?", "Salvar", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
+                    DialogResult result;
 
-                    if (result == DialogResult.Yes)
+                    if (validarTextBox() == 0)
                     {
-                        int id = Convert.ToInt32(txtId.Text);
-                        Modelo.Fornecedor fornecedor = new Modelo.Fornecedor();
+                        result = MessageBox.Show("Confirma gravação dos dados?", "Salvar", MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-                        if (id != -1)
+                        if (result == DialogResult.Yes)
                         {
-                            fornecedor = contexto.Fornecedor.Find(id);
-                        }
-                        fornecedor.id = id;
-                        fornecedor.razaoSocial = txtRazaoSocial.Text;
-                        fornecedor.fantasia = txtFantasia.Text;
-                        fornecedor.contato = txtContato.Text;
-                        fornecedor.endereco = txtEndereco.Text;
-                        fornecedor.bairro = txtBairro.Text;
-                        fornecedor.cidadeID = Convert.ToInt32(cmbCidade.SelectedValue);
-                        fornecedor.cep = txtCep.Text;
-                        fornecedor.fone = txtTelefone.Text;
-                        fornecedor.celular = txtCelular.Text;
-                        fornecedor.whatsApp = txtWhats.Text;
-                        fornecedor.email = txtEmail.Text;
-                        fornecedor.site = txtSite.Text;
-                        fornecedor.cnpj = txtCnpj.Text;
+                            int id = Convert.ToInt32(txtId.Text);
+                            Modelo.Fornecedor fornecedor = new Modelo.Fornecedor();
 
-                        if (fornecedor.id == -1)
-                        {
-                            habilitaCampos(false);
-                            contexto.Fornecedor.Add(fornecedor);
-                            MessageBox.Show("Dados gravados com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            limparCampos();
-                            contexto.SaveChanges();
-                            carregarGridFornecedor();
-                            sentinelaEditar = 1;
+                            if (id != -1)
+                            {
+                                fornecedor = contexto.Fornecedor.Find(id);
+                            }
+                            fornecedor.id = id;
+                            fornecedor.razaoSocial = txtRazaoSocial.Text;
+                            fornecedor.fantasia = txtFantasia.Text;
+                            fornecedor.contato = txtContato.Text;
+                            fornecedor.endereco = txtEndereco.Text;
+                            fornecedor.bairro = txtBairro.Text;
+                            fornecedor.cidadeID = Convert.ToInt32(cmbCidade.SelectedValue);
+                            fornecedor.cep = txtCep.Text;
+                            fornecedor.fone = txtTelefone.Text;
+                            fornecedor.celular = txtCelular.Text;
+                            fornecedor.whatsApp = txtWhats.Text;
+                            fornecedor.email = txtEmail.Text;
+                            fornecedor.site = txtSite.Text;
+                            fornecedor.cnpj = txtCnpj.Text;
+
+                            if (fornecedor.id == -1)
+                            {
+                                habilitaCampos(false);
+                                contexto.Fornecedor.Add(fornecedor);
+                                MessageBox.Show("Dados gravados com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                limparCampos();
+                                contexto.SaveChanges();
+                                carregarGridFornecedor();
+                                sentinelaEditar = 1;
+                            }
+                            else
+                            {
+                                limparCampos();
+                                habilitaCampos(false);
+                                contexto.Entry(fornecedor).State = EntityState.Modified;
+                                contexto.SaveChanges();
+                                carregarGridFornecedor();
+                                sentinelaEditar = 1;
+                            }
                         }
-                        else
-                        {
-                            limparCampos();
-                            habilitaCampos(false);
-                            contexto.Entry(fornecedor).State = EntityState.Modified;
-                            contexto.SaveChanges();
-                            carregarGridFornecedor();
-                            sentinelaEditar = 1;
-                        }                       
-                    }                   
-                }             
+                    }
+                }
+                catch (System.Data.Entity.Validation.DbEntityValidationException)
+                {
+                    MessageBox.Show("O campo Razão Social é obrigatório!", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            catch (System.Data.Entity.Validation.DbEntityValidationException)
+            else
             {
                 MessageBox.Show("O campo Razão Social é obrigatório!", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
             
         }
 

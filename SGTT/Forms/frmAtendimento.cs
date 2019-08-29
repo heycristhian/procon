@@ -19,6 +19,8 @@ namespace SGAP.Forms
 
         frmMenu menu = new frmMenu("aux");
 
+        public string descricao { get; set; }
+
         public frmAtendimento()
         {
             InitializeComponent();
@@ -59,6 +61,7 @@ namespace SGAP.Forms
             cmbTipoAtendimento.Enabled = status;
             cmbTipoReclamacao.Enabled = status;
             txtDescricaoProblema.Enabled = status;
+            lblExpandirDescricao.Enabled = status;
             dtpInicio.Enabled = status;
             dtpEncerramento.Enabled = status;
         }
@@ -548,6 +551,13 @@ namespace SGAP.Forms
             Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
             int id = Convert.ToInt32(cmbTipoReclamacao.SelectedValue.ToString());
             cmbProblema.DataSource = contexto.ProblemaPrincipal.ToList().Where(p => p.TipoReclamacao.id == id).OrderBy(p => p.descricao).ToList();
-        }        
+        }
+
+        private void lblExpandirDescricao_Click(object sender, EventArgs e)
+        {
+            frmTexto form = new frmTexto(txtDescricaoProblema.Text, this);
+            form.ShowDialog();
+            txtDescricaoProblema.Text = (descricao != null) ? descricao : txtDescricaoProblema.Text;
+        }
     }
 }

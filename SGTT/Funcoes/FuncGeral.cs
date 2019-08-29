@@ -167,6 +167,42 @@ namespace SGAP.Funcoes
             }
         }
 
+        public static bool tratamentoCpfFornecedor(TextBox txt)
+        {
+            if (txt.Text != "")
+            {
+                string cpf = txt.Text.Replace(".", "").Replace("-", "").Replace("/", "");
+
+                if (ValidaCpf.IsCpf(txt.Text) != true)
+                {
+                    MessageBox.Show("CPF ou CNPJ inválido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt.Focus();
+                    return false;
+                }
+                else
+                {
+                    txt.Text = Convert.ToUInt64(cpf).ToString(@"000\.000\.000\-00");
+                    SGAP.Modelo.SGAPContexto contexto = new SGAPContexto();
+                    cpf = txt.Text;
+                    Fornecedor forn = contexto.Fornecedor.ToList().FirstOrDefault(t => t.cnpj.CompareTo(cpf) == 0);
+                    if (forn != null)
+                    {
+                        MessageBox.Show("Este CPF já está cadastrado no sistema!", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txt.Focus();
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public static bool tratamentoCpfConsumidorNoBd(TextBox txt)
         {
             if (txt.Text != "")
@@ -195,9 +231,10 @@ namespace SGAP.Funcoes
                 string cnpj = txt.Text.Replace(".", "").Replace("-", "").Replace("/", "");
                 if (ValidaCpf.IsCnpj(txt.Text) != true)
                 {
-                    MessageBox.Show("CNPJ inválido", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txt.Focus();
-                    return false;
+                    //MessageBox.Show("CNPJ inválido", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //txt.Focus();
+                    //return false;
+                    return FuncGeral.tratamentoCpfFornecedor(txt);                    
                 }
                 else
                 {
