@@ -34,7 +34,6 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pbClose = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
@@ -45,11 +44,11 @@
             // 
             this.lbRestaurar.AutoSize = true;
             this.lbRestaurar.BackColor = System.Drawing.Color.White;
-            this.lbRestaurar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRestaurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRestaurar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(168)))), ((int)(((byte)(252)))));
             this.lbRestaurar.Location = new System.Drawing.Point(409, 73);
             this.lbRestaurar.Name = "lbRestaurar";
-            this.lbRestaurar.Size = new System.Drawing.Size(82, 30);
+            this.lbRestaurar.Size = new System.Drawing.Size(78, 29);
             this.lbRestaurar.TabIndex = 11;
             this.lbRestaurar.Text = "Login";
             // 
@@ -86,7 +85,7 @@
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(384, 338);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(120, 28);
@@ -112,16 +111,6 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 25);
             this.label2.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Image = global::SGAP.Properties.Resources.password15px;
-            this.label1.Location = new System.Drawing.Point(564, 217);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 15);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "label1";
             // 
             // pbClose
             // 
@@ -152,7 +141,6 @@
             this.ClientSize = new System.Drawing.Size(888, 472);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pbClose);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtSenha);
@@ -179,7 +167,6 @@
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.PictureBox pbClose;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
     }
