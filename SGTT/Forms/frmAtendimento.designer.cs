@@ -69,6 +69,8 @@
             this.lbMovimentar = new System.Windows.Forms.Label();
             this.lbEncaminhar = new System.Windows.Forms.Label();
             this.lblExpandirDescricao = new System.Windows.Forms.Label();
+            this.txtDescricaoProblema = new System.Windows.Forms.TextBox();
+            this.btnAndamentos = new System.Windows.Forms.Button();
             this.lbRemover = new System.Windows.Forms.Label();
             this.lbSalvar = new System.Windows.Forms.Label();
             this.lbCancelar = new System.Windows.Forms.Label();
@@ -77,7 +79,6 @@
             this.picProblema = new System.Windows.Forms.PictureBox();
             this.picAddFornecedor = new System.Windows.Forms.PictureBox();
             this.picAddConsumidor = new System.Windows.Forms.PictureBox();
-            this.txtDescricaoProblema = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtendimento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProblema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddFornecedor)).BeginInit();
@@ -245,7 +246,6 @@
             this.id.ReadOnly = true;
             this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.id.Visible = false;
-            this.id.Width = 24;
             // 
             // tipoAtendimentoID
             // 
@@ -271,7 +271,7 @@
             this.numeroProcon.Name = "numeroProcon";
             this.numeroProcon.ReadOnly = true;
             this.numeroProcon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.numeroProcon.Width = 59;
+            this.numeroProcon.Width = 53;
             // 
             // tipoAtendimento
             // 
@@ -503,12 +503,40 @@
             this.lblExpandirDescricao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblExpandirDescricao.Font = new System.Drawing.Font("Decker", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpandirDescricao.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblExpandirDescricao.Location = new System.Drawing.Point(141, 456);
+            this.lblExpandirDescricao.Location = new System.Drawing.Point(131, 456);
             this.lblExpandirDescricao.Name = "lblExpandirDescricao";
-            this.lblExpandirDescricao.Size = new System.Drawing.Size(122, 16);
+            this.lblExpandirDescricao.Size = new System.Drawing.Size(136, 16);
             this.lblExpandirDescricao.TabIndex = 91;
             this.lblExpandirDescricao.Text = "Expandir descrição";
             this.lblExpandirDescricao.Click += new System.EventHandler(this.lblExpandirDescricao_Click);
+            // 
+            // txtDescricaoProblema
+            // 
+            this.txtDescricaoProblema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricaoProblema.Location = new System.Drawing.Point(15, 381);
+            this.txtDescricaoProblema.MaxLength = 8000;
+            this.txtDescricaoProblema.Multiline = true;
+            this.txtDescricaoProblema.Name = "txtDescricaoProblema";
+            this.txtDescricaoProblema.Size = new System.Drawing.Size(248, 72);
+            this.txtDescricaoProblema.TabIndex = 7;
+            // 
+            // btnAndamentos
+            // 
+            this.btnAndamentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(203)))), ((int)(((byte)(248)))));
+            this.btnAndamentos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAndamentos.FlatAppearance.BorderSize = 0;
+            this.btnAndamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAndamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAndamentos.ForeColor = System.Drawing.Color.Black;
+            this.btnAndamentos.Image = global::SGAP.Properties.Resources.add;
+            this.btnAndamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAndamentos.Location = new System.Drawing.Point(15, 486);
+            this.btnAndamentos.Name = "btnAndamentos";
+            this.btnAndamentos.Size = new System.Drawing.Size(246, 34);
+            this.btnAndamentos.TabIndex = 92;
+            this.btnAndamentos.Text = "Andamentos";
+            this.btnAndamentos.UseVisualStyleBackColor = false;
+            this.btnAndamentos.Click += new System.EventHandler(this.btnAndamentos_Click);
             // 
             // lbRemover
             // 
@@ -538,7 +566,7 @@
             this.lbSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
             this.lbSalvar.Image = global::SGAP.Properties.Resources.salvar;
             this.lbSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbSalvar.Location = new System.Drawing.Point(52, 501);
+            this.lbSalvar.Location = new System.Drawing.Point(52, 529);
             this.lbSalvar.MinimumSize = new System.Drawing.Size(64, 75);
             this.lbSalvar.Name = "lbSalvar";
             this.lbSalvar.Size = new System.Drawing.Size(64, 75);
@@ -557,7 +585,7 @@
             this.lbCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
             this.lbCancelar.Image = global::SGAP.Properties.Resources.cancelar;
             this.lbCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbCancelar.Location = new System.Drawing.Point(158, 501);
+            this.lbCancelar.Location = new System.Drawing.Point(158, 529);
             this.lbCancelar.MinimumSize = new System.Drawing.Size(64, 75);
             this.lbCancelar.Name = "lbCancelar";
             this.lbCancelar.Size = new System.Drawing.Size(64, 75);
@@ -640,16 +668,6 @@
             this.picAddConsumidor.TabStop = false;
             this.picAddConsumidor.Click += new System.EventHandler(this.picAddConsumidor_Click);
             // 
-            // txtDescricaoProblema
-            // 
-            this.txtDescricaoProblema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricaoProblema.Location = new System.Drawing.Point(15, 381);
-            this.txtDescricaoProblema.MaxLength = 8000;
-            this.txtDescricaoProblema.Multiline = true;
-            this.txtDescricaoProblema.Name = "txtDescricaoProblema";
-            this.txtDescricaoProblema.Size = new System.Drawing.Size(248, 72);
-            this.txtDescricaoProblema.TabIndex = 7;
-            // 
             // frmAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -658,6 +676,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(994, 654);
+            this.Controls.Add(this.btnAndamentos);
             this.Controls.Add(this.lblExpandirDescricao);
             this.Controls.Add(this.lbEncaminhar);
             this.Controls.Add(this.lbMovimentar);
@@ -755,5 +774,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEncerramento;
         private System.Windows.Forms.Label lblExpandirDescricao;
         public System.Windows.Forms.TextBox txtDescricaoProblema;
+        private System.Windows.Forms.Button btnAndamentos;
     }
 }

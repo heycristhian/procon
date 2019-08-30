@@ -559,5 +559,11 @@ namespace SGAP.Forms
             form.ShowDialog();
             txtDescricaoProblema.Text = (descricao != null) ? descricao : txtDescricaoProblema.Text;
         }
+
+        private void btnAndamentos_Click(object sender, EventArgs e)
+        {
+            frmAndamentos andamentos = new frmAndamentos();
+            andamentos.ShowDialog();
+        }
     }
 }
