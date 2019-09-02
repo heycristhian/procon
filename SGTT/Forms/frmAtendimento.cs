@@ -110,6 +110,8 @@ namespace SGAP.Forms
             Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
             ToolModeladas.dgvTransformation(dgvAtendimento);
 
+            this.dgvAtendimento.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             habilitaCampos(false);
 
             carregarGridAtendimento();
@@ -175,6 +177,8 @@ namespace SGAP.Forms
                 lbEncaminhar.Enabled = true;
 
                 carregarGridAtendimento();
+
+                btnAndamentos.Visible = true;
             }
             catch (System.ArgumentOutOfRangeException)
             {
@@ -236,6 +240,7 @@ namespace SGAP.Forms
             habilitaCampos(true);
             txtId.Text = "-1";
             txtnumeroProcon.Focus();
+            btnAndamentos.Visible = false;
 
             Atendimento atendimento = new Atendimento();
             SGAPContexto contexto = new SGAPContexto();
@@ -273,6 +278,8 @@ namespace SGAP.Forms
         {
             limparCampos();
             habilitaCampos(false);
+
+            btnAndamentos.Visible = false;
         }
 
         private void lbSalvar_Click(object sender, EventArgs e)
@@ -312,6 +319,7 @@ namespace SGAP.Forms
                         contexto.SaveChanges();
                         MessageBox.Show("Dados gravados com sucesso", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limparCampos();
+                        btnAndamentos.Visible = false;
                         habilitaCampos(false);
                         dgvAtendimento.DataSource = "";
                         dgvAtendimento.DataSource = contexto.Atendimento.ToList();
@@ -344,6 +352,9 @@ namespace SGAP.Forms
         {
             Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
             Modelo.Atendimento atendimento = new Modelo.Atendimento();
+
+            btnAndamentos.Visible = false;
+
             if (txtId.Text == "")
                 txtId.Text = "0";
 
@@ -562,7 +573,7 @@ namespace SGAP.Forms
 
         private void btnAndamentos_Click(object sender, EventArgs e)
         {
-            frmAndamentos andamentos = new frmAndamentos();
+            frmAndamentos andamentos = new frmAndamentos(this);
             andamentos.ShowDialog();
         }
     }

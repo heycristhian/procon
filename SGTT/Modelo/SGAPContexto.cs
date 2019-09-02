@@ -24,6 +24,7 @@ namespace SGAP.Modelo
         public DbSet<TipoAtendimento> TipoAtendimento { get; set; }
         public DbSet<TipoReclamacao> TipoReclamacao { get; set; }
         public DbSet<Login> Login { get; set; }
+        public DbSet<Andamento> Andamento { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

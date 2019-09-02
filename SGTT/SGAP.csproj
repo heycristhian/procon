@@ -334,6 +334,16 @@
     <Content Include="phantomjs-license.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\desligar30px.png" />
+    <None Include="Resources\desligar30px red.png" />
+    <None Include="Resources\maximize16px.png" />
+    <None Include="Resources\borracha50px.png" />
+    <None Include="Resources\close50px.png" />
+    <None Include="Resources\desligar30pxWhite.png" />
+    <None Include="Resources\delete30pxWhite.png" />
+    <None Include="Resources\edit30pxWhite.png" />
+    <None Include="Resources\addDocument30pxWhite.png" />
+    <None Include="Resources\addDocument30px.png" />
     <None Include="Resources\close 19px.png" />
     <None Include="Resources\procon1.jpg" />
     <None Include="Resources\procon.jpg" />

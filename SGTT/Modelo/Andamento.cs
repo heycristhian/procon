@@ -19,6 +19,9 @@ namespace SGAP.Modelo
         [StringLength(255)]
         public string descricao { get; set; }
 
+        [Required]
+        public DateTime data { get; set; }
+
         //CHAVES ESTRANGEIRAS
         public int atendimentoID { get; set; }
         virtual public Atendimento Atendimento { get; set; }

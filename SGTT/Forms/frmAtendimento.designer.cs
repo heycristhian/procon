@@ -505,7 +505,7 @@
             this.lblExpandirDescricao.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblExpandirDescricao.Location = new System.Drawing.Point(131, 456);
             this.lblExpandirDescricao.Name = "lblExpandirDescricao";
-            this.lblExpandirDescricao.Size = new System.Drawing.Size(136, 16);
+            this.lblExpandirDescricao.Size = new System.Drawing.Size(122, 16);
             this.lblExpandirDescricao.TabIndex = 91;
             this.lblExpandirDescricao.Text = "Expandir descrição";
             this.lblExpandirDescricao.Click += new System.EventHandler(this.lblExpandirDescricao_Click);
@@ -536,6 +536,7 @@
             this.btnAndamentos.TabIndex = 92;
             this.btnAndamentos.Text = "Andamentos";
             this.btnAndamentos.UseVisualStyleBackColor = false;
+            this.btnAndamentos.Visible = false;
             this.btnAndamentos.Click += new System.EventHandler(this.btnAndamentos_Click);
             // 
             // lbRemover
