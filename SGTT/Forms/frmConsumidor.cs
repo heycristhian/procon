@@ -10,12 +10,17 @@ using System.Windows.Forms;
 using System.Data.Entity;
 using SGAP.Funcoes;
 using SGAP.Modelo;
-using Correios.Net;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace SGAP.Forms
 {
     public partial class frmConsumidor : Form
     {
+        static HttpClient client = new HttpClient();
+
         public frmConsumidor()
         {
             InitializeComponent();
@@ -30,6 +35,7 @@ namespace SGAP.Forms
             lbCancelar.Enabled = status;
 
             txtNome.Enabled = status;
+            txtNumero.Enabled = status;
             txtEndereco.Enabled = status;
             txtBairro.Enabled = status;
             cmbCidade.Enabled = status;
@@ -116,6 +122,7 @@ namespace SGAP.Forms
             txtEmail.Text = "";
             txtRg.Text = "";
             txtCpf.Text = "";
+            txtNumero.Text = "";
         }        
 
         private void carregarGridConsumidor()
@@ -138,6 +145,7 @@ namespace SGAP.Forms
                             email = consumidor.email,
                             rg = consumidor.rg,
                             cpf = consumidor.cpf,
+                            orgaoEmissor = consumidor.orgaoEmissor
                         };
             dgvConsumidor.DataSource = dados.ToList();
         }
@@ -160,9 +168,12 @@ namespace SGAP.Forms
         {
             if (dgvConsumidor.SelectedRows.Count > 0)
             {
+                string end = dgvConsumidor.SelectedRows[0].Cells["endereco"].Value.ToString();
+                string[] endereco = end.Split(',');
                 txtId.Text = dgvConsumidor.SelectedRows[0].Cells["id"].Value.ToString();
                 txtNome.Text = dgvConsumidor.SelectedRows[0].Cells["nome"].Value.ToString();
-                txtEndereco.Text = dgvConsumidor.SelectedRows[0].Cells["endereco"].Value.ToString();
+                txtEndereco.Text = endereco[0];
+                txtNumero.Text = endereco[1];
                 txtBairro.Text = dgvConsumidor.SelectedRows[0].Cells["bairro"].Value.ToString();
                 cmbCidade.SelectedValue = dgvConsumidor.SelectedRows[0].Cells["cidadeID"].Value;
                 txtCep.Text = dgvConsumidor.SelectedRows[0].Cells["cep"].Value.ToString();
@@ -263,7 +274,7 @@ namespace SGAP.Forms
 
                             consumidor.id = id;
                             consumidor.nome = txtNome.Text;
-                            consumidor.endereco = txtEndereco.Text;
+                            consumidor.endereco = txtEndereco.Text + ", " + txtNumero.Text;
                             consumidor.bairro = txtBairro.Text;
                             consumidor.cidadeID = Convert.ToInt32(cmbCidade.SelectedValue);
                             consumidor.cep = txtCep.Text;
@@ -451,16 +462,39 @@ namespace SGAP.Forms
 
         private void txtCep_Leave(object sender, EventArgs e)
         {
-            //FuncGeral.tratamentoCep(txtCep);
+            GetAllCEP(txtCep.Text);
+            Funcoes.FuncGeral.tratamentoCep(txtCep);
+        }
 
-            //string cep = String.Join("", System.Text.RegularExpressions.Regex.Split(txtCep.Text, @"[^\d]"));            
+        private async void GetAllCEP(string text)
+        {
+            try
+            {
+                string URI = @"https://viacep.com.br/ws/" + text + @"/json/";
+                string cepString = "";
+                using (var client = new HttpClient())
+                {
+                    using (var response = await client.GetAsync(URI))
+                    {
+                        if (response.IsSuccessStatusCode)
+                        {
+                            cepString = await response.Content.ReadAsStringAsync();
+                            CEP cep = JsonConvert.DeserializeObject<CEP>(cepString);
+                            List<CEP> lstCep = new List<CEP>();
+                            txtEndereco.Text = cep.logradouro;
+                            txtBairro.Text = cep.bairro;
+                            txtNumero.Focus();
 
-            //Address address = SearchZip.GetAddress("sp");
-            //if (address.Zip != null)
-            //{
-            //    txtEndereco.Text = address.Street;
-            //}
-            //else txtCep.Text = "";
+                        }
+                    }
+
+                }
+            }
+            catch (System.Net.Http.HttpRequestException)
+            {
+                txtEndereco.Focus();
+            }
+            
         }
 
         private void txtTelefone_Leave(object sender, EventArgs e)

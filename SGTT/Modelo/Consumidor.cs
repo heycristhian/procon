@@ -22,10 +22,10 @@ namespace SGAP.Modelo
         [StringLength(40)]
         public string nome { get; set; }
 
-        [StringLength(40)]
+        [StringLength(100)]
         public string endereco { get; set; }
 
-        [StringLength(30)]
+        [StringLength(100)]
         public string bairro { get; set; }
 
         public int cidadeID { get; set; }

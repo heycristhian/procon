@@ -286,59 +286,75 @@ namespace SGAP.Forms
         {
             try
             {
+
                 Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
-                DialogResult result;
-                result = MessageBox.Show("Confirma gravação dos dados?", "Salvar", MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                Modelo.Atendimento atendimentoVerifica = new Modelo.Atendimento();
 
-                if (result == DialogResult.Yes)
+                int ano = (Convert.ToDateTime(dtpInicio.Text)).Year;
+                int mes = (Convert.ToDateTime(dtpInicio.Text)).Month;
+
+                atendimentoVerifica = contexto.Atendimento.FirstOrDefault(x => x.numeroProcon.Equals(txtnumeroProcon.Text) && x.dataInicio.Month == mes && x.dataInicio.Year == ano);
+                if(atendimentoVerifica == null)
                 {
-                    int id = Convert.ToInt32(txtId.Text);
-                    Modelo.Atendimento atendimento = new Modelo.Atendimento();
+                    DialogResult result;
+                    result = MessageBox.Show("Confirma gravação dos dados?", "Salvar", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-                    if (id != -1)
+                    if (result == DialogResult.Yes)
                     {
-                        atendimento = contexto.Atendimento.Find(id);
-                    }
-                    atendimento.id = id;
-                    atendimento.numeroProcon = txtnumeroProcon.Text;
-                    atendimento.consumidorID = Convert.ToInt32(cmbConsumidor.SelectedValue);
-                    atendimento.fornecedorID = Convert.ToInt32(cmbFornecedor.SelectedValue);
-                    atendimento.tipoAtendimentoID = Convert.ToInt32(cmbTipoAtendimento.SelectedValue);
-                    atendimento.tipoReclamacaoID = Convert.ToInt32(cmbTipoReclamacao.SelectedValue);
-                    atendimento.problemaPrincipalID = Convert.ToInt32(cmbProblema.SelectedValue);
-                    atendimento.reclamacao = txtDescricaoProblema.Text;
-                    atendimento.dataInicio = dtpInicio.Value;
-                    atendimento.dataEncerramento = dtpEncerramento.Value;
-                    atendimento.usuario = menu.usuario;
+                        int id = Convert.ToInt32(txtId.Text);
+                        Modelo.Atendimento atendimento = new Modelo.Atendimento();
 
-                    if (atendimento.id == -1)
-                    {
-                        
-                        contexto.Atendimento.Add(atendimento);
-                        contexto.SaveChanges();
-                        MessageBox.Show("Dados gravados com sucesso", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        limparCampos();
-                        btnAndamentos.Visible = false;
-                        habilitaCampos(false);
-                        dgvAtendimento.DataSource = "";
-                        dgvAtendimento.DataSource = contexto.Atendimento.ToList();
-                        
-                    }
 
+                        if (id != -1)
+                        {
+                            atendimento = contexto.Atendimento.Find(id);
+                        }
+                        atendimento.id = id;
+                        atendimento.numeroProcon = txtnumeroProcon.Text;
+                        atendimento.consumidorID = Convert.ToInt32(cmbConsumidor.SelectedValue);
+                        atendimento.fornecedorID = Convert.ToInt32(cmbFornecedor.SelectedValue);
+                        atendimento.tipoAtendimentoID = Convert.ToInt32(cmbTipoAtendimento.SelectedValue);
+                        atendimento.tipoReclamacaoID = Convert.ToInt32(cmbTipoReclamacao.SelectedValue);
+                        atendimento.problemaPrincipalID = Convert.ToInt32(cmbProblema.SelectedValue);
+                        atendimento.reclamacao = txtDescricaoProblema.Text;
+                        atendimento.dataInicio = dtpInicio.Value;
+                        atendimento.dataEncerramento = dtpEncerramento.Value;
+                        atendimento.usuario = menu.usuario;
+
+                        if (atendimento.id == -1)
+                        {
+
+                            contexto.Atendimento.Add(atendimento);
+                            contexto.SaveChanges();
+                            MessageBox.Show("Dados gravados com sucesso", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            limparCampos();
+                            btnAndamentos.Visible = false;
+                            habilitaCampos(false);
+                            dgvAtendimento.DataSource = "";
+                            dgvAtendimento.DataSource = contexto.Atendimento.ToList();
+
+                        }
+
+                        else
+                        {
+                            contexto.Entry(atendimento).State = EntityState.Modified;
+                            contexto.SaveChanges();
+                            habilitaCampos(false);
+                        }
+                    }
                     else
                     {
-                        contexto.Entry(atendimento).State = EntityState.Modified;
-                        contexto.SaveChanges();
-                        habilitaCampos(false);
+                        MessageBox.Show("Dados não gravados", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                    carregarGridAtendimento();
                 }
                 else
                 {
-                    MessageBox.Show("Dados não gravados", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Número atendimento já existe para mesma data", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                carregarGridAtendimento();
-                
+
+
             }
             catch (System.FormatException)
             {

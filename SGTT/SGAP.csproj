@@ -77,6 +77,9 @@
     <Reference Include="MySql.Data.Entity.EF6, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.Entity.6.10.8\lib\net452\MySql.Data.Entity.EF6.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NReco.PhantomJS, Version=1.0.4.0, Culture=neutral, PublicKeyToken=f160d8c5e2ae66b6, processorArchitecture=MSIL">
       <HintPath>..\packages\NReco.PhantomJS.1.0.4\lib\net40\NReco.PhantomJS.dll</HintPath>
       <Private>True</Private>
@@ -204,6 +207,7 @@
     <Compile Include="Forms\frmTipoReclamacao.Designer.cs">
       <DependentUpon>frmTipoReclamacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcoes\CEP.cs" />
     <Compile Include="Funcoes\FloatExtends.cs" />
     <Compile Include="Funcoes\FuncGeral.cs" />
     <Compile Include="Funcoes\GridViewToExcel.cs" />
@@ -213,6 +217,7 @@
     <Compile Include="Modelo\Andamento.cs" />
     <Compile Include="Modelo\Atendimento.cs" />
     <Compile Include="Modelo\Cidade.cs" />
+    <Compile Include="Modelo\AlteracaoAtendimento.cs" />
     <Compile Include="Modelo\Consumidor.cs" />
     <Compile Include="Modelo\Encaminhamento.cs" />
     <Compile Include="Modelo\Entidade.cs" />
@@ -223,6 +228,7 @@
     <Compile Include="Modelo\SGAPContexto.cs" />
     <Compile Include="Modelo\TipoAtendimento.cs" />
     <Compile Include="Modelo\TipoReclamacao.cs" />
+    <Compile Include="Modelo\TipoStatus.cs" />
     <Compile Include="Modelo\ValidaCpf.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

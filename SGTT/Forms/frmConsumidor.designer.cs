@@ -52,6 +52,19 @@
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.cmbCidade = new System.Windows.Forms.ComboBox();
             this.dgvConsumidor = new System.Windows.Forms.DataGridView();
+            this.lbSalvar = new System.Windows.Forms.Label();
+            this.lbCancelar = new System.Windows.Forms.Label();
+            this.lbRemover = new System.Windows.Forms.Label();
+            this.lbEditar = new System.Windows.Forms.Label();
+            this.lbNovo = new System.Windows.Forms.Label();
+            this.lbFechar = new System.Windows.Forms.Label();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.picProblema = new System.Windows.Forms.PictureBox();
+            this.txtOrgaoEmissor = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,17 +79,7 @@
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbSalvar = new System.Windows.Forms.Label();
-            this.lbCancelar = new System.Windows.Forms.Label();
-            this.lbRemover = new System.Windows.Forms.Label();
-            this.lbEditar = new System.Windows.Forms.Label();
-            this.lbNovo = new System.Windows.Forms.Label();
-            this.lbFechar = new System.Windows.Forms.Label();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.picProblema = new System.Windows.Forms.PictureBox();
-            this.txtOrgaoEmissor = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.orgaoEmissor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsumidor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProblema)).BeginInit();
             this.SuspendLayout();
@@ -95,7 +98,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(218, 67);
+            this.label3.Location = new System.Drawing.Point(13, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 16);
             this.label3.TabIndex = 2;
@@ -105,7 +108,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 127);
+            this.label4.Location = new System.Drawing.Point(216, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 16);
             this.label4.TabIndex = 3;
@@ -213,20 +216,20 @@
             // txtEndereco
             // 
             this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.Location = new System.Drawing.Point(221, 86);
+            this.txtEndereco.Location = new System.Drawing.Point(16, 146);
             this.txtEndereco.MaxLength = 40;
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(150, 22);
-            this.txtEndereco.TabIndex = 5;
+            this.txtEndereco.Size = new System.Drawing.Size(148, 22);
+            this.txtEndereco.TabIndex = 3;
             // 
             // txtBairro
             // 
             this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBairro.Location = new System.Drawing.Point(15, 146);
+            this.txtBairro.Location = new System.Drawing.Point(218, 86);
             this.txtBairro.MaxLength = 30;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(150, 22);
-            this.txtBairro.TabIndex = 3;
+            this.txtBairro.TabIndex = 6;
             // 
             // txtCep
             // 
@@ -246,7 +249,7 @@
             this.txtTelefone.MaxLength = 14;
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(150, 22);
-            this.txtTelefone.TabIndex = 6;
+            this.txtTelefone.TabIndex = 7;
             this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             this.txtTelefone.Leave += new System.EventHandler(this.txtTelefone_Leave);
             // 
@@ -257,7 +260,7 @@
             this.txtTelefoneCom.MaxLength = 14;
             this.txtTelefoneCom.Name = "txtTelefoneCom";
             this.txtTelefoneCom.Size = new System.Drawing.Size(150, 22);
-            this.txtTelefoneCom.TabIndex = 7;
+            this.txtTelefoneCom.TabIndex = 8;
             this.txtTelefoneCom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefoneCom_KeyPress);
             this.txtTelefoneCom.Leave += new System.EventHandler(this.txtTelefoneCom_Leave);
             // 
@@ -268,7 +271,7 @@
             this.txtCelular.MaxLength = 14;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(150, 22);
-            this.txtCelular.TabIndex = 8;
+            this.txtCelular.TabIndex = 9;
             this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             this.txtCelular.Leave += new System.EventHandler(this.txtCelular_Leave);
             // 
@@ -279,7 +282,7 @@
             this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(150, 22);
-            this.txtEmail.TabIndex = 10;
+            this.txtEmail.TabIndex = 11;
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtRg
@@ -289,7 +292,7 @@
             this.txtRg.MaxLength = 14;
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(150, 22);
-            this.txtRg.TabIndex = 11;
+            this.txtRg.TabIndex = 12;
             this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRg_KeyPress);
             // 
             // txtCpf
@@ -299,7 +302,7 @@
             this.txtCpf.MaxLength = 14;
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(150, 22);
-            this.txtCpf.TabIndex = 9;
+            this.txtCpf.TabIndex = 10;
             this.txtCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpf_KeyPress);
             this.txtCpf.Leave += new System.EventHandler(this.txtCpf_Leave);
             // 
@@ -311,7 +314,7 @@
             this.cmbCidade.Location = new System.Drawing.Point(220, 28);
             this.cmbCidade.Name = "cmbCidade";
             this.cmbCidade.Size = new System.Drawing.Size(149, 24);
-            this.cmbCidade.TabIndex = 4;
+            this.cmbCidade.TabIndex = 5;
             // 
             // dgvConsumidor
             // 
@@ -333,143 +336,14 @@
             this.whatsapp,
             this.email,
             this.rg,
-            this.cpf});
+            this.cpf,
+            this.orgaoEmissor});
             this.dgvConsumidor.Location = new System.Drawing.Point(8, 270);
             this.dgvConsumidor.Name = "dgvConsumidor";
             this.dgvConsumidor.ReadOnly = true;
             this.dgvConsumidor.Size = new System.Drawing.Size(775, 216);
             this.dgvConsumidor.TabIndex = 27;
             this.dgvConsumidor.DoubleClick += new System.EventHandler(this.dgvConsumidor_DoubleClick);
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.id.Width = 24;
-            // 
-            // nome
-            // 
-            this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nome.DataPropertyName = "nomeConsumidor";
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            this.nome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.nome.Width = 41;
-            // 
-            // endereco
-            // 
-            this.endereco.DataPropertyName = "endereco";
-            this.endereco.HeaderText = "Endereço";
-            this.endereco.Name = "endereco";
-            this.endereco.ReadOnly = true;
-            this.endereco.Visible = false;
-            // 
-            // bairro
-            // 
-            this.bairro.DataPropertyName = "bairro";
-            this.bairro.HeaderText = "Bairro";
-            this.bairro.Name = "bairro";
-            this.bairro.ReadOnly = true;
-            this.bairro.Visible = false;
-            // 
-            // cidade
-            // 
-            this.cidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cidade.DataPropertyName = "nomeCidade";
-            this.cidade.HeaderText = "Cidade";
-            this.cidade.Name = "cidade";
-            this.cidade.ReadOnly = true;
-            this.cidade.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cidade.Width = 46;
-            // 
-            // cidadeID
-            // 
-            this.cidadeID.DataPropertyName = "cidadeID";
-            this.cidadeID.HeaderText = "CidadeID";
-            this.cidadeID.Name = "cidadeID";
-            this.cidadeID.ReadOnly = true;
-            this.cidadeID.Visible = false;
-            // 
-            // cep
-            // 
-            this.cep.DataPropertyName = "cep";
-            this.cep.HeaderText = "CEP";
-            this.cep.Name = "cep";
-            this.cep.ReadOnly = true;
-            this.cep.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cep.Visible = false;
-            // 
-            // fone
-            // 
-            this.fone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.fone.DataPropertyName = "fone";
-            this.fone.HeaderText = "Tel.";
-            this.fone.MinimumWidth = 30;
-            this.fone.Name = "fone";
-            this.fone.ReadOnly = true;
-            this.fone.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.fone.Width = 31;
-            // 
-            // foneComercial
-            // 
-            this.foneComercial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.foneComercial.DataPropertyName = "foneComercial";
-            this.foneComercial.HeaderText = "Tel. Comercial";
-            this.foneComercial.Name = "foneComercial";
-            this.foneComercial.ReadOnly = true;
-            this.foneComercial.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.foneComercial.Width = 80;
-            // 
-            // celular
-            // 
-            this.celular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.celular.DataPropertyName = "celular";
-            this.celular.HeaderText = "Celular";
-            this.celular.Name = "celular";
-            this.celular.ReadOnly = true;
-            this.celular.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.celular.Width = 45;
-            // 
-            // whatsapp
-            // 
-            this.whatsapp.DataPropertyName = "whatsapp";
-            this.whatsapp.HeaderText = "WhatsApp";
-            this.whatsapp.Name = "whatsapp";
-            this.whatsapp.ReadOnly = true;
-            this.whatsapp.Visible = false;
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "E-mail";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Visible = false;
-            // 
-            // rg
-            // 
-            this.rg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.rg.DataPropertyName = "rg";
-            this.rg.HeaderText = "RG";
-            this.rg.Name = "rg";
-            this.rg.ReadOnly = true;
-            this.rg.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.rg.Width = 29;
-            // 
-            // cpf
-            // 
-            this.cpf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cpf.DataPropertyName = "cpf";
-            this.cpf.HeaderText = "CPF";
-            this.cpf.Name = "cpf";
-            this.cpf.ReadOnly = true;
-            this.cpf.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cpf.Width = 33;
             // 
             // lbSalvar
             // 
@@ -621,7 +495,7 @@
             this.txtOrgaoEmissor.MaxLength = 14;
             this.txtOrgaoEmissor.Name = "txtOrgaoEmissor";
             this.txtOrgaoEmissor.Size = new System.Drawing.Size(150, 22);
-            this.txtOrgaoEmissor.TabIndex = 12;
+            this.txtOrgaoEmissor.TabIndex = 13;
             // 
             // label10
             // 
@@ -633,12 +507,170 @@
             this.label10.TabIndex = 103;
             this.label10.Text = "Orgão Emissor:";
             // 
+            // txtNumero
+            // 
+            this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumero.Location = new System.Drawing.Point(170, 146);
+            this.txtNumero.MaxLength = 40;
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(28, 22);
+            this.txtNumero.TabIndex = 4;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(167, 126);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(26, 16);
+            this.label14.TabIndex = 106;
+            this.label14.Text = "Nº:";
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.id.Width = 24;
+            // 
+            // nome
+            // 
+            this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nome.DataPropertyName = "nomeConsumidor";
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            this.nome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.nome.Width = 41;
+            // 
+            // endereco
+            // 
+            this.endereco.DataPropertyName = "endereco";
+            this.endereco.HeaderText = "Endereço";
+            this.endereco.Name = "endereco";
+            this.endereco.ReadOnly = true;
+            this.endereco.Visible = false;
+            // 
+            // bairro
+            // 
+            this.bairro.DataPropertyName = "bairro";
+            this.bairro.HeaderText = "Bairro";
+            this.bairro.Name = "bairro";
+            this.bairro.ReadOnly = true;
+            this.bairro.Visible = false;
+            // 
+            // cidade
+            // 
+            this.cidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cidade.DataPropertyName = "nomeCidade";
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            this.cidade.ReadOnly = true;
+            this.cidade.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cidade.Width = 46;
+            // 
+            // cidadeID
+            // 
+            this.cidadeID.DataPropertyName = "cidadeID";
+            this.cidadeID.HeaderText = "CidadeID";
+            this.cidadeID.Name = "cidadeID";
+            this.cidadeID.ReadOnly = true;
+            this.cidadeID.Visible = false;
+            // 
+            // cep
+            // 
+            this.cep.DataPropertyName = "cep";
+            this.cep.HeaderText = "CEP";
+            this.cep.Name = "cep";
+            this.cep.ReadOnly = true;
+            this.cep.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cep.Visible = false;
+            // 
+            // fone
+            // 
+            this.fone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fone.DataPropertyName = "fone";
+            this.fone.HeaderText = "Tel.";
+            this.fone.MinimumWidth = 30;
+            this.fone.Name = "fone";
+            this.fone.ReadOnly = true;
+            this.fone.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.fone.Width = 31;
+            // 
+            // foneComercial
+            // 
+            this.foneComercial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.foneComercial.DataPropertyName = "foneComercial";
+            this.foneComercial.HeaderText = "Tel. Comercial";
+            this.foneComercial.Name = "foneComercial";
+            this.foneComercial.ReadOnly = true;
+            this.foneComercial.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.foneComercial.Width = 80;
+            // 
+            // celular
+            // 
+            this.celular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.celular.DataPropertyName = "celular";
+            this.celular.HeaderText = "Celular";
+            this.celular.Name = "celular";
+            this.celular.ReadOnly = true;
+            this.celular.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.celular.Width = 45;
+            // 
+            // whatsapp
+            // 
+            this.whatsapp.DataPropertyName = "whatsapp";
+            this.whatsapp.HeaderText = "WhatsApp";
+            this.whatsapp.Name = "whatsapp";
+            this.whatsapp.ReadOnly = true;
+            this.whatsapp.Visible = false;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "E-mail";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Visible = false;
+            // 
+            // rg
+            // 
+            this.rg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.rg.DataPropertyName = "rg";
+            this.rg.HeaderText = "RG";
+            this.rg.Name = "rg";
+            this.rg.ReadOnly = true;
+            this.rg.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.rg.Width = 29;
+            // 
+            // cpf
+            // 
+            this.cpf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cpf.DataPropertyName = "cpf";
+            this.cpf.HeaderText = "CPF";
+            this.cpf.Name = "cpf";
+            this.cpf.ReadOnly = true;
+            this.cpf.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cpf.Width = 33;
+            // 
+            // orgaoEmissor
+            // 
+            this.orgaoEmissor.DataPropertyName = "orgaoEmissor";
+            this.orgaoEmissor.HeaderText = "Orgão Emissor";
+            this.orgaoEmissor.Name = "orgaoEmissor";
+            this.orgaoEmissor.ReadOnly = true;
+            // 
             // frmConsumidor
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(795, 526);
             this.ControlBox = false;
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtOrgaoEmissor);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.picProblema);
@@ -720,6 +752,11 @@
         private System.Windows.Forms.Label lbFechar;
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox picProblema;
+        private System.Windows.Forms.TextBox txtOrgaoEmissor;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn endereco;
@@ -734,8 +771,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn rg;
         private System.Windows.Forms.DataGridViewTextBoxColumn cpf;
-        private System.Windows.Forms.PictureBox picProblema;
-        private System.Windows.Forms.TextBox txtOrgaoEmissor;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orgaoEmissor;
     }
 }

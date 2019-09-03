@@ -176,7 +176,12 @@ namespace SGAP.Forms
                     carregaGrid(andamento.atendimentoID);
                     MessageBox.Show("Andamento editado com sucesso", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     limparCampos();
-                }               
+                }
+                else
+                {
+                    txtAndamento.Select(txtAndamento.Text.Length, 0);
+                    txtAndamento.Focus();
+                }
             }
             else
             {
@@ -223,6 +228,30 @@ namespace SGAP.Forms
             carregaGrid(Convert.ToInt32(frmAtendimento.txtId.Text));
 
             limparCampos();
+        }
+
+        private void frmAndamentos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1 && btnAdicionar.Enabled == true)
+            {
+                e.SuppressKeyPress = true;
+                btnAdicionar_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F2 && btnEditar.Enabled == true)
+            {
+                e.SuppressKeyPress = true;
+                btnEditar_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F3 && btnRemover.Enabled == true)
+            {
+                e.SuppressKeyPress = true;
+                btnRemover_Click(sender, e);
+            }
+
+            if (e.Alt && e.KeyCode == Keys.X)
+                this.Dispose();
         }
     }
 }

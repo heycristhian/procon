@@ -44,5 +44,8 @@ namespace SGAP.Modelo
         public int problemaPrincipalID { get; set; }
         virtual public ProblemaPrincipal ProblemaPrincipal { get; set; }
 
+        public int tipoStatus { get; set; }
+        virtual public TipoStatus TipoStatus { get; set; }
+
     }
 }

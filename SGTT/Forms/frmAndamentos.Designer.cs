@@ -29,8 +29,14 @@
         private void InitializeComponent()
         {
             this.menu = new System.Windows.Forms.Panel();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnRemover = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
             this.informacoes = new System.Windows.Forms.Panel();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.lblAndamento = new System.Windows.Forms.Label();
             this.txtAndamento = new System.Windows.Forms.RichTextBox();
             this.dgvAndamentos = new System.Windows.Forms.DataGridView();
@@ -39,17 +45,11 @@
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.atendimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.atendimentoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.btnRemover = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnAdicionar = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
             this.informacoes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAndamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAndamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +66,80 @@
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(200, 538);
             this.menu.TabIndex = 0;
+            // 
+            // btnSair
+            // 
+            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.ForeColor = System.Drawing.Color.White;
+            this.btnSair.Image = global::SGAP.Properties.Resources.desligar30pxWhite;
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSair.Location = new System.Drawing.Point(0, 495);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(200, 40);
+            this.btnSair.TabIndex = 3;
+            this.btnSair.Text = "Voltar (Alt + X)";
+            this.btnSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemover.FlatAppearance.BorderSize = 0;
+            this.btnRemover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemover.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemover.ForeColor = System.Drawing.Color.White;
+            this.btnRemover.Image = global::SGAP.Properties.Resources.delete30pxWhite;
+            this.btnRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemover.Location = new System.Drawing.Point(0, 92);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(200, 40);
+            this.btnRemover.TabIndex = 2;
+            this.btnRemover.Text = "Remover (F3)";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Image = global::SGAP.Properties.Resources.edit30pxWhite;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(0, 46);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(200, 40);
+            this.btnEditar.TabIndex = 1;
+            this.btnEditar.Text = "Editar  (F2)";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdicionar.FlatAppearance.BorderSize = 0;
+            this.btnAdicionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionar.ForeColor = System.Drawing.Color.White;
+            this.btnAdicionar.Image = global::SGAP.Properties.Resources.addDocument30pxWhite;
+            this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdicionar.Location = new System.Drawing.Point(0, 0);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(200, 40);
+            this.btnAdicionar.TabIndex = 0;
+            this.btnAdicionar.Text = "Adicionar (F1)";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // informacoes
             // 
@@ -90,6 +164,36 @@
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 4;
             this.txtId.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::SGAP.Properties.Resources.maximize16px;
+            this.pictureBox2.Location = new System.Drawing.Point(883, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.FlatAppearance.BorderSize = 0;
+            this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Wheat;
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpar.Image = global::SGAP.Properties.Resources.borracha50px;
+            this.btnLimpar.Location = new System.Drawing.Point(839, 36);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(50, 50);
+            this.btnLimpar.TabIndex = 4;
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Visible = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // lblAndamento
             // 
@@ -171,36 +275,6 @@
             this.atendimentoID.Name = "atendimentoID";
             this.atendimentoID.Visible = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::SGAP.Properties.Resources.maximize16px;
-            this.pictureBox2.Location = new System.Drawing.Point(883, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpar.FlatAppearance.BorderSize = 0;
-            this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Wheat;
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpar.Image = global::SGAP.Properties.Resources.borracha50px;
-            this.btnLimpar.Location = new System.Drawing.Point(839, 36);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(50, 50);
-            this.btnLimpar.TabIndex = 4;
-            this.btnLimpar.UseVisualStyleBackColor = true;
-            this.btnLimpar.Visible = false;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -213,79 +287,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // btnSair
-            // 
-            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSair.FlatAppearance.BorderSize = 0;
-            this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Image = global::SGAP.Properties.Resources.desligar30pxWhite;
-            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSair.Location = new System.Drawing.Point(0, 495);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(200, 40);
-            this.btnSair.TabIndex = 3;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // btnRemover
-            // 
-            this.btnRemover.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRemover.FlatAppearance.BorderSize = 0;
-            this.btnRemover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemover.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemover.ForeColor = System.Drawing.Color.White;
-            this.btnRemover.Image = global::SGAP.Properties.Resources.delete30pxWhite;
-            this.btnRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemover.Location = new System.Drawing.Point(0, 92);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(200, 40);
-            this.btnRemover.TabIndex = 2;
-            this.btnRemover.Text = "Remover";
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Image = global::SGAP.Properties.Resources.edit30pxWhite;
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(0, 46);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(200, 40);
-            this.btnEditar.TabIndex = 1;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdicionar.FlatAppearance.BorderSize = 0;
-            this.btnAdicionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionar.Image = global::SGAP.Properties.Resources.addDocument30pxWhite;
-            this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdicionar.Location = new System.Drawing.Point(0, 0);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(200, 40);
-            this.btnAdicionar.TabIndex = 0;
-            this.btnAdicionar.Text = "Adicionar";
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
-            // 
             // frmAndamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,15 +295,17 @@
             this.ClientSize = new System.Drawing.Size(1124, 538);
             this.Controls.Add(this.informacoes);
             this.Controls.Add(this.menu);
+            this.KeyPreview = true;
             this.Name = "frmAndamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAndamentos";
             this.Load += new System.EventHandler(this.frmAndamentos_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmAndamentos_KeyDown);
             this.menu.ResumeLayout(false);
             this.informacoes.ResumeLayout(false);
             this.informacoes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAndamentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAndamentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
