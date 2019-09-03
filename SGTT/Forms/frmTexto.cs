@@ -28,6 +28,7 @@ namespace SGAP.Forms
             descricao = descricaoTexto;
             frmAtendimento = atendimento;
             txtDescricao.Text = descricaoTexto;
+            txtDescricao.Select(txtDescricao.Text.Length, 0);
         }
 
         private void frmTexto_Load(object sender, EventArgs e)
