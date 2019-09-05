@@ -132,7 +132,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(888, 477);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmLogin
             // 
@@ -149,10 +148,12 @@
             this.Controls.Add(this.lbRestaurar);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.White;
+            this.KeyPreview = true;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -71,16 +71,16 @@
             this.novoAtendimentoToolStripMenuItem});
             this.atendimentoToolStripMenuItem.Name = "atendimentoToolStripMenuItem";
             this.atendimentoToolStripMenuItem.ShowShortcutKeys = false;
-            this.atendimentoToolStripMenuItem.Size = new System.Drawing.Size(133, 29);
-            this.atendimentoToolStripMenuItem.Text = "&Atendimento";
+            this.atendimentoToolStripMenuItem.Size = new System.Drawing.Size(76, 29);
+            this.atendimentoToolStripMenuItem.Text = "&Iniciar";
             this.atendimentoToolStripMenuItem.MouseEnter += new System.EventHandler(this.atendimentoToolStripMenuItem_MouseEnter);
             this.atendimentoToolStripMenuItem.MouseLeave += new System.EventHandler(this.atendimentoToolStripMenuItem_MouseLeave);
             // 
             // novoAtendimentoToolStripMenuItem
             // 
             this.novoAtendimentoToolStripMenuItem.Name = "novoAtendimentoToolStripMenuItem";
-            this.novoAtendimentoToolStripMenuItem.Size = new System.Drawing.Size(243, 30);
-            this.novoAtendimentoToolStripMenuItem.Text = "Novo Atendimento";
+            this.novoAtendimentoToolStripMenuItem.Size = new System.Drawing.Size(228, 30);
+            this.novoAtendimentoToolStripMenuItem.Text = "CIP/Atendimento";
             this.novoAtendimentoToolStripMenuItem.Click += new System.EventHandler(this.novoAtendimentoToolStripMenuItem_Click);
             // 
             // cadastrosToolStripMenuItem

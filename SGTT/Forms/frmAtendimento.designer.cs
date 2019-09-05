@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -70,6 +70,8 @@
             this.lbEncaminhar = new System.Windows.Forms.Label();
             this.lblExpandirDescricao = new System.Windows.Forms.Label();
             this.txtDescricaoProblema = new System.Windows.Forms.TextBox();
+            this.picPesquisarFornecedor = new System.Windows.Forms.PictureBox();
+            this.picPesquisarConsumidor = new System.Windows.Forms.PictureBox();
             this.btnAndamentos = new System.Windows.Forms.Button();
             this.lbRemover = new System.Windows.Forms.Label();
             this.lbSalvar = new System.Windows.Forms.Label();
@@ -80,6 +82,8 @@
             this.picAddFornecedor = new System.Windows.Forms.PictureBox();
             this.picAddConsumidor = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtendimento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPesquisarFornecedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPesquisarConsumidor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProblema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddFornecedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddConsumidor)).BeginInit();
@@ -180,7 +184,7 @@
             this.cmbFornecedor.FormattingEnabled = true;
             this.cmbFornecedor.Location = new System.Drawing.Point(15, 314);
             this.cmbFornecedor.Name = "cmbFornecedor";
-            this.cmbFornecedor.Size = new System.Drawing.Size(248, 24);
+            this.cmbFornecedor.Size = new System.Drawing.Size(218, 24);
             this.cmbFornecedor.TabIndex = 6;
             this.cmbFornecedor.Click += new System.EventHandler(this.cmbFornecedor_Click);
             // 
@@ -189,9 +193,10 @@
             this.cmbConsumidor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbConsumidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbConsumidor.FormattingEnabled = true;
+            this.cmbConsumidor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cmbConsumidor.Location = new System.Drawing.Point(15, 256);
             this.cmbConsumidor.Name = "cmbConsumidor";
-            this.cmbConsumidor.Size = new System.Drawing.Size(248, 24);
+            this.cmbConsumidor.Size = new System.Drawing.Size(218, 24);
             this.cmbConsumidor.TabIndex = 5;
             this.cmbConsumidor.Click += new System.EventHandler(this.cmbConsumidor_Click);
             // 
@@ -246,6 +251,7 @@
             this.id.ReadOnly = true;
             this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.id.Visible = false;
+            this.id.Width = 24;
             // 
             // tipoAtendimentoID
             // 
@@ -271,7 +277,7 @@
             this.numeroProcon.Name = "numeroProcon";
             this.numeroProcon.ReadOnly = true;
             this.numeroProcon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.numeroProcon.Width = 53;
+            this.numeroProcon.Width = 59;
             // 
             // tipoAtendimento
             // 
@@ -359,9 +365,9 @@
             // 
             this.dataInicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataInicio.DataPropertyName = "dataInicio";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataInicio.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataInicio.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataInicio.HeaderText = "Início";
             this.dataInicio.Name = "dataInicio";
             this.dataInicio.ReadOnly = true;
@@ -372,9 +378,9 @@
             // 
             this.dataEncerramento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataEncerramento.DataPropertyName = "dataEncerramento";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataEncerramento.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataEncerramento.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataEncerramento.HeaderText = "Encerramento";
             this.dataEncerramento.Name = "dataEncerramento";
             this.dataEncerramento.ReadOnly = true;
@@ -520,6 +526,28 @@
             this.txtDescricaoProblema.Size = new System.Drawing.Size(248, 72);
             this.txtDescricaoProblema.TabIndex = 7;
             // 
+            // picPesquisarFornecedor
+            // 
+            this.picPesquisarFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picPesquisarFornecedor.Image = global::SGAP.Properties.Resources.search24px;
+            this.picPesquisarFornecedor.Location = new System.Drawing.Point(239, 314);
+            this.picPesquisarFornecedor.Name = "picPesquisarFornecedor";
+            this.picPesquisarFornecedor.Size = new System.Drawing.Size(24, 24);
+            this.picPesquisarFornecedor.TabIndex = 94;
+            this.picPesquisarFornecedor.TabStop = false;
+            this.picPesquisarFornecedor.Click += new System.EventHandler(this.picPesquisarFornecedor_Click);
+            // 
+            // picPesquisarConsumidor
+            // 
+            this.picPesquisarConsumidor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picPesquisarConsumidor.Image = global::SGAP.Properties.Resources.search24px;
+            this.picPesquisarConsumidor.Location = new System.Drawing.Point(239, 256);
+            this.picPesquisarConsumidor.Name = "picPesquisarConsumidor";
+            this.picPesquisarConsumidor.Size = new System.Drawing.Size(24, 24);
+            this.picPesquisarConsumidor.TabIndex = 93;
+            this.picPesquisarConsumidor.TabStop = false;
+            this.picPesquisarConsumidor.Click += new System.EventHandler(this.picPesquisarConsumidor_Click);
+            // 
             // btnAndamentos
             // 
             this.btnAndamentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(203)))), ((int)(((byte)(248)))));
@@ -640,7 +668,7 @@
             // 
             this.picProblema.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picProblema.Image = global::SGAP.Properties.Resources.add;
-            this.picProblema.Location = new System.Drawing.Point(269, 201);
+            this.picProblema.Location = new System.Drawing.Point(269, 197);
             this.picProblema.Name = "picProblema";
             this.picProblema.Size = new System.Drawing.Size(28, 28);
             this.picProblema.TabIndex = 79;
@@ -662,7 +690,7 @@
             // 
             this.picAddConsumidor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picAddConsumidor.Image = global::SGAP.Properties.Resources.add;
-            this.picAddConsumidor.Location = new System.Drawing.Point(269, 256);
+            this.picAddConsumidor.Location = new System.Drawing.Point(269, 252);
             this.picAddConsumidor.Name = "picAddConsumidor";
             this.picAddConsumidor.Size = new System.Drawing.Size(28, 28);
             this.picAddConsumidor.TabIndex = 76;
@@ -677,6 +705,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(994, 654);
+            this.Controls.Add(this.picPesquisarFornecedor);
+            this.Controls.Add(this.picPesquisarConsumidor);
             this.Controls.Add(this.btnAndamentos);
             this.Controls.Add(this.lblExpandirDescricao);
             this.Controls.Add(this.lbEncaminhar);
@@ -718,6 +748,8 @@
             this.Load += new System.EventHandler(this.frmAtendimento_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmAtendimento_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtendimento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPesquisarFornecedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPesquisarConsumidor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProblema)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddFornecedor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddConsumidor)).EndInit();
@@ -776,5 +808,7 @@
         private System.Windows.Forms.Label lblExpandirDescricao;
         public System.Windows.Forms.TextBox txtDescricaoProblema;
         private System.Windows.Forms.Button btnAndamentos;
+        private System.Windows.Forms.PictureBox picPesquisarConsumidor;
+        private System.Windows.Forms.PictureBox picPesquisarFornecedor;
     }
 }

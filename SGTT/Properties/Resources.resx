@@ -175,17 +175,23 @@
   <data name="procon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\procon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="novo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\novo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="desligar30px red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\desligar30px red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="close50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="desligar30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\desligar30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pesquisar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pesquisar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search28px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search28px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loginProcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loginProcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,13 +220,13 @@
   <data name="procon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\procon1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="novo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\novo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="desligar30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\desligar30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

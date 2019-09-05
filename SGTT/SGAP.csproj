@@ -207,6 +207,12 @@
     <Compile Include="Forms\frmTipoReclamacao.Designer.cs">
       <DependentUpon>frmTipoReclamacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmPesquisaEntidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPesquisaEntidade.Designer.cs">
+      <DependentUpon>frmPesquisaEntidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Funcoes\CEP.cs" />
     <Compile Include="Funcoes\FloatExtends.cs" />
     <Compile Include="Funcoes\FuncGeral.cs" />
@@ -280,6 +286,9 @@
     <EmbeddedResource Include="Forms\frmTipoReclamacao.resx">
       <DependentUpon>frmTipoReclamacao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPesquisaEntidade.resx">
+      <DependentUpon>frmPesquisaEntidade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -340,6 +349,8 @@
     <Content Include="phantomjs-license.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\search24px.png" />
+    <None Include="Resources\search28px.png" />
     <None Include="Resources\desligar30px.png" />
     <None Include="Resources\desligar30px red.png" />
     <None Include="Resources\maximize16px.png" />

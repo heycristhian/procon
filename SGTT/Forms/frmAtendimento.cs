@@ -21,6 +21,8 @@ namespace SGAP.Forms
 
         public string descricao { get; set; }
 
+        public int idCombo { get; set; }
+
         public frmAtendimento()
         {
             InitializeComponent();
@@ -55,7 +57,9 @@ namespace SGAP.Forms
 
             txtnumeroProcon.Enabled = status;
             cmbConsumidor.Enabled = status;
+            picPesquisarConsumidor.Enabled = status;
             cmbFornecedor.Enabled = status;
+            picPesquisarFornecedor.Enabled = status;
             picProblema.Visible = status;
             cmbProblema.Enabled = status;
             cmbTipoAtendimento.Enabled = status;
@@ -591,6 +595,29 @@ namespace SGAP.Forms
         {
             frmAndamentos andamentos = new frmAndamentos(this);
             andamentos.ShowDialog();
+        }
+
+        private void picPesquisarConsumidor_Click(object sender, EventArgs e)
+        {
+            frmPesquisaEntidade pesquisaEntidade = new frmPesquisaEntidade(this, "consumidor");
+            pesquisaEntidade.ShowDialog();
+
+            if(idCombo > 0)
+            {
+                cmbConsumidor.DisplayMember = "descConsumidor";
+                cmbConsumidor.ValueMember = "id";
+                cmbConsumidor.DataSource = contexto.Consumidor.Where(x => x.id == idCombo).OrderBy(p => p.nome).ToList();
+            }
+        }
+
+        private void picPesquisarFornecedor_Click(object sender, EventArgs e)
+        {
+            frmPesquisaEntidade pesquisaEntidade = new frmPesquisaEntidade(this, "fornecedor");
+            pesquisaEntidade.ShowDialog();
+
+            cmbFornecedor.DisplayMember = "razaoSocial";
+            cmbFornecedor.ValueMember = "id";
+            cmbFornecedor.DataSource = contexto.Fornecedor.Where(x => x.id == idCombo).OrderBy(p => p.razaoSocial).ToList();
         }
     }
 }

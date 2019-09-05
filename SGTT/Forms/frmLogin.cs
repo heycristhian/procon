@@ -83,7 +83,7 @@ namespace SGAP.Forms
 
         private void pbClose_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Application.Exit();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -108,9 +108,12 @@ namespace SGAP.Forms
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void frmLogin_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.Alt && e.KeyCode == Keys.F4)
+            {
+                Application.Exit();
+            }
         }
     }
 }
