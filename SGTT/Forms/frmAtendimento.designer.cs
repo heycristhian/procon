@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dtpInicio = new System.Windows.Forms.DateTimePicker();
-            this.dtpEncerramento = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbFornecedor = new System.Windows.Forms.ComboBox();
@@ -81,6 +79,8 @@
             this.picProblema = new System.Windows.Forms.PictureBox();
             this.picAddFornecedor = new System.Windows.Forms.PictureBox();
             this.picAddConsumidor = new System.Windows.Forms.PictureBox();
+            this.dtpInicio = new System.Windows.Forms.MaskedTextBox();
+            this.dtpEncerramento = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtendimento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPesquisarFornecedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPesquisarConsumidor)).BeginInit();
@@ -139,24 +139,6 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Nº Atendimento:";
             // 
-            // dtpInicio
-            // 
-            this.dtpInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInicio.Location = new System.Drawing.Point(329, 28);
-            this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(99, 22);
-            this.dtpInicio.TabIndex = 8;
-            // 
-            // dtpEncerramento
-            // 
-            this.dtpEncerramento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEncerramento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEncerramento.Location = new System.Drawing.Point(329, 83);
-            this.dtpEncerramento.Name = "dtpEncerramento";
-            this.dtpEncerramento.Size = new System.Drawing.Size(99, 22);
-            this.dtpEncerramento.TabIndex = 9;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -204,7 +186,7 @@
             // 
             this.txtnumeroProcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnumeroProcon.Location = new System.Drawing.Point(15, 28);
-            this.txtnumeroProcon.MaxLength = 10;
+            this.txtnumeroProcon.MaxLength = 30;
             this.txtnumeroProcon.Name = "txtnumeroProcon";
             this.txtnumeroProcon.Size = new System.Drawing.Size(248, 22);
             this.txtnumeroProcon.TabIndex = 1;
@@ -251,7 +233,6 @@
             this.id.ReadOnly = true;
             this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.id.Visible = false;
-            this.id.Width = 24;
             // 
             // tipoAtendimentoID
             // 
@@ -277,7 +258,7 @@
             this.numeroProcon.Name = "numeroProcon";
             this.numeroProcon.ReadOnly = true;
             this.numeroProcon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.numeroProcon.Width = 59;
+            this.numeroProcon.Width = 53;
             // 
             // tipoAtendimento
             // 
@@ -365,9 +346,9 @@
             // 
             this.dataInicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataInicio.DataPropertyName = "dataInicio";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataInicio.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Format = "d";
+            dataGridViewCellStyle13.NullValue = null;
+            this.dataInicio.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataInicio.HeaderText = "Início";
             this.dataInicio.Name = "dataInicio";
             this.dataInicio.ReadOnly = true;
@@ -378,9 +359,9 @@
             // 
             this.dataEncerramento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataEncerramento.DataPropertyName = "dataEncerramento";
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataEncerramento.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Format = "d";
+            dataGridViewCellStyle14.NullValue = null;
+            this.dataEncerramento.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataEncerramento.HeaderText = "Encerramento";
             this.dataEncerramento.Name = "dataEncerramento";
             this.dataEncerramento.ReadOnly = true;
@@ -511,7 +492,7 @@
             this.lblExpandirDescricao.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblExpandirDescricao.Location = new System.Drawing.Point(131, 456);
             this.lblExpandirDescricao.Name = "lblExpandirDescricao";
-            this.lblExpandirDescricao.Size = new System.Drawing.Size(122, 16);
+            this.lblExpandirDescricao.Size = new System.Drawing.Size(136, 16);
             this.lblExpandirDescricao.TabIndex = 91;
             this.lblExpandirDescricao.Text = "Expandir descrição";
             this.lblExpandirDescricao.Click += new System.EventHandler(this.lblExpandirDescricao_Click);
@@ -697,6 +678,26 @@
             this.picAddConsumidor.TabStop = false;
             this.picAddConsumidor.Click += new System.EventHandler(this.picAddConsumidor_Click);
             // 
+            // dtpInicio
+            // 
+            this.dtpInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpInicio.Location = new System.Drawing.Point(329, 28);
+            this.dtpInicio.Mask = "00/00/0000";
+            this.dtpInicio.Name = "dtpInicio";
+            this.dtpInicio.Size = new System.Drawing.Size(100, 21);
+            this.dtpInicio.TabIndex = 95;
+            this.dtpInicio.ValidatingType = typeof(System.DateTime);
+            // 
+            // dtpEncerramento
+            // 
+            this.dtpEncerramento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEncerramento.Location = new System.Drawing.Point(329, 83);
+            this.dtpEncerramento.Mask = "00/00/0000";
+            this.dtpEncerramento.Name = "dtpEncerramento";
+            this.dtpEncerramento.Size = new System.Drawing.Size(100, 21);
+            this.dtpEncerramento.TabIndex = 96;
+            this.dtpEncerramento.ValidatingType = typeof(System.DateTime);
+            // 
             // frmAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -705,6 +706,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(994, 654);
+            this.Controls.Add(this.dtpEncerramento);
+            this.Controls.Add(this.dtpInicio);
             this.Controls.Add(this.picPesquisarFornecedor);
             this.Controls.Add(this.picPesquisarConsumidor);
             this.Controls.Add(this.btnAndamentos);
@@ -734,8 +737,6 @@
             this.Controls.Add(this.txtDescricaoProblema);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dtpEncerramento);
-            this.Controls.Add(this.dtpInicio);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -767,8 +768,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.DataGridView dgvAtendimento;
-        public System.Windows.Forms.DateTimePicker dtpInicio;
-        public System.Windows.Forms.DateTimePicker dtpEncerramento;
         public System.Windows.Forms.ComboBox cmbFornecedor;
         public System.Windows.Forms.ComboBox cmbConsumidor;
         public System.Windows.Forms.TextBox txtnumeroProcon;
@@ -810,5 +809,7 @@
         private System.Windows.Forms.Button btnAndamentos;
         private System.Windows.Forms.PictureBox picPesquisarConsumidor;
         private System.Windows.Forms.PictureBox picPesquisarFornecedor;
+        private System.Windows.Forms.MaskedTextBox dtpInicio;
+        private System.Windows.Forms.MaskedTextBox dtpEncerramento;
     }
 }

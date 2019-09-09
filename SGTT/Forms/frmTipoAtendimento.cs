@@ -160,8 +160,6 @@ namespace SGAP.Forms
                             contexto.SaveChanges();                            
                             limparCampos();
                             habilitaCampos(false);
-                            dgvTipoAtendimento.DataSource = "";
-                            dgvTipoAtendimento.DataSource = contexto.Cidade.ToList();
 
                             MessageBox.Show("Dados gravados com sucesso", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }

@@ -18,13 +18,14 @@ namespace SGAP.Modelo
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
+        [Required]
         public string numeroProcon { get; set; }
 
         public string reclamacao { get; set; }
 
         public DateTime dataInicio { get; set; }
-
-        public DateTime dataEncerramento { get; set; }
+        
+        public Nullable<DateTime> dataEncerramento { get; set; }
 
         public string usuario { get; set; }
 

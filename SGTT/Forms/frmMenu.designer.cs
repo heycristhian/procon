@@ -30,7 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.atendimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.novoAtendimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consumidorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,21 +66,13 @@
             // 
             // atendimentoToolStripMenuItem
             // 
-            this.atendimentoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.novoAtendimentoToolStripMenuItem});
             this.atendimentoToolStripMenuItem.Name = "atendimentoToolStripMenuItem";
             this.atendimentoToolStripMenuItem.ShowShortcutKeys = false;
-            this.atendimentoToolStripMenuItem.Size = new System.Drawing.Size(76, 29);
-            this.atendimentoToolStripMenuItem.Text = "&Iniciar";
+            this.atendimentoToolStripMenuItem.Size = new System.Drawing.Size(168, 29);
+            this.atendimentoToolStripMenuItem.Text = "CIP/Atendimento";
+            this.atendimentoToolStripMenuItem.Click += new System.EventHandler(this.atendimentoToolStripMenuItem_Click);
             this.atendimentoToolStripMenuItem.MouseEnter += new System.EventHandler(this.atendimentoToolStripMenuItem_MouseEnter);
             this.atendimentoToolStripMenuItem.MouseLeave += new System.EventHandler(this.atendimentoToolStripMenuItem_MouseLeave);
-            // 
-            // novoAtendimentoToolStripMenuItem
-            // 
-            this.novoAtendimentoToolStripMenuItem.Name = "novoAtendimentoToolStripMenuItem";
-            this.novoAtendimentoToolStripMenuItem.Size = new System.Drawing.Size(228, 30);
-            this.novoAtendimentoToolStripMenuItem.Text = "CIP/Atendimento";
-            this.novoAtendimentoToolStripMenuItem.Click += new System.EventHandler(this.novoAtendimentoToolStripMenuItem_Click);
             // 
             // cadastrosToolStripMenuItem
             // 
@@ -240,7 +231,6 @@
         private System.Windows.Forms.ToolStripMenuItem tipoReclamaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem problemaPrincipalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoAtendimentoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem novoAtendimentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copiarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restaurarToolStripMenuItem;

@@ -100,9 +100,7 @@ namespace SGAP.Forms
 
         private void novoAtendimentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAtendimento frmAtend = new frmAtendimento(this);
-            frmAtend.MdiParent = this;
-            frmAtend.Show();
+            
         } 
 
         private void atendimentoToolStripMenuItem_MouseEnter(object sender, EventArgs e)
@@ -146,6 +144,13 @@ namespace SGAP.Forms
         {
             frmRestauraBackup rest = new frmRestauraBackup();
             rest.ShowDialog();
+        }
+
+        private void atendimentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAtendimento frmAtend = new frmAtendimento(this);
+            frmAtend.MdiParent = this;
+            frmAtend.Show();
         }
     }
 }
