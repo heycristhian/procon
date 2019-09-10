@@ -113,6 +113,9 @@ namespace SGAP.Forms
 
         private void frmAtendimento_Load(object sender, EventArgs e)
         {
+            btnEncerrar.Text = "Encerrar";
+            btnEncerrar.UseColumnTextForButtonValue = true;
+
             Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
             ToolModeladas.dgvTransformation(dgvAtendimento);
 
@@ -260,7 +263,7 @@ namespace SGAP.Forms
             //dtpInicio.Text = DateTime.Now.ToShortDateString().ToString();
 
 
-            dtpInicio.Text = Convert.ToDateTime("01/10/2020").ToShortDateString().ToString();
+            dtpInicio.Text = DateTime.Now.ToShortDateString();
 
             Atendimento atendimento = new Atendimento();
             SGAPContexto contexto = new SGAPContexto();
@@ -652,6 +655,43 @@ namespace SGAP.Forms
             cmbFornecedor.DisplayMember = "razaoSocial";
             cmbFornecedor.ValueMember = "id";
             cmbFornecedor.DataSource = contexto.Fornecedor.Where(x => x.id == idCombo).OrderBy(p => p.razaoSocial).ToList();
+        }
+
+        private void dgvAtendimento_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvAtendimento.Columns["btnEncerrar"].Index && e.RowIndex >= 0)
+            {
+                DialogResult result;
+                result = MessageBox.Show("Deseja encerrar o atendimento?", "Encerrar", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+                if(result == DialogResult.Yes)
+                {
+
+                    Atendimento atendimento = new Atendimento();
+                    SGAPContexto contexto = new SGAPContexto();
+
+                    atendimento.id = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["id"].Value);
+                    atendimento.numeroProcon = dgvAtendimento.SelectedRows[0].Cells["numeroProcon"].Value.ToString();
+                    atendimento.consumidorID = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["consumidorID"].Value);
+                    atendimento.fornecedorID = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["fornecedorID"].Value);
+                    atendimento.tipoAtendimentoID = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["tipoAtendimentoID"].Value);
+                    atendimento.tipoReclamacaoID = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["tipoReclamacaoID"].Value);
+                    atendimento.problemaPrincipalID = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["problemaPrincipalID"].Value);
+                    atendimento.reclamacao = dgvAtendimento.SelectedRows[0].Cells["reclamacao"].Value.ToString();
+                    atendimento.dataInicio = Convert.ToDateTime(dgvAtendimento.SelectedRows[0].Cells["dataInicio"].Value.ToString());
+                    atendimento.dataEncerramento = DateTime.Now;
+
+                    contexto.Entry(atendimento).State = EntityState.Modified;
+                    contexto.SaveChanges();
+
+                    carregarGridAtendimento();
+
+
+                }
+
+               
+            }
         }
     }
 }
