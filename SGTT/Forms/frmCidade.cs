@@ -297,6 +297,11 @@ namespace SGAP.Forms
 
         private void txtPesquisar_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Pesquisar();
+        }
+
+        private void Pesquisar()
+        {
             Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
             var dados = from cidade in contexto.Cidade.ToList().Where(p => (p.descricao.ToLower().RemoveDiacritics().Contains(txtPesquisar.Text.ToLower().RemoveDiacritics().Trim()) || p.uf.ToLower().RemoveDiacritics().Contains(txtPesquisar.Text.ToLower().RemoveDiacritics().Trim())))
                         select new
@@ -351,6 +356,16 @@ namespace SGAP.Forms
         private void lbFechar_MouseLeave(object sender, EventArgs e)
         {
             FuncGeral.labelFecharCorLeave(lbFechar);
+        }
+
+        private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
+        {
+            Pesquisar();
+        }
+
+        private void txtPesquisar_KeyUp(object sender, KeyEventArgs e)
+        {
+            Pesquisar();
         }
     }
 }

@@ -52,8 +52,6 @@ namespace SGAP.Forms
             lbRemover.Enabled = !status;
             lbSalvar.Enabled = status;
             lbCancelar.Enabled = status;
-            lbMovimentar.Enabled = status;
-            lbEncaminhar.Enabled = status;
             picAddConsumidor.Visible = status;
             picAddFornecedor.Visible = status;
 
@@ -86,6 +84,17 @@ namespace SGAP.Forms
             cmbProblema.Text = "";
         }
 
+        private void trocaCorCIP()
+        {
+            for (int i = 0; i < dgvAtendimento.Rows.Count; i++)
+            {
+                if (dgvAtendimento.Rows[i].Cells["tipoAtendimento"].Value.ToString() == "CIP")
+                {
+                    dgvAtendimento.Rows[i].Cells["tipoAtendimento"].Style.BackColor = Color.Yellow;
+                }
+            }
+        }
+
         private void carregarGridAtendimento()
         {
             Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
@@ -108,7 +117,12 @@ namespace SGAP.Forms
                             dataInicio = atendimento.dataInicio,
                             dataEncerramento = atendimento.dataEncerramento
                         };
+
+            dgvAtendimento.DataSource = "";
             dgvAtendimento.DataSource = dados.ToList();
+
+            trocaCorCIP();
+
         }
 
         private void frmAtendimento_Load(object sender, EventArgs e)
@@ -124,6 +138,7 @@ namespace SGAP.Forms
             habilitaCampos(false);
 
             carregarGridAtendimento();
+            dgvAtendimento.Refresh();
 
             cmbConsumidor.DisplayMember = "descConsumidor";
             cmbConsumidor.ValueMember = "id";
@@ -190,12 +205,11 @@ namespace SGAP.Forms
 
                 habilitaCampos(false);
 
-                lbMovimentar.Enabled = true;
+                lbEncaminhar.Enabled = true;
                 lbEncaminhar.Enabled = true;
 
-                carregarGridAtendimento();
-
                 btnAndamentos.Visible = true;
+                lbEncaminhar.Visible = true;
             }
             catch (System.ArgumentOutOfRangeException)
             {
@@ -224,8 +238,8 @@ namespace SGAP.Forms
             int id = Convert.ToInt32(cmbTipoReclamacao.SelectedValue.ToString());
             cmbProblema.DataSource = contexto.ProblemaPrincipal.ToList().Where(p => p.TipoReclamacao.id == id).OrderBy(p => p.descricao).ToList();
         }
-
-        private void txtPesquisar_KeyPress(object sender, KeyPressEventArgs e)
+        
+        private void Pesquisar()
         {
             Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
             var dados = from atendimento in contexto.Atendimento.ToList().Where(p => (p.Consumidor.nome.ToLower().RemoveDiacritics().Contains(txtPesquisar.Text.ToLower().RemoveDiacritics().Trim()) || p.Fornecedor.razaoSocial.ToLower().RemoveDiacritics().Contains(txtPesquisar.Text.ToLower().RemoveDiacritics().Trim())))
@@ -249,6 +263,13 @@ namespace SGAP.Forms
                         };
             dgvAtendimento.DataSource = "";
             dgvAtendimento.DataSource = dados.ToList();
+            trocaCorCIP();
+
+        }
+
+        private void txtPesquisar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Pesquisar();
         }
 
         private void lbNovo_Click(object sender, EventArgs e)
@@ -259,6 +280,7 @@ namespace SGAP.Forms
             txtId.Text = "-1";
             txtnumeroProcon.Focus();
             btnAndamentos.Visible = false;
+            lbEncaminhar.Visible = false;
 
             //dtpInicio.Text = DateTime.Now.ToShortDateString().ToString();
 
@@ -303,6 +325,7 @@ namespace SGAP.Forms
             habilitaCampos(false);
 
             btnAndamentos.Visible = false;
+            lbEncaminhar.Visible = false;
         }
 
         private void lbSalvar_Click(object sender, EventArgs e)
@@ -369,9 +392,8 @@ namespace SGAP.Forms
                             MessageBox.Show("Dados gravados com sucesso", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             limparCampos();
                             btnAndamentos.Visible = false;
+                            lbEncaminhar.Visible = false;
                             habilitaCampos(false);
-                            dgvAtendimento.DataSource = "";
-                            dgvAtendimento.DataSource = contexto.Atendimento.ToList();
 
                         }
 
@@ -398,11 +420,6 @@ namespace SGAP.Forms
             {
                 MessageBox.Show("Número atendimento já existe para mesma data", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
-
-            
-            
-
         }
 
         private void lbRemover_Click(object sender, EventArgs e)
@@ -411,6 +428,7 @@ namespace SGAP.Forms
             Modelo.Atendimento atendimento = new Modelo.Atendimento();
 
             btnAndamentos.Visible = false;
+            lbEncaminhar.Visible = false;
 
             if (txtId.Text == "")
                 txtId.Text = "0";
@@ -426,16 +444,26 @@ namespace SGAP.Forms
                                     MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (result == DialogResult.Yes)
                 {
-                    contexto.Atendimento.Remove(atendimento);
-                    contexto.SaveChanges();          // atualiza o banco de dados 
-                    MessageBox.Show("Atendimento removido com sucesso!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    try
+                    {
+                        contexto.Atendimento.Remove(atendimento);
+                        contexto.SaveChanges();          // atualiza o banco de dados 
+
+                        carregarGridAtendimento();
+                        limparCampos();
+                        habilitaCampos(false);
+
+                        MessageBox.Show("Atendimento removido com sucesso!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    catch (System.Data.Entity.Infrastructure.DbUpdateException)
+                    {
+                        MessageBox.Show("Atendimento não pode ser excluído, pois há históricos de andamento no mesmo!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
             }
             else MessageBox.Show("Não há registo para remoção!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-            carregarGridAtendimento();
-            limparCampos();
-            habilitaCampos(false);
         }
 
         private void lbNovo_MouseEnter(object sender, EventArgs e)
@@ -533,7 +561,7 @@ namespace SGAP.Forms
                 lbCancelar_Click(sender, e);
             }
                 
-            if (e.KeyCode == Keys.F6 && lbMovimentar.Enabled == true)
+            if (e.KeyCode == Keys.F6 && lbEncaminhar.Enabled == true)
                 lbMovimentar_Click(sender, e);
             if (e.KeyCode == Keys.F7 && lbEncaminhar.Enabled == true)
                 lbEncaminhar_Click(sender, e);
@@ -555,14 +583,14 @@ namespace SGAP.Forms
 
         private void lbMovimentar_MouseEnter(object sender, EventArgs e)
         {
-            lbMovimentar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            lbMovimentar.ForeColor = System.Drawing.Color.White;
+            lbEncaminhar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            lbEncaminhar.ForeColor = System.Drawing.Color.White;
         }
 
         private void lbMovimentar_MouseLeave(object sender, EventArgs e)
         {
-            lbMovimentar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(203)))), ((int)(((byte)(248)))));
-            lbMovimentar.ForeColor = System.Drawing.Color.Black;
+            lbEncaminhar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(203)))), ((int)(((byte)(248)))));
+            lbEncaminhar.ForeColor = System.Drawing.Color.Black;
         }
 
         private void lbEncaminhar_MouseEnter(object sender, EventArgs e)
@@ -579,8 +607,66 @@ namespace SGAP.Forms
 
         private void lbMovimentar_Click(object sender, EventArgs e)
         {
-            frmMovimento frmMov = new frmMovimento(Convert.ToInt32(txtId.Text));
-            frmMov.ShowDialog();
+            TipoAtendimento tipoAtendimento = new TipoAtendimento();
+            int id = Convert.ToInt32(Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["tipoAtendimentoID"].Value));
+            tipoAtendimento = contexto.TipoAtendimento.FirstOrDefault(x => x.id == id);
+
+            if (tipoAtendimento.descricao.ToLower().Trim() == "cip")
+            {
+                MessageBox.Show("Esse registro ja é uma CIP", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            } 
+            else
+            {
+                DialogResult result;
+                result = MessageBox.Show("Deseja transformar o atendimento " + dgvAtendimento.SelectedRows[0].Cells["numeroProcon"].Value.ToString() + " em CIP?", "Encerrar", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+                if (result == DialogResult.Yes)
+                {
+
+                    Atendimento atendimento = new Atendimento();
+                    SGAPContexto contexto = new SGAPContexto();
+                    AlteracaoAtendimento alteracao = new AlteracaoAtendimento();
+                    AlteracaoAtendimento verificaAlteracao = new AlteracaoAtendimento();
+
+                    tipoAtendimento = contexto.TipoAtendimento.First(x => x.descricao.ToLower().Trim().Equals("cip"));
+                   
+                    atendimento.id = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["id"].Value);
+                    atendimento.numeroProcon = dgvAtendimento.SelectedRows[0].Cells["numeroProcon"].Value.ToString();
+                    atendimento.consumidorID = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["consumidorID"].Value);
+                    atendimento.fornecedorID = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["fornecedorID"].Value);
+                    atendimento.tipoAtendimentoID = tipoAtendimento.id;
+                    atendimento.tipoReclamacaoID = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["tipoReclamacaoID"].Value);
+                    atendimento.problemaPrincipalID = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["problemaPrincipalID"].Value);
+                    atendimento.reclamacao = dgvAtendimento.SelectedRows[0].Cells["reclamacao"].Value.ToString();
+                    atendimento.dataInicio = Convert.ToDateTime(dgvAtendimento.SelectedRows[0].Cells["dataInicio"].Value.ToString());
+                    atendimento.dataEncerramento = DateTime.Now;
+
+                    contexto.Entry(atendimento).State = EntityState.Modified;
+                    contexto.SaveChanges();
+
+                    verificaAlteracao = contexto.AlteracaoAtendimento.FirstOrDefault(x => x.numeroAtendimento.Equals(atendimento.numeroProcon));
+
+                    alteracao.id = (verificaAlteracao != null) ? verificaAlteracao.id : -1;
+                    alteracao.numeroAtendimento = atendimento.numeroProcon;
+                    alteracao.dataAlteracao = DateTime.Now;
+                    alteracao.atendimentoID = Convert.ToInt32(txtId.Text);                   
+
+                    if(verificaAlteracao == null)
+                    {
+                        contexto.AlteracaoAtendimento.Add(alteracao);
+                        contexto.SaveChanges();
+                    }
+                    else
+                    {
+                        contexto.Entry(alteracao).State = EntityState.Modified;
+                        contexto.SaveChanges();
+                    }
+
+                    carregarGridAtendimento();
+                }
+            }
+           
         }
 
         private void lbEncaminhar_Click(object sender, EventArgs e)
@@ -687,11 +773,20 @@ namespace SGAP.Forms
 
                     carregarGridAtendimento();
 
-
                 }
 
                
             }
+        }
+
+        private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
+        {
+            Pesquisar();
+        }
+
+        private void txtPesquisar_KeyUp(object sender, KeyEventArgs e)
+        {
+            Pesquisar();
         }
     }
 }

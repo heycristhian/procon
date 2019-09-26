@@ -364,7 +364,7 @@ namespace SGAP.Forms
             
         }
 
-        private void txtPesquisar_KeyPress(object sender, KeyPressEventArgs e)
+        private void Pesquisar()
         {
             Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
             List<Modelo.Consumidor> lstConsumidor = new List<Modelo.Consumidor>();
@@ -397,7 +397,12 @@ namespace SGAP.Forms
             {
                 //Fazer algo para tratar esse erro
             }
-            
+
+        }
+
+        private void txtPesquisar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Pesquisar();
         }
 
         private void lbNovo_MouseEnter(object sender, EventArgs e)
@@ -585,6 +590,16 @@ namespace SGAP.Forms
             cons.ShowDialog();
             Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
             cmbCidade.DataSource = contexto.Cidade.ToList().OrderBy(p => p.descEstado).ToList();
+        }
+
+        private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
+        {
+            Pesquisar();
+        }
+
+        private void txtPesquisar_KeyUp(object sender, KeyEventArgs e)
+        {
+            Pesquisar();
         }
     }
 }

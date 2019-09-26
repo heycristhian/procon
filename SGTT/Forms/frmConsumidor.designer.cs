@@ -52,19 +52,6 @@
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.cmbCidade = new System.Windows.Forms.ComboBox();
             this.dgvConsumidor = new System.Windows.Forms.DataGridView();
-            this.lbSalvar = new System.Windows.Forms.Label();
-            this.lbCancelar = new System.Windows.Forms.Label();
-            this.lbRemover = new System.Windows.Forms.Label();
-            this.lbEditar = new System.Windows.Forms.Label();
-            this.lbNovo = new System.Windows.Forms.Label();
-            this.lbFechar = new System.Windows.Forms.Label();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.picProblema = new System.Windows.Forms.PictureBox();
-            this.txtOrgaoEmissor = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +67,19 @@
             this.rg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orgaoEmissor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbSalvar = new System.Windows.Forms.Label();
+            this.lbCancelar = new System.Windows.Forms.Label();
+            this.lbRemover = new System.Windows.Forms.Label();
+            this.lbEditar = new System.Windows.Forms.Label();
+            this.lbNovo = new System.Windows.Forms.Label();
+            this.lbFechar = new System.Windows.Forms.Label();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.picProblema = new System.Windows.Forms.PictureBox();
+            this.txtOrgaoEmissor = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsumidor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProblema)).BeginInit();
             this.SuspendLayout();
@@ -345,187 +345,6 @@
             this.dgvConsumidor.TabIndex = 27;
             this.dgvConsumidor.DoubleClick += new System.EventHandler(this.dgvConsumidor_DoubleClick);
             // 
-            // lbSalvar
-            // 
-            this.lbSalvar.AutoSize = true;
-            this.lbSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
-            this.lbSalvar.Image = global::SGAP.Properties.Resources.salvar;
-            this.lbSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbSalvar.Location = new System.Drawing.Point(646, 182);
-            this.lbSalvar.MinimumSize = new System.Drawing.Size(64, 75);
-            this.lbSalvar.Name = "lbSalvar";
-            this.lbSalvar.Size = new System.Drawing.Size(64, 75);
-            this.lbSalvar.TabIndex = 96;
-            this.lbSalvar.Text = "Salvar\n(F4)";
-            this.lbSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbSalvar.Click += new System.EventHandler(this.lbSalvar_Click);
-            this.lbSalvar.MouseEnter += new System.EventHandler(this.lbSalvar_MouseEnter);
-            this.lbSalvar.MouseLeave += new System.EventHandler(this.lbSalvar_MouseLeave);
-            // 
-            // lbCancelar
-            // 
-            this.lbCancelar.AutoSize = true;
-            this.lbCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
-            this.lbCancelar.Image = global::SGAP.Properties.Resources.cancelar;
-            this.lbCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbCancelar.Location = new System.Drawing.Point(716, 182);
-            this.lbCancelar.MinimumSize = new System.Drawing.Size(64, 75);
-            this.lbCancelar.Name = "lbCancelar";
-            this.lbCancelar.Size = new System.Drawing.Size(64, 75);
-            this.lbCancelar.TabIndex = 97;
-            this.lbCancelar.Text = "Cancelar\n(F5)";
-            this.lbCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbCancelar.Click += new System.EventHandler(this.lbCancelar_Click);
-            this.lbCancelar.MouseEnter += new System.EventHandler(this.lbCancelar_MouseEnter);
-            this.lbCancelar.MouseLeave += new System.EventHandler(this.lbCancelar_MouseLeave);
-            // 
-            // lbRemover
-            // 
-            this.lbRemover.AutoSize = true;
-            this.lbRemover.BackColor = System.Drawing.Color.White;
-            this.lbRemover.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRemover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
-            this.lbRemover.Image = global::SGAP.Properties.Resources.remover;
-            this.lbRemover.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbRemover.Location = new System.Drawing.Point(576, 182);
-            this.lbRemover.MinimumSize = new System.Drawing.Size(64, 75);
-            this.lbRemover.Name = "lbRemover";
-            this.lbRemover.Size = new System.Drawing.Size(64, 75);
-            this.lbRemover.TabIndex = 95;
-            this.lbRemover.Text = "Remover\n(F3)";
-            this.lbRemover.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbRemover.Click += new System.EventHandler(this.lbRemover_Click);
-            this.lbRemover.MouseEnter += new System.EventHandler(this.lbRemover_MouseEnter);
-            this.lbRemover.MouseLeave += new System.EventHandler(this.lbRemover_MouseLeave);
-            // 
-            // lbEditar
-            // 
-            this.lbEditar.AutoSize = true;
-            this.lbEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
-            this.lbEditar.Image = global::SGAP.Properties.Resources.modificar;
-            this.lbEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbEditar.Location = new System.Drawing.Point(506, 182);
-            this.lbEditar.MinimumSize = new System.Drawing.Size(64, 75);
-            this.lbEditar.Name = "lbEditar";
-            this.lbEditar.Size = new System.Drawing.Size(64, 75);
-            this.lbEditar.TabIndex = 94;
-            this.lbEditar.Text = "Editar\n(F2)";
-            this.lbEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbEditar.Click += new System.EventHandler(this.lbEditar_Click);
-            this.lbEditar.MouseEnter += new System.EventHandler(this.lbEditar_MouseEnter);
-            this.lbEditar.MouseLeave += new System.EventHandler(this.lbEditar_MouseLeave);
-            // 
-            // lbNovo
-            // 
-            this.lbNovo.AutoSize = true;
-            this.lbNovo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNovo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
-            this.lbNovo.Image = global::SGAP.Properties.Resources.novo;
-            this.lbNovo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbNovo.Location = new System.Drawing.Point(435, 182);
-            this.lbNovo.MinimumSize = new System.Drawing.Size(62, 75);
-            this.lbNovo.Name = "lbNovo";
-            this.lbNovo.Size = new System.Drawing.Size(62, 75);
-            this.lbNovo.TabIndex = 93;
-            this.lbNovo.Text = "Novo \n(F1)";
-            this.lbNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbNovo.Click += new System.EventHandler(this.lbNovo_Click);
-            this.lbNovo.MouseEnter += new System.EventHandler(this.lbNovo_MouseEnter);
-            this.lbNovo.MouseLeave += new System.EventHandler(this.lbNovo_MouseLeave);
-            // 
-            // lbFechar
-            // 
-            this.lbFechar.AutoSize = true;
-            this.lbFechar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
-            this.lbFechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbFechar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFechar.Location = new System.Drawing.Point(663, 492);
-            this.lbFechar.MaximumSize = new System.Drawing.Size(101, 23);
-            this.lbFechar.MinimumSize = new System.Drawing.Size(120, 30);
-            this.lbFechar.Name = "lbFechar";
-            this.lbFechar.Size = new System.Drawing.Size(120, 30);
-            this.lbFechar.TabIndex = 98;
-            this.lbFechar.Text = "FECHAR (Alt+X)";
-            this.lbFechar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbFechar.Click += new System.EventHandler(this.lbFechar_Click);
-            this.lbFechar.MouseEnter += new System.EventHandler(this.lbFechar_MouseEnter);
-            this.lbFechar.MouseLeave += new System.EventHandler(this.lbFechar_MouseLeave);
-            // 
-            // txtPesquisar
-            // 
-            this.txtPesquisar.Location = new System.Drawing.Point(16, 236);
-            this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(353, 20);
-            this.txtPesquisar.TabIndex = 13;
-            this.txtPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisar_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 214);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 16);
-            this.label1.TabIndex = 100;
-            this.label1.Text = "Buscar:";
-            // 
-            // picProblema
-            // 
-            this.picProblema.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picProblema.Image = global::SGAP.Properties.Resources.add;
-            this.picProblema.Location = new System.Drawing.Point(375, 24);
-            this.picProblema.Name = "picProblema";
-            this.picProblema.Size = new System.Drawing.Size(28, 28);
-            this.picProblema.TabIndex = 101;
-            this.picProblema.TabStop = false;
-            this.picProblema.Click += new System.EventHandler(this.picProblema_Click);
-            // 
-            // txtOrgaoEmissor
-            // 
-            this.txtOrgaoEmissor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrgaoEmissor.Location = new System.Drawing.Point(630, 146);
-            this.txtOrgaoEmissor.MaxLength = 14;
-            this.txtOrgaoEmissor.Name = "txtOrgaoEmissor";
-            this.txtOrgaoEmissor.Size = new System.Drawing.Size(150, 22);
-            this.txtOrgaoEmissor.TabIndex = 13;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(627, 127);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(101, 16);
-            this.label10.TabIndex = 103;
-            this.label10.Text = "Orgão Emissor:";
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumero.Location = new System.Drawing.Point(170, 146);
-            this.txtNumero.MaxLength = 40;
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(28, 22);
-            this.txtNumero.TabIndex = 4;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(167, 126);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(26, 16);
-            this.label14.TabIndex = 106;
-            this.label14.Text = "Nº:";
-            // 
             // id
             // 
             this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -662,6 +481,189 @@
             this.orgaoEmissor.HeaderText = "Orgão Emissor";
             this.orgaoEmissor.Name = "orgaoEmissor";
             this.orgaoEmissor.ReadOnly = true;
+            // 
+            // lbSalvar
+            // 
+            this.lbSalvar.AutoSize = true;
+            this.lbSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
+            this.lbSalvar.Image = global::SGAP.Properties.Resources.salvar;
+            this.lbSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbSalvar.Location = new System.Drawing.Point(646, 182);
+            this.lbSalvar.MinimumSize = new System.Drawing.Size(64, 75);
+            this.lbSalvar.Name = "lbSalvar";
+            this.lbSalvar.Size = new System.Drawing.Size(64, 75);
+            this.lbSalvar.TabIndex = 96;
+            this.lbSalvar.Text = "Salvar\n(F4)";
+            this.lbSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lbSalvar.Click += new System.EventHandler(this.lbSalvar_Click);
+            this.lbSalvar.MouseEnter += new System.EventHandler(this.lbSalvar_MouseEnter);
+            this.lbSalvar.MouseLeave += new System.EventHandler(this.lbSalvar_MouseLeave);
+            // 
+            // lbCancelar
+            // 
+            this.lbCancelar.AutoSize = true;
+            this.lbCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
+            this.lbCancelar.Image = global::SGAP.Properties.Resources.cancelar;
+            this.lbCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbCancelar.Location = new System.Drawing.Point(716, 182);
+            this.lbCancelar.MinimumSize = new System.Drawing.Size(64, 75);
+            this.lbCancelar.Name = "lbCancelar";
+            this.lbCancelar.Size = new System.Drawing.Size(64, 75);
+            this.lbCancelar.TabIndex = 97;
+            this.lbCancelar.Text = "Cancelar\n(F5)";
+            this.lbCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lbCancelar.Click += new System.EventHandler(this.lbCancelar_Click);
+            this.lbCancelar.MouseEnter += new System.EventHandler(this.lbCancelar_MouseEnter);
+            this.lbCancelar.MouseLeave += new System.EventHandler(this.lbCancelar_MouseLeave);
+            // 
+            // lbRemover
+            // 
+            this.lbRemover.AutoSize = true;
+            this.lbRemover.BackColor = System.Drawing.Color.White;
+            this.lbRemover.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRemover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
+            this.lbRemover.Image = global::SGAP.Properties.Resources.remover;
+            this.lbRemover.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbRemover.Location = new System.Drawing.Point(576, 182);
+            this.lbRemover.MinimumSize = new System.Drawing.Size(64, 75);
+            this.lbRemover.Name = "lbRemover";
+            this.lbRemover.Size = new System.Drawing.Size(64, 75);
+            this.lbRemover.TabIndex = 95;
+            this.lbRemover.Text = "Remover\n(F3)";
+            this.lbRemover.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lbRemover.Click += new System.EventHandler(this.lbRemover_Click);
+            this.lbRemover.MouseEnter += new System.EventHandler(this.lbRemover_MouseEnter);
+            this.lbRemover.MouseLeave += new System.EventHandler(this.lbRemover_MouseLeave);
+            // 
+            // lbEditar
+            // 
+            this.lbEditar.AutoSize = true;
+            this.lbEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
+            this.lbEditar.Image = global::SGAP.Properties.Resources.modificar;
+            this.lbEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbEditar.Location = new System.Drawing.Point(506, 182);
+            this.lbEditar.MinimumSize = new System.Drawing.Size(64, 75);
+            this.lbEditar.Name = "lbEditar";
+            this.lbEditar.Size = new System.Drawing.Size(64, 75);
+            this.lbEditar.TabIndex = 94;
+            this.lbEditar.Text = "Editar\n(F2)";
+            this.lbEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lbEditar.Click += new System.EventHandler(this.lbEditar_Click);
+            this.lbEditar.MouseEnter += new System.EventHandler(this.lbEditar_MouseEnter);
+            this.lbEditar.MouseLeave += new System.EventHandler(this.lbEditar_MouseLeave);
+            // 
+            // lbNovo
+            // 
+            this.lbNovo.AutoSize = true;
+            this.lbNovo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNovo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(168)))));
+            this.lbNovo.Image = global::SGAP.Properties.Resources.novo;
+            this.lbNovo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbNovo.Location = new System.Drawing.Point(435, 182);
+            this.lbNovo.MinimumSize = new System.Drawing.Size(62, 75);
+            this.lbNovo.Name = "lbNovo";
+            this.lbNovo.Size = new System.Drawing.Size(62, 75);
+            this.lbNovo.TabIndex = 93;
+            this.lbNovo.Text = "Novo \n(F1)";
+            this.lbNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lbNovo.Click += new System.EventHandler(this.lbNovo_Click);
+            this.lbNovo.MouseEnter += new System.EventHandler(this.lbNovo_MouseEnter);
+            this.lbNovo.MouseLeave += new System.EventHandler(this.lbNovo_MouseLeave);
+            // 
+            // lbFechar
+            // 
+            this.lbFechar.AutoSize = true;
+            this.lbFechar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
+            this.lbFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbFechar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFechar.Location = new System.Drawing.Point(663, 492);
+            this.lbFechar.MaximumSize = new System.Drawing.Size(101, 23);
+            this.lbFechar.MinimumSize = new System.Drawing.Size(120, 30);
+            this.lbFechar.Name = "lbFechar";
+            this.lbFechar.Size = new System.Drawing.Size(120, 30);
+            this.lbFechar.TabIndex = 98;
+            this.lbFechar.Text = "FECHAR (Alt+X)";
+            this.lbFechar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbFechar.Click += new System.EventHandler(this.lbFechar_Click);
+            this.lbFechar.MouseEnter += new System.EventHandler(this.lbFechar_MouseEnter);
+            this.lbFechar.MouseLeave += new System.EventHandler(this.lbFechar_MouseLeave);
+            // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.Location = new System.Drawing.Point(16, 236);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(353, 20);
+            this.txtPesquisar.TabIndex = 13;
+            this.txtPesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisar_KeyDown);
+            this.txtPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisar_KeyPress);
+            this.txtPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPesquisar_KeyUp);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 214);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 16);
+            this.label1.TabIndex = 100;
+            this.label1.Text = "Buscar:";
+            // 
+            // picProblema
+            // 
+            this.picProblema.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picProblema.Image = global::SGAP.Properties.Resources.add;
+            this.picProblema.Location = new System.Drawing.Point(375, 24);
+            this.picProblema.Name = "picProblema";
+            this.picProblema.Size = new System.Drawing.Size(28, 28);
+            this.picProblema.TabIndex = 101;
+            this.picProblema.TabStop = false;
+            this.picProblema.Click += new System.EventHandler(this.picProblema_Click);
+            // 
+            // txtOrgaoEmissor
+            // 
+            this.txtOrgaoEmissor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrgaoEmissor.Location = new System.Drawing.Point(630, 146);
+            this.txtOrgaoEmissor.MaxLength = 14;
+            this.txtOrgaoEmissor.Name = "txtOrgaoEmissor";
+            this.txtOrgaoEmissor.Size = new System.Drawing.Size(150, 22);
+            this.txtOrgaoEmissor.TabIndex = 13;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(627, 127);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(101, 16);
+            this.label10.TabIndex = 103;
+            this.label10.Text = "Orgão Emissor:";
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumero.Location = new System.Drawing.Point(170, 146);
+            this.txtNumero.MaxLength = 40;
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(28, 22);
+            this.txtNumero.TabIndex = 4;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(167, 126);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(26, 16);
+            this.label14.TabIndex = 106;
+            this.label14.Text = "Nº:";
             // 
             // frmConsumidor
             // 
