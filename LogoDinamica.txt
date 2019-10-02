@@ -1,4 +1,0 @@
-            Bitmap img1 = new Bitmap(@".\Logos\logo1.png");
-            Bitmap img2 = new Bitmap(@".\Logos\logo2.png");
-            pictureBox3.Image = img1;
-            pictureBox4.Image = img2; 

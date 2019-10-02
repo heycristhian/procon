@@ -16,10 +16,8 @@ namespace SGAP.Modelo
         public DbSet<Atendimento> Atendimento { get; set; }
         
         public DbSet<Consumidor> Consumidor { get; set; }
-        public DbSet<Encaminhamento> Encaminhamento { get; set; }
         public DbSet<Entidade> Entidade { get; set; }
         public DbSet<Fornecedor> Fornecedor { get; set; }
-        public DbSet<Movimento> Movimento { get; set; }
         public DbSet<ProblemaPrincipal> ProblemaPrincipal { get; set; }
         public DbSet<TipoAtendimento> TipoAtendimento { get; set; }
         public DbSet<TipoReclamacao> TipoReclamacao { get; set; }

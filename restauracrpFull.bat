@@ -1,1 +1,0 @@
-C:\xampp\mysql\bin\mysqldump -t -u root --database crp < d:\dados.sql

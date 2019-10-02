@@ -21,6 +21,8 @@ namespace SGAP.Modelo
 
         [Required]
         public DateTime data { get; set; }
+        
+        public Nullable<DateTime> prazo { get; set; }
 
         //CHAVES ESTRANGEIRAS
         public int atendimentoID { get; set; }

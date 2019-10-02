@@ -141,12 +141,6 @@
     <Compile Include="Forms\frmConsumidor.designer.cs">
       <DependentUpon>frmConsumidor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmEncaminhamento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmEncaminhamento.Designer.cs">
-      <DependentUpon>frmEncaminhamento.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmEntidade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,12 +164,6 @@
     </Compile>
     <Compile Include="Forms\frmMenu.designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmMovimento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmMovimento.Designer.cs">
-      <DependentUpon>frmMovimento.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmProblemaPrincipal.cs">
       <SubType>Form</SubType>
@@ -225,11 +213,9 @@
     <Compile Include="Modelo\Cidade.cs" />
     <Compile Include="Modelo\AlteracaoAtendimento.cs" />
     <Compile Include="Modelo\Consumidor.cs" />
-    <Compile Include="Modelo\Encaminhamento.cs" />
     <Compile Include="Modelo\Entidade.cs" />
     <Compile Include="Modelo\Fornecedor.cs" />
     <Compile Include="Modelo\Login.cs" />
-    <Compile Include="Modelo\Movimento.cs" />
     <Compile Include="Modelo\ProblemaPrincipal.cs" />
     <Compile Include="Modelo\SGAPContexto.cs" />
     <Compile Include="Modelo\TipoAtendimento.cs" />
@@ -253,9 +239,6 @@
     <EmbeddedResource Include="Forms\frmConsumidor.resx">
       <DependentUpon>frmConsumidor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmEncaminhamento.resx">
-      <DependentUpon>frmEncaminhamento.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEntidade.resx">
       <DependentUpon>frmEntidade.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,9 +250,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmMovimento.resx">
-      <DependentUpon>frmMovimento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProblemaPrincipal.resx">
       <DependentUpon>frmProblemaPrincipal.cs</DependentUpon>

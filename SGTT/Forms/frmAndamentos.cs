@@ -53,7 +53,8 @@ namespace SGAP.Forms
                             descricao = andamento.descricao,
                             data = andamento.data,
                             atendimentoID = andamento.atendimentoID,
-                            atendimento = andamento.Atendimento.numeroProcon
+                            atendimento = andamento.Atendimento.numeroProcon,
+                            prazo = andamento.prazo
                         };
             dgvAndamentos.DataSource = dados.ToList();
         }
@@ -61,6 +62,8 @@ namespace SGAP.Forms
         private void redimensionarGride()
         {
             txtAndamento.Visible = !txtAndamento.Visible;
+            dtpPrazo.Visible = !dtpPrazo.Visible;
+            lblPrazo.Visible = !lblPrazo.Visible;
             lblAndamento.Visible = !lblAndamento.Visible;
             btnLimpar.Visible = !btnLimpar.Visible;
 
@@ -121,6 +124,21 @@ namespace SGAP.Forms
                 andamento.descricao = txtAndamento.Text;
                 andamento.data = DateTime.Now;
                 andamento.atendimentoID = Convert.ToInt32(frmAtendimento.txtId.Text);
+                try
+                {
+                    if (dtpPrazo.Text == "  /  /")
+                    {
+                        andamento.prazo = null;
+                    }
+                    else
+                    {
+                        andamento.prazo = Convert.ToDateTime(dtpPrazo.Text);
+                    }
+                }
+                catch (System.FormatException)
+                {
+                    andamento.prazo = null;
+                }
 
                 contexto.Andamento.Add(andamento);
                 contexto.SaveChanges();
@@ -170,6 +188,23 @@ namespace SGAP.Forms
                     andamento.descricao = txtAndamento.Text;
                     andamento.data = Convert.ToDateTime(dgvAndamentos.SelectedRows[0].Cells["data"].Value.ToString());
                     andamento.atendimentoID = Convert.ToInt32(dgvAndamentos.SelectedRows[0].Cells["atendimentoID"].Value.ToString());
+                    try
+                    {
+                        if (dtpPrazo.Text == "  /  /")
+                        {
+                            andamento.prazo = null;
+                        }
+                        else
+                        {
+                            andamento.prazo = Convert.ToDateTime(dtpPrazo.Text);
+                        }
+                    }
+                    catch (System.FormatException)
+                    {
+                        andamento.prazo = null;
+                    }
+
+
 
                     contexto.Entry(andamento).State = EntityState.Modified;
                     contexto.SaveChanges();
@@ -252,6 +287,11 @@ namespace SGAP.Forms
 
             if (e.Alt && e.KeyCode == Keys.X)
                 this.Dispose();
+        }
+
+        private void informacoes_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

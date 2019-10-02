@@ -563,8 +563,6 @@ namespace SGAP.Forms
                 
             if (e.KeyCode == Keys.F6 && lbEncaminhar.Enabled == true)
                 lbMovimentar_Click(sender, e);
-            if (e.KeyCode == Keys.F7 && lbEncaminhar.Enabled == true)
-                lbEncaminhar_Click(sender, e);
             if (e.Alt && e.KeyCode == Keys.X)
             {
                 DialogResult result;
@@ -676,12 +674,6 @@ namespace SGAP.Forms
                 }
             }
            
-        }
-
-        private void lbEncaminhar_Click(object sender, EventArgs e)
-        {
-            frmEncaminhamento frmEncaminha = new frmEncaminhamento();
-            frmEncaminha.ShowDialog();
         }
 
         private void cmbConsumidor_Click(object sender, EventArgs e)

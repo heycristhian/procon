@@ -34,6 +34,8 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.informacoes = new System.Windows.Forms.Panel();
+            this.dtpPrazo = new System.Windows.Forms.MaskedTextBox();
+            this.lblPrazo = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -44,6 +46,7 @@
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.atendimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.atendimentoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menu.SuspendLayout();
@@ -74,7 +77,7 @@
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.White;
             this.btnSair.Image = global::SGAP.Properties.Resources.desligar30pxWhite;
             this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -93,7 +96,7 @@
             this.btnRemover.FlatAppearance.BorderSize = 0;
             this.btnRemover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemover.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemover.ForeColor = System.Drawing.Color.White;
             this.btnRemover.Image = global::SGAP.Properties.Resources.delete30pxWhite;
             this.btnRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -111,7 +114,7 @@
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Image = global::SGAP.Properties.Resources.edit30pxWhite;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -129,7 +132,7 @@
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
             this.btnAdicionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionar.ForeColor = System.Drawing.Color.White;
             this.btnAdicionar.Image = global::SGAP.Properties.Resources.addDocument30pxWhite;
             this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,6 +147,8 @@
             // informacoes
             // 
             this.informacoes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.informacoes.Controls.Add(this.dtpPrazo);
+            this.informacoes.Controls.Add(this.lblPrazo);
             this.informacoes.Controls.Add(this.txtId);
             this.informacoes.Controls.Add(this.pictureBox2);
             this.informacoes.Controls.Add(this.btnLimpar);
@@ -156,6 +161,29 @@
             this.informacoes.Name = "informacoes";
             this.informacoes.Size = new System.Drawing.Size(924, 538);
             this.informacoes.TabIndex = 1;
+            this.informacoes.Paint += new System.Windows.Forms.PaintEventHandler(this.informacoes_Paint);
+            // 
+            // dtpPrazo
+            // 
+            this.dtpPrazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPrazo.Location = new System.Drawing.Point(731, 55);
+            this.dtpPrazo.Mask = "00/00/0000";
+            this.dtpPrazo.Name = "dtpPrazo";
+            this.dtpPrazo.Size = new System.Drawing.Size(100, 21);
+            this.dtpPrazo.TabIndex = 2;
+            this.dtpPrazo.ValidatingType = typeof(System.DateTime);
+            this.dtpPrazo.Visible = false;
+            // 
+            // lblPrazo
+            // 
+            this.lblPrazo.AutoSize = true;
+            this.lblPrazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrazo.Location = new System.Drawing.Point(728, 36);
+            this.lblPrazo.Name = "lblPrazo";
+            this.lblPrazo.Size = new System.Drawing.Size(46, 16);
+            this.lblPrazo.TabIndex = 96;
+            this.lblPrazo.Text = "Prazo:";
+            this.lblPrazo.Visible = false;
             // 
             // txtId
             // 
@@ -184,13 +212,13 @@
             this.btnLimpar.FlatAppearance.BorderSize = 0;
             this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Wheat;
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.Color.White;
             this.btnLimpar.Image = global::SGAP.Properties.Resources.borracha50px;
             this.btnLimpar.Location = new System.Drawing.Point(839, 36);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(50, 50);
-            this.btnLimpar.TabIndex = 4;
+            this.btnLimpar.TabIndex = 3;
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Visible = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -212,8 +240,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAndamento.Location = new System.Drawing.Point(6, 36);
             this.txtAndamento.Name = "txtAndamento";
-            this.txtAndamento.Size = new System.Drawing.Size(827, 50);
-            this.txtAndamento.TabIndex = 2;
+            this.txtAndamento.Size = new System.Drawing.Size(716, 50);
+            this.txtAndamento.TabIndex = 1;
             this.txtAndamento.Text = "";
             this.txtAndamento.Visible = false;
             // 
@@ -228,11 +256,12 @@
             this.id,
             this.descricao,
             this.atendimento,
+            this.prazo,
             this.atendimentoID});
             this.dgvAndamentos.Location = new System.Drawing.Point(6, 92);
             this.dgvAndamentos.Name = "dgvAndamentos";
             this.dgvAndamentos.Size = new System.Drawing.Size(905, 433);
-            this.dgvAndamentos.TabIndex = 1;
+            this.dgvAndamentos.TabIndex = 5;
             this.dgvAndamentos.DoubleClick += new System.EventHandler(this.dgvAndamentos_DoubleClick);
             // 
             // data
@@ -267,6 +296,15 @@
             this.atendimento.Name = "atendimento";
             this.atendimento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.atendimento.Width = 78;
+            // 
+            // prazo
+            // 
+            this.prazo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.prazo.DataPropertyName = "prazo";
+            this.prazo.HeaderText = "Prazo";
+            this.prazo.Name = "prazo";
+            this.prazo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.prazo.Width = 40;
             // 
             // atendimentoID
             // 
@@ -325,11 +363,14 @@
         private System.Windows.Forms.Label lblAndamento;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.MaskedTextBox dtpPrazo;
+        private System.Windows.Forms.Label lblPrazo;
         private System.Windows.Forms.DataGridViewTextBoxColumn data;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn atendimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prazo;
         private System.Windows.Forms.DataGridViewTextBoxColumn atendimentoID;
-        private System.Windows.Forms.TextBox txtId;
     }
 }
