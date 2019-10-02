@@ -90,7 +90,7 @@ namespace SGAP.Forms
             {
                 if (dgvAtendimento.Rows[i].Cells["tipoAtendimento"].Value.ToString() == "CIP")
                 {
-                    dgvAtendimento.Rows[i].Cells["tipoAtendimento"].Style.BackColor = Color.Yellow;
+                    dgvAtendimento.Rows[i].Cells["tipoAtendimento"].Style.BackColor = Color.Orange;
                 }
             }
         }
@@ -138,7 +138,6 @@ namespace SGAP.Forms
             habilitaCampos(false);
 
             carregarGridAtendimento();
-            dgvAtendimento.Refresh();
 
             cmbConsumidor.DisplayMember = "descConsumidor";
             cmbConsumidor.ValueMember = "id";
@@ -269,7 +268,8 @@ namespace SGAP.Forms
 
         private void txtPesquisar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Pesquisar();
+            if (txtPesquisar.Text == "") 
+                Pesquisar();
         }
 
         private void lbNovo_Click(object sender, EventArgs e)
@@ -628,11 +628,20 @@ namespace SGAP.Forms
                     SGAPContexto contexto = new SGAPContexto();
                     AlteracaoAtendimento alteracao = new AlteracaoAtendimento();
                     AlteracaoAtendimento verificaAlteracao = new AlteracaoAtendimento();
+                    Atendimento verificaAtendimento = new Atendimento();
+
+                    verificaAtendimento = contexto.Atendimento.OrderByDescending(x => x.id).FirstOrDefault(x => x.TipoAtendimento.descricao.ToLower().Equals("cip"));
 
                     tipoAtendimento = contexto.TipoAtendimento.First(x => x.descricao.ToLower().Trim().Equals("cip"));
                    
                     atendimento.id = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["id"].Value);
-                    atendimento.numeroProcon = dgvAtendimento.SelectedRows[0].Cells["numeroProcon"].Value.ToString();
+
+                    string data = DateTime.Now.Year.ToString();
+                    if (verificaAtendimento == null)
+                        atendimento.numeroProcon = "001/" + data.Substring(data.Length - 2, 2);
+                    else
+                        atendimento.numeroProcon = (Convert.ToInt32(verificaAtendimento.numeroProcon.Substring(0, 3)) + 1).ToString("000") + "/" + data.Substring(data.Length - 2, 2);
+
                     atendimento.consumidorID = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["consumidorID"].Value);
                     atendimento.fornecedorID = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["fornecedorID"].Value);
                     atendimento.tipoAtendimentoID = tipoAtendimento.id;
@@ -648,7 +657,7 @@ namespace SGAP.Forms
                     verificaAlteracao = contexto.AlteracaoAtendimento.FirstOrDefault(x => x.numeroAtendimento.Equals(atendimento.numeroProcon));
 
                     alteracao.id = (verificaAlteracao != null) ? verificaAlteracao.id : -1;
-                    alteracao.numeroAtendimento = atendimento.numeroProcon;
+                    alteracao.numeroAtendimento = dgvAtendimento.SelectedRows[0].Cells["numeroProcon"].Value.ToString();
                     alteracao.dataAlteracao = DateTime.Now;
                     alteracao.atendimentoID = Convert.ToInt32(txtId.Text);                   
 
@@ -781,12 +790,14 @@ namespace SGAP.Forms
 
         private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
         {
-            Pesquisar();
+            if (e.KeyCode == Keys.Enter)
+                Pesquisar();
         }
 
         private void txtPesquisar_KeyUp(object sender, KeyEventArgs e)
         {
-            Pesquisar();
+            if (txtPesquisar.Text == "")
+                Pesquisar();
         }
     }
 }
