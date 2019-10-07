@@ -302,7 +302,6 @@ namespace SGAP.Forms
                                 sentinelaEditar = 1;
 
                             }
-                            MessageBox.Show("Dados gravados com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             limparCampos();
                             habilitaCampos(false);                            
                         }

@@ -161,7 +161,6 @@ namespace SGAP.Forms
                             limparCampos();
                             habilitaCampos(false);
 
-                            MessageBox.Show("Dados gravados com sucesso", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else

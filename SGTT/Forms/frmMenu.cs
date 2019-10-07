@@ -148,9 +148,27 @@ namespace SGAP.Forms
 
         private void atendimentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAtendimento frmAtend = new frmAtendimento(this);
-            frmAtend.MdiParent = this;
-            frmAtend.Show();
+            TipoAtendimento tipoAtendimento = new TipoAtendimento();
+            TipoReclamacao tipoReclamacao = new TipoReclamacao();
+            SGAPContexto contexto = new SGAPContexto();
+
+            int contadorTipoReclamacao = contexto.TipoReclamacao.Count(x => x.id > 0);
+            int contadorTipoAtendimento = contexto.TipoAtendimento.Count(x => x.id > 0);
+
+            if (contadorTipoAtendimento == 0 && contadorTipoReclamacao == 0)
+                MessageBox.Show("Cadastre pelo menos um Tipo Atendimento e um Tipo Reclamação para acessar Atendimento/CIP");
+            else if(contadorTipoAtendimento == 0 && contadorTipoReclamacao > 0)
+                MessageBox.Show("Cadastre pelo menos um Tipo Atendimento para acessar Atendimento/CIP");
+            else if (contadorTipoAtendimento > 0 && contadorTipoReclamacao == 0)
+                MessageBox.Show("Cadastre pelo menos um Tipo Reclamação para acessar Atendimento/CIP");
+            else
+            {
+
+                frmAtendimento frmAtend = new frmAtendimento(this);
+                frmAtend.MdiParent = this;
+                frmAtend.Show();                
+                frmAtend.BringToFront();
+            }            
         }
     }
 }

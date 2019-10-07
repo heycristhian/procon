@@ -231,7 +231,6 @@ namespace SGAP.Forms
                     contexto.Entry(problemaPrincipal).State = EntityState.Modified;
 
                 contexto.SaveChanges();
-                MessageBox.Show("Dados gravados com sucesso", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else MessageBox.Show("Dados não gravados", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             limparCampos();

@@ -278,7 +278,6 @@ namespace SGAP.Forms
                             {
                                 habilitaCampos(false);
                                 contexto.Fornecedor.Add(fornecedor);
-                                MessageBox.Show("Dados gravados com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 limparCampos();
                                 contexto.SaveChanges();
                                 carregarGridFornecedor();

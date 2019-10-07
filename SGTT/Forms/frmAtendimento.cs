@@ -43,7 +43,20 @@ namespace SGAP.Forms
             menu = frmMenu;
         }
 
- 
+        private void novoCIP(Atendimento atendimento)
+        {
+            Atendimento verificaAtendimento = new Atendimento();
+
+            verificaAtendimento = contexto.Atendimento.OrderByDescending(x => x.id).FirstOrDefault(x => x.TipoAtendimento.descricao.ToLower().Equals("cip"));
+
+            string data = DateTime.Now.Year.ToString();
+            if (verificaAtendimento == null)
+                atendimento.numeroProcon = "001/" + data.Substring(data.Length - 2, 2);
+            else
+                atendimento.numeroProcon = (Convert.ToInt32(verificaAtendimento.numeroProcon.Substring(0, 3)) + 1).ToString("000") + "/" + data.Substring(data.Length - 2, 2);
+
+        }
+
 
         private void habilitaCampos(bool status)
         {
@@ -82,6 +95,8 @@ namespace SGAP.Forms
             dtpInicio.Text = "";
             dtpEncerramento.Text = "";
             cmbProblema.Text = "";
+
+            cmbTipoAtendimento.SelectedIndex = 0;
         }
 
         private void trocaCorCIP()
@@ -329,97 +344,103 @@ namespace SGAP.Forms
         }
 
         private void lbSalvar_Click(object sender, EventArgs e)
-        {            
-            Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
-            Modelo.Atendimento atendimentoVerifica = new Modelo.Atendimento();
-
-            int ano = (Convert.ToDateTime(dtpInicio.Text)).Year;
-            int mes = (Convert.ToDateTime(dtpInicio.Text)).Month;
-
-            atendimentoVerifica = contexto.Atendimento.FirstOrDefault(x => x.numeroProcon.Equals(txtnumeroProcon.Text) && x.dataInicio.Month == mes && x.dataInicio.Year == ano && txtId.Text == "-1");
-
-            if(atendimentoVerifica == null)
+        {
+            try
             {
-                DialogResult result;
-                result = MessageBox.Show("Confirma gravação dos dados?", "Salvar", MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
+                Modelo.Atendimento atendimentoVerifica = new Modelo.Atendimento();
 
-                if (result == DialogResult.Yes)
+                int ano = (Convert.ToDateTime(dtpInicio.Text)).Year;
+                int mes = (Convert.ToDateTime(dtpInicio.Text)).Month;
+
+                atendimentoVerifica = contexto.Atendimento.FirstOrDefault(x => x.numeroProcon.Equals(txtnumeroProcon.Text) && x.dataInicio.Month == mes && x.dataInicio.Year == ano && txtId.Text == "-1");
+
+                if (atendimentoVerifica == null)
                 {
-                    int id = Convert.ToInt32(txtId.Text);
-                    Modelo.Atendimento atendimento = new Modelo.Atendimento();
+                    DialogResult result;
+                    result = MessageBox.Show("Confirma gravação dos dados?", "Salvar", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-
-                    if (id != -1)
+                    if (result == DialogResult.Yes)
                     {
-                        atendimento = contexto.Atendimento.Find(id);
-                    }
-                    atendimento.id = id;
-                    atendimento.numeroProcon = txtnumeroProcon.Text;
-                    atendimento.consumidorID = Convert.ToInt32(cmbConsumidor.SelectedValue);
-                    atendimento.fornecedorID = Convert.ToInt32(cmbFornecedor.SelectedValue);
-                    atendimento.tipoAtendimentoID = Convert.ToInt32(cmbTipoAtendimento.SelectedValue);
-                    atendimento.tipoReclamacaoID = Convert.ToInt32(cmbTipoReclamacao.SelectedValue);
-                    atendimento.problemaPrincipalID = Convert.ToInt32(cmbProblema.SelectedValue);
-                    atendimento.reclamacao = txtDescricaoProblema.Text;
-                    atendimento.dataInicio = Convert.ToDateTime(dtpInicio.Text);
+                        int id = Convert.ToInt32(txtId.Text);
+                        Modelo.Atendimento atendimento = new Modelo.Atendimento();
 
-                    try
-                    {
-                        if (dtpEncerramento.Text == "  /  /")
+
+                        if (id != -1)
+                        {
+                            atendimento = contexto.Atendimento.Find(id);
+                        }
+                        atendimento.id = id;
+                        atendimento.numeroProcon = txtnumeroProcon.Text;
+                        atendimento.consumidorID = Convert.ToInt32(cmbConsumidor.SelectedValue);
+                        atendimento.fornecedorID = Convert.ToInt32(cmbFornecedor.SelectedValue);
+                        atendimento.tipoAtendimentoID = Convert.ToInt32(cmbTipoAtendimento.SelectedValue);
+                        atendimento.tipoReclamacaoID = Convert.ToInt32(cmbTipoReclamacao.SelectedValue);
+                        atendimento.problemaPrincipalID = Convert.ToInt32(cmbProblema.SelectedValue);
+                        atendimento.reclamacao = txtDescricaoProblema.Text;
+                        atendimento.dataInicio = Convert.ToDateTime(dtpInicio.Text);
+
+                        try
+                        {
+                            if (dtpEncerramento.Text == "  /  /")
+                            {
+                                atendimento.dataEncerramento = null;
+                            }
+                            else
+                            {
+                                atendimento.dataEncerramento = Convert.ToDateTime(dtpEncerramento.Text);
+                            }
+                        }
+                        catch (System.FormatException)
                         {
                             atendimento.dataEncerramento = null;
                         }
-                        else
+
+                        atendimento.usuario = menu.usuario;
+
+                        try
                         {
-                            atendimento.dataEncerramento = Convert.ToDateTime(dtpEncerramento.Text);
+                            if (atendimento.id == -1)
+                            {
+
+                                contexto.Atendimento.Add(atendimento);
+                                contexto.SaveChanges();
+                                limparCampos();
+                                btnAndamentos.Visible = false;
+                                lbEncaminhar.Visible = false;
+                                habilitaCampos(false);
+                            }
+
+                            else
+                            {
+                                contexto.Entry(atendimento).State = EntityState.Modified;
+                                contexto.SaveChanges();
+                                habilitaCampos(false);
+                            }
                         }
-                    }
-                    catch (System.FormatException)
-                    {
-                        atendimento.dataEncerramento = null;
-                    }                    
-
-                    atendimento.usuario = menu.usuario;
-
-                    try
-                    {
-                        if (atendimento.id == -1)
+                        catch (System.Data.Entity.Validation.DbEntityValidationException)
                         {
-
-                            contexto.Atendimento.Add(atendimento);
-                            contexto.SaveChanges();
-                            MessageBox.Show("Dados gravados com sucesso", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            limparCampos();
-                            btnAndamentos.Visible = false;
-                            lbEncaminhar.Visible = false;
-                            habilitaCampos(false);
-
+                            MessageBox.Show("Número atendimento é obrigatório", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
 
-                        else
-                        {
-                            contexto.Entry(atendimento).State = EntityState.Modified;
-                            contexto.SaveChanges();
-                            habilitaCampos(false);
-                        }
                     }
-                    catch(System.Data.Entity.Validation.DbEntityValidationException)
+                    else
                     {
-                        MessageBox.Show("Número atendimento é obrigatório", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Dados não gravados", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    
+                    carregarGridAtendimento();
                 }
                 else
                 {
-                    MessageBox.Show("Dados não gravados", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Número atendimento já existe para mesma data", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                carregarGridAtendimento();
             }
-            else
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
             {
-                MessageBox.Show("Número atendimento já existe para mesma data", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Por favor, confirme se todos os dados foram preenchidos!", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+           
         }
 
         private void lbRemover_Click(object sender, EventArgs e)
@@ -626,19 +647,14 @@ namespace SGAP.Forms
                     SGAPContexto contexto = new SGAPContexto();
                     AlteracaoAtendimento alteracao = new AlteracaoAtendimento();
                     AlteracaoAtendimento verificaAlteracao = new AlteracaoAtendimento();
-                    Atendimento verificaAtendimento = new Atendimento();
 
-                    verificaAtendimento = contexto.Atendimento.OrderByDescending(x => x.id).FirstOrDefault(x => x.TipoAtendimento.descricao.ToLower().Equals("cip"));
 
                     tipoAtendimento = contexto.TipoAtendimento.First(x => x.descricao.ToLower().Trim().Equals("cip"));
                    
                     atendimento.id = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["id"].Value);
 
-                    string data = DateTime.Now.Year.ToString();
-                    if (verificaAtendimento == null)
-                        atendimento.numeroProcon = "001/" + data.Substring(data.Length - 2, 2);
-                    else
-                        atendimento.numeroProcon = (Convert.ToInt32(verificaAtendimento.numeroProcon.Substring(0, 3)) + 1).ToString("000") + "/" + data.Substring(data.Length - 2, 2);
+                    // aqui
+                    novoCIP(atendimento);
 
                     atendimento.consumidorID = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["consumidorID"].Value);
                     atendimento.fornecedorID = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["fornecedorID"].Value);
@@ -684,8 +700,6 @@ namespace SGAP.Forms
 
         private void cmbTipoAtendimento_Click(object sender, EventArgs e)
         {
-            Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
-            cmbTipoAtendimento.DataSource = contexto.TipoAtendimento.ToList();
         }
 
         private void cmbProblema_Click(object sender, EventArgs e)
@@ -790,6 +804,16 @@ namespace SGAP.Forms
         {
             if (txtPesquisar.Text == "")
                 Pesquisar();
+        }
+
+        private void cmbTipoAtendimento_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(cmbTipoAtendimento.Text == "CIP")
+            {
+                Atendimento atendimento = new Atendimento();
+                novoCIP(atendimento);
+                txtnumeroProcon.Text = atendimento.numeroProcon;
+            }
         }
     }
 }

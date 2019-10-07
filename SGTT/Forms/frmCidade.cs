@@ -206,7 +206,6 @@ namespace SGAP.Forms
                         {
                             contexto.Cidade.Add(cidade);
                             contexto.SaveChanges();
-                            MessageBox.Show("Dados gravados com sucesso", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             limparCampos();
                             habilitaCampos(false);
                             dgvCidade.DataSource = "";

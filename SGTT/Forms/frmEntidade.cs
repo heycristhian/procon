@@ -226,7 +226,6 @@ namespace SGAP.Forms
                             habilitaCampos(false);
                         }
                         contexto.SaveChanges();
-                        MessageBox.Show("Dados gravados com sucesso", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         carregarGridEntidade();
                     }
                     else

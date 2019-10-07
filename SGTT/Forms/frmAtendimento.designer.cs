@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -348,9 +348,9 @@
             // 
             this.dataInicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataInicio.DataPropertyName = "dataInicio";
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.dataInicio.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataInicio.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataInicio.HeaderText = "Início";
             this.dataInicio.Name = "dataInicio";
             this.dataInicio.ReadOnly = true;
@@ -361,9 +361,9 @@
             // 
             this.dataEncerramento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataEncerramento.DataPropertyName = "dataEncerramento";
-            dataGridViewCellStyle6.Format = "d";
-            dataGridViewCellStyle6.NullValue = null;
-            this.dataEncerramento.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataEncerramento.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataEncerramento.HeaderText = "Encerramento";
             this.dataEncerramento.Name = "dataEncerramento";
             this.dataEncerramento.ReadOnly = true;
@@ -417,7 +417,7 @@
             this.cmbTipoAtendimento.Name = "cmbTipoAtendimento";
             this.cmbTipoAtendimento.Size = new System.Drawing.Size(248, 24);
             this.cmbTipoAtendimento.TabIndex = 2;
-            this.cmbTipoAtendimento.Click += new System.EventHandler(this.cmbTipoAtendimento_Click);
+            this.cmbTipoAtendimento.SelectedValueChanged += new System.EventHandler(this.cmbTipoAtendimento_SelectedValueChanged);
             // 
             // cmbTipoReclamacao
             // 
