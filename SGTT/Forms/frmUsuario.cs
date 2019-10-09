@@ -11,17 +11,17 @@ using System.Windows.Forms;
 
 namespace SGAP.Forms
 {
-    public partial class frmLogin : Form
+    public partial class frmUsuario : Form
     {
         frmMenu menu;
 
-        public frmLogin()
+        public frmUsuario()
         {
             InitializeComponent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
         }
 
-        public frmLogin(frmMenu frmMenu)
+        public frmUsuario(frmMenu frmMenu)
         {
             InitializeComponent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -88,12 +88,12 @@ namespace SGAP.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {            
-            Login login = new Login();
+            Usuario login = new Usuario();
             SGAPContexto contexto = new SGAPContexto();
             login.usuario = txtUsuario.Text;
             login.senha = txtSenha.Text;
 
-            Login verificaLogin = new Login();
+            Usuario verificaLogin = new Usuario();
 
             verificaLogin = contexto.Login.FirstOrDefault(x => x.usuario.Equals(login.usuario) && x.senha.Equals(login.senha));
             

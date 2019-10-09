@@ -1,6 +1,6 @@
 ﻿namespace SGAP.Forms
 {
-    partial class frmLogin
+    partial class frmUsuario
     {
         /// <summary>
         /// Required designer variable.

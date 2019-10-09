@@ -21,7 +21,7 @@ namespace SGAP.Forms
             this.Hide();
             InitializeComponent();
 
-            frmLogin login = new frmLogin(this);
+            frmUsuario login = new frmUsuario(this);
             login.ShowDialog();
 
             this.Show();

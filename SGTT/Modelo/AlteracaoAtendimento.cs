@@ -17,7 +17,17 @@ namespace SGAP.Modelo
 
         public string numeroAtendimento { get; set; }
 
+        public string tipoAtendimento { get; set; }
+
+        public string consumidor { get; set; }
+
+        public string fornecedor { get; set; }
+
+        public string descricao { get; set; }
+
         public DateTime dataAlteracao { get; set; }
+
+        public string usuario { get; set; }
 
         //CHAVES ESTRANGEIRAS
         public int atendimentoID { get; set; }

@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace SGAP.Modelo
 {
-    [Table("Login")]
-    public class Login
+    [Table("Usuario")]
+    public class Usuario
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

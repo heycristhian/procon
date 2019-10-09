@@ -153,11 +153,11 @@
     <Compile Include="Forms\frmFornecedor.designer.cs">
       <DependentUpon>frmFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmLogin.cs">
+    <Compile Include="Forms\frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="Forms\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmMenu.cs">
       <SubType>Form</SubType>
@@ -215,7 +215,7 @@
     <Compile Include="Modelo\Consumidor.cs" />
     <Compile Include="Modelo\Entidade.cs" />
     <Compile Include="Modelo\Fornecedor.cs" />
-    <Compile Include="Modelo\Login.cs" />
+    <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Modelo\ProblemaPrincipal.cs" />
     <Compile Include="Modelo\SGAPContexto.cs" />
     <Compile Include="Modelo\TipoAtendimento.cs" />
@@ -245,8 +245,8 @@
     <EmbeddedResource Include="Forms\frmFornecedor.resx">
       <DependentUpon>frmFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
