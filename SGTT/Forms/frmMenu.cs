@@ -16,6 +16,8 @@ namespace SGAP.Forms
     {
         public string usuario { get; set; }
 
+        public int atendimentoAberto { get; set; }
+
         public frmMenu()
         {
             this.Hide();
@@ -163,12 +165,21 @@ namespace SGAP.Forms
                 MessageBox.Show("Cadastre pelo menos um Tipo Reclamação para acessar Atendimento/CIP");
             else
             {
-
-                frmAtendimento frmAtend = new frmAtendimento(this);
-                frmAtend.MdiParent = this;
-                frmAtend.Show();                
-                frmAtend.BringToFront();
+                if(atendimentoAberto != 1)
+                {
+                    atendimentoAberto = 1;
+                    frmAtendimento frmAtend = new frmAtendimento(this);
+                    frmAtend.MdiParent = this;
+                    frmAtend.Show();
+                    frmAtend.BringToFront();                    
+                }
+                
             }            
+        }
+
+        private void prazoFornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Funcoes.Relatorios.prazoFornecedor();
         }
     }
 }

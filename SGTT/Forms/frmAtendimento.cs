@@ -301,22 +301,22 @@ namespace SGAP.Forms
 
 
             dtpInicio.Text = DateTime.Now.ToShortDateString();
-
-            Atendimento atendimento = new Atendimento();
-            SGAPContexto contexto = new SGAPContexto();
-            atendimento = contexto.Atendimento.OrderByDescending(x => x.id).FirstOrDefault(x => x.usuario.Equals(menu.usuario));
             
-            if(atendimento == null)
+            AlteracaoAtendimento alteracaoAtendimento = new AlteracaoAtendimento();
+            SGAPContexto contexto = new SGAPContexto();
+            alteracaoAtendimento = contexto.AlteracaoAtendimento.OrderByDescending(x => x.id).FirstOrDefault(x => x.usuario.Equals(menu.usuario));
+            
+            if(alteracaoAtendimento == null)
             {
                 txtnumeroProcon.Text = "001-" + DateTime.Now.Year + "-" + menu.usuario;
             }
-            else if(atendimento.dataInicio.Year != DateTime.Now.Year)
+            else if(alteracaoAtendimento.dataInicio.Year != DateTime.Now.Year)
             {
                 txtnumeroProcon.Text = "001-" + DateTime.Now.Year + "-" + menu.usuario;
             }
             else
             {
-                txtnumeroProcon.Text = (Convert.ToInt32(atendimento.numeroProcon.Substring(0, 3)) + 1).ToString("000") + "-" + DateTime.Now.Year + "-" + menu.usuario;
+                txtnumeroProcon.Text = (Convert.ToInt32(alteracaoAtendimento.numeroProcon.Substring(0, 3)) + 1).ToString("000") + "-" + DateTime.Now.Year + "-" + menu.usuario;
             }
 
         }
@@ -418,6 +418,8 @@ namespace SGAP.Forms
                                 contexto.SaveChanges();
                                 habilitaCampos(false);
                             }
+
+                            FuncGeral.trigger(atendimento, menu.usuario);
                         }
                         catch (System.Data.Entity.Validation.DbEntityValidationException)
                         {
@@ -447,6 +449,7 @@ namespace SGAP.Forms
         {
             Modelo.SGAPContexto contexto = new Modelo.SGAPContexto();
             Modelo.Atendimento atendimento = new Modelo.Atendimento();
+            List<AlteracaoAtendimento> lstAlteracaoAtendimento = new List<AlteracaoAtendimento>();
 
             btnAndamentos.Visible = false;
             lbEncaminhar.Visible = false;
@@ -459,6 +462,7 @@ namespace SGAP.Forms
             if (id > 0)
             {
                 atendimento = contexto.Atendimento.Find(id);
+                lstAlteracaoAtendimento = contexto.AlteracaoAtendimento.Where(x => x.atendimentoID == id).ToList();
 
                 DialogResult result; // confirmação da remoção
                 result = MessageBox.Show("Confirma remoção do atendimento?", "Remover", MessageBoxButtons.YesNo,
@@ -467,6 +471,11 @@ namespace SGAP.Forms
                 {
                     try
                     {
+                        foreach(AlteracaoAtendimento alteracaoAtendimento in lstAlteracaoAtendimento)
+                        {
+                            contexto.AlteracaoAtendimento.Remove(alteracaoAtendimento);
+                        }
+
                         contexto.Atendimento.Remove(atendimento);
                         contexto.SaveChanges();          // atualiza o banco de dados 
 
@@ -591,6 +600,7 @@ namespace SGAP.Forms
                 if (result == DialogResult.Yes)
                 {
                     this.Dispose();
+                    menu.atendimentoAberto = 0;
                 }
             }                
 
@@ -646,8 +656,6 @@ namespace SGAP.Forms
                     Atendimento atendimento = new Atendimento();
                     SGAPContexto contexto = new SGAPContexto();
                     AlteracaoAtendimento alteracao = new AlteracaoAtendimento();
-                    AlteracaoAtendimento verificaAlteracao = new AlteracaoAtendimento();
-
 
                     tipoAtendimento = contexto.TipoAtendimento.First(x => x.descricao.ToLower().Trim().Equals("cip"));
                    
@@ -663,28 +671,12 @@ namespace SGAP.Forms
                     atendimento.problemaPrincipalID = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["problemaPrincipalID"].Value);
                     atendimento.reclamacao = dgvAtendimento.SelectedRows[0].Cells["reclamacao"].Value.ToString();
                     atendimento.dataInicio = Convert.ToDateTime(dgvAtendimento.SelectedRows[0].Cells["dataInicio"].Value.ToString());
-                    atendimento.dataEncerramento = DateTime.Now;
+                    atendimento.dataEncerramento = DateTime.Now;                   
 
                     contexto.Entry(atendimento).State = EntityState.Modified;
                     contexto.SaveChanges();
 
-                    verificaAlteracao = contexto.AlteracaoAtendimento.FirstOrDefault(x => x.numeroAtendimento.Equals(atendimento.numeroProcon));
-
-                    alteracao.id = (verificaAlteracao != null) ? verificaAlteracao.id : -1;
-                    alteracao.numeroAtendimento = dgvAtendimento.SelectedRows[0].Cells["numeroProcon"].Value.ToString();
-                    alteracao.dataAlteracao = DateTime.Now;
-                    alteracao.atendimentoID = Convert.ToInt32(txtId.Text);                   
-
-                    if(verificaAlteracao == null)
-                    {
-                        contexto.AlteracaoAtendimento.Add(alteracao);
-                        contexto.SaveChanges();
-                    }
-                    else
-                    {
-                        contexto.Entry(alteracao).State = EntityState.Modified;
-                        contexto.SaveChanges();
-                    }
+                    FuncGeral.trigger(atendimento, menu.usuario);
 
                     carregarGridAtendimento();
                 }
@@ -786,6 +778,8 @@ namespace SGAP.Forms
                     contexto.Entry(atendimento).State = EntityState.Modified;
                     contexto.SaveChanges();
 
+                    FuncGeral.trigger(atendimento, menu.usuario);
+
                     carregarGridAtendimento();
 
                 }
@@ -814,6 +808,18 @@ namespace SGAP.Forms
                 novoCIP(atendimento);
                 txtnumeroProcon.Text = atendimento.numeroProcon;
             }
+        }
+
+        private void frmAtendimento_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            menu.atendimentoAberto = 0;
+        }
+
+        private void cmbTipoReclamacao_Click(object sender, EventArgs e)
+        {
+            cmbTipoReclamacao.DisplayMember = "descricao";
+            cmbTipoReclamacao.ValueMember = "id";
+            cmbTipoReclamacao.DataSource = contexto.TipoReclamacao.ToList().OrderBy(p => p.descricao).ToList();
         }
     }
 }

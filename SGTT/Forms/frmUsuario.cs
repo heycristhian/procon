@@ -40,6 +40,23 @@ namespace SGAP.Forms
             List<Cidade> lstCidade = new List<Cidade>();
 
             lstCidade = contexto.Cidade.ToList();
+
+            TipoAtendimento tipoAtendimento = new TipoAtendimento();
+            
+            if(contexto.TipoAtendimento.FirstOrDefault(x => x.descricao.ToLower().Trim().Equals("atendimento")) == null)
+            {
+                tipoAtendimento.descricao = "Atendimento";
+                contexto.TipoAtendimento.Add(tipoAtendimento);
+                contexto.SaveChanges();
+            }
+
+            if (contexto.TipoAtendimento.FirstOrDefault(x => x.descricao.ToLower().Trim().Equals("cip")) == null)
+            {
+                tipoAtendimento.descricao = "CIP";
+                contexto.TipoAtendimento.Add(tipoAtendimento);
+                contexto.SaveChanges();
+            }
+
         }
 
         private void txtUsuario_Enter(object sender, EventArgs e)

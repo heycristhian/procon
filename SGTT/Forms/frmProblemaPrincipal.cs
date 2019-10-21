@@ -184,9 +184,17 @@ namespace SGAP.Forms
                                     MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (result == DialogResult.Yes)
                 {
-                    contexto.ProblemaPrincipal.Remove(problemaPrincipal);
-                    contexto.SaveChanges();          // atualiza o banco de dados 
-                    MessageBox.Show("Reclamação removida com sucesso!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    try
+                    {
+                        contexto.ProblemaPrincipal.Remove(problemaPrincipal);
+                        contexto.SaveChanges();          // atualiza o banco de dados 
+                        MessageBox.Show("Reclamação removida com sucesso!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    catch (System.Data.Entity.Infrastructure.DbUpdateException)
+                    {
+                        MessageBox.Show("Problema Principal não pode ser excluído, pois há outros registros que estão utilizando o mesmo!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
             }
             else MessageBox.Show("Não há registo para remoção!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

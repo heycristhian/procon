@@ -15,21 +15,38 @@ namespace SGAP.Modelo
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
-        public string numeroAtendimento { get; set; }
+        [Required]
+        public string numeroProcon { get; set; }
 
-        public string tipoAtendimento { get; set; }
+        public string reclamacao { get; set; }
 
-        public string consumidor { get; set; }
+        public DateTime dataInicio { get; set; }
 
-        public string fornecedor { get; set; }
-
-        public string descricao { get; set; }
-
-        public DateTime dataAlteracao { get; set; }
+        public Nullable<DateTime> dataEncerramento { get; set; }
 
         public string usuario { get; set; }
 
+        public DateTime dataAlteracao { get; set; }
+
         //CHAVES ESTRANGEIRAS
+        public int consumidorID { get; set; }
+        virtual public Consumidor Consumidor { get; set; }
+
+        public int fornecedorID { get; set; }
+        virtual public Fornecedor Fornecedor { get; set; }
+
+        public int tipoAtendimentoID { get; set; }
+        virtual public TipoAtendimento TipoAtendimento { get; set; }
+
+        public int tipoReclamacaoID { get; set; }
+        virtual public TipoReclamacao TipoReclamacao { get; set; }
+
+        public int problemaPrincipalID { get; set; }
+        virtual public ProblemaPrincipal ProblemaPrincipal { get; set; }
+
+        public int tipoStatus { get; set; }
+        virtual public TipoStatus TipoStatus { get; set; }
+
         public int atendimentoID { get; set; }
         virtual public Atendimento Atendimento { get; set; }
     }

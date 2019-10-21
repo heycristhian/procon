@@ -283,6 +283,28 @@ namespace SGAP.Funcoes
             }
         }
 
+        public static void trigger(Atendimento atendimento, string usuario)
+        {
+            AlteracaoAtendimento alteracao = new AlteracaoAtendimento();
+            SGAPContexto contexto = new SGAPContexto();
+            alteracao.id = -1;
+            alteracao.numeroProcon = atendimento.numeroProcon;
+            alteracao.tipoAtendimentoID = atendimento.tipoAtendimentoID;
+            alteracao.consumidorID = atendimento.consumidorID;
+            alteracao.fornecedorID = atendimento.fornecedorID;
+            alteracao.reclamacao = atendimento.reclamacao;
+            alteracao.dataAlteracao = DateTime.Now;
+            alteracao.usuario = usuario;
+            alteracao.atendimentoID = atendimento.id;
+            alteracao.tipoReclamacaoID = atendimento.tipoReclamacaoID;
+            alteracao.problemaPrincipalID = atendimento.problemaPrincipalID;
+            alteracao.dataInicio = atendimento.dataInicio;
+            alteracao.dataEncerramento = atendimento.dataEncerramento;
+
+            contexto.AlteracaoAtendimento.Add(alteracao);
+            contexto.SaveChanges();
+        }
+
     }    
 }
 

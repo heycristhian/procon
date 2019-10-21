@@ -118,9 +118,17 @@ namespace SGAP.Forms
                                     MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (result == DialogResult.Yes)
                 {
-                    contexto.TipoReclamacao.Remove(tipoReclamacao);
-                    contexto.SaveChanges();          // atualiza o banco de dados 
-                    MessageBox.Show("Tipo de reclamação removido com sucesso!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    try
+                    {
+                        contexto.TipoReclamacao.Remove(tipoReclamacao);
+                        contexto.SaveChanges();          // atualiza o banco de dados 
+                        MessageBox.Show("Tipo de reclamação removido com sucesso!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    catch (System.Data.Entity.Infrastructure.DbUpdateException)
+                    {
+                        MessageBox.Show("Tipo Reclamação não pode ser excluída, pois há outros registros que estão utilizando a mesma!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
             }
             else MessageBox.Show("Não há registo para remoção!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

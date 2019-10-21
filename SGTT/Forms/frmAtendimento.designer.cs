@@ -429,6 +429,7 @@
             this.cmbTipoReclamacao.Size = new System.Drawing.Size(248, 24);
             this.cmbTipoReclamacao.TabIndex = 3;
             this.cmbTipoReclamacao.SelectedIndexChanged += new System.EventHandler(this.cmbTipoReclamacao_SelectedIndexChanged);
+            this.cmbTipoReclamacao.Click += new System.EventHandler(this.cmbTipoReclamacao_Click);
             // 
             // txtId
             // 
@@ -740,6 +741,7 @@
             this.Name = "frmAtendimento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atendimento";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAtendimento_FormClosed);
             this.Load += new System.EventHandler(this.frmAtendimento_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmAtendimento_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtendimento)).EndInit();

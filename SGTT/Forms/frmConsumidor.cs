@@ -231,9 +231,17 @@ namespace SGAP.Forms
                                     MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (result == DialogResult.Yes)
                 {
-                    contexto.Consumidor.Remove(consumidor);
-                    contexto.SaveChanges();          // atualiza o banco de dados 
-                    MessageBox.Show("Consumidor removido com sucesso!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    try
+                    {
+                        contexto.Consumidor.Remove(consumidor);
+                        contexto.SaveChanges();          // atualiza o banco de dados 
+                        MessageBox.Show("Consumidor removido com sucesso!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    catch (System.Data.Entity.Infrastructure.DbUpdateException)
+                    {
+                        MessageBox.Show("Consumidor não pode ser excluído, pois há outros registros que estão utilizando o mesmo!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
             }
             else MessageBox.Show("Não há registo para remoção!", "Remover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

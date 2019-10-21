@@ -33,7 +33,6 @@
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consumidorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.entidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoReclamaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoAtendimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +43,8 @@
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tssUser = new System.Windows.Forms.ToolStripStatusLabel();
+            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prazoFornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.atendimentoToolStripMenuItem,
             this.cadastrosToolStripMenuItem,
+            this.relatóriosToolStripMenuItem,
             this.backupToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -79,7 +81,6 @@
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cidadeToolStripMenuItem,
             this.consumidorToolStripMenuItem,
-            this.entidadeToolStripMenuItem,
             this.fornecedorToolStripMenuItem,
             this.tipoReclamaçãoToolStripMenuItem,
             this.tipoAtendimentoToolStripMenuItem,
@@ -103,13 +104,6 @@
             this.consumidorToolStripMenuItem.Size = new System.Drawing.Size(244, 30);
             this.consumidorToolStripMenuItem.Text = "Consumidor";
             this.consumidorToolStripMenuItem.Click += new System.EventHandler(this.consumidorToolStripMenuItem_Click);
-            // 
-            // entidadeToolStripMenuItem
-            // 
-            this.entidadeToolStripMenuItem.Name = "entidadeToolStripMenuItem";
-            this.entidadeToolStripMenuItem.Size = new System.Drawing.Size(244, 30);
-            this.entidadeToolStripMenuItem.Text = "&Entidade";
-            this.entidadeToolStripMenuItem.Click += new System.EventHandler(this.entidadeToolStripMenuItem_Click);
             // 
             // fornecedorToolStripMenuItem
             // 
@@ -188,6 +182,21 @@
             this.tssUser.Size = new System.Drawing.Size(53, 20);
             this.tssUser.Text = "Usuário: ";
             // 
+            // relatóriosToolStripMenuItem
+            // 
+            this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.prazoFornecedorToolStripMenuItem});
+            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
+            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(107, 29);
+            this.relatóriosToolStripMenuItem.Text = "Relatórios";
+            // 
+            // prazoFornecedorToolStripMenuItem
+            // 
+            this.prazoFornecedorToolStripMenuItem.Name = "prazoFornecedorToolStripMenuItem";
+            this.prazoFornecedorToolStripMenuItem.Size = new System.Drawing.Size(230, 30);
+            this.prazoFornecedorToolStripMenuItem.Text = "Prazo fornecedor";
+            this.prazoFornecedorToolStripMenuItem.Click += new System.EventHandler(this.prazoFornecedorToolStripMenuItem_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -226,7 +235,6 @@
         private System.Windows.Forms.ToolStripMenuItem fornecedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cidadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consumidorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem entidadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atendimentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoReclamaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem problemaPrincipalToolStripMenuItem;
@@ -236,5 +244,7 @@
         private System.Windows.Forms.ToolStripMenuItem restaurarToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel tssUser;
+        private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prazoFornecedorToolStripMenuItem;
     }
 }
