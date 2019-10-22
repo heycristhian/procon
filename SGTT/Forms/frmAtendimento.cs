@@ -136,7 +136,7 @@ namespace SGAP.Forms
             dgvAtendimento.DataSource = "";
             dgvAtendimento.DataSource = dados.ToList();
 
-            trocaCorCIP();
+           // trocaCorCIP();
 
         }
 
@@ -283,8 +283,9 @@ namespace SGAP.Forms
 
         private void txtPesquisar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (txtPesquisar.Text == "") 
-                Pesquisar();
+            //if (txtPesquisar.Text == "") 
+            //    Pesquisar();
+            Pesquisar();
         }
 
         private void lbNovo_Click(object sender, EventArgs e)
@@ -304,7 +305,7 @@ namespace SGAP.Forms
             
             AlteracaoAtendimento alteracaoAtendimento = new AlteracaoAtendimento();
             SGAPContexto contexto = new SGAPContexto();
-            alteracaoAtendimento = contexto.AlteracaoAtendimento.OrderByDescending(x => x.id).FirstOrDefault(x => x.usuario.Equals(menu.usuario));
+            alteracaoAtendimento = contexto.AlteracaoAtendimento.OrderByDescending(x => x.id).FirstOrDefault(x => x.usuario.Equals(menu.usuario) && x.TipoAtendimento.descricao.ToLower().Trim().Equals("atendimento"));
             
             if(alteracaoAtendimento == null)
             {
@@ -790,14 +791,16 @@ namespace SGAP.Forms
 
         private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-                Pesquisar();
+            //if (e.KeyCode == Keys.Enter)
+            //    Pesquisar();
+            Pesquisar();
         }
 
         private void txtPesquisar_KeyUp(object sender, KeyEventArgs e)
         {
-            if (txtPesquisar.Text == "")
-                Pesquisar();
+            //if (txtPesquisar.Text == "")
+            //    Pesquisar();
+            Pesquisar();
         }
 
         private void cmbTipoAtendimento_SelectedValueChanged(object sender, EventArgs e)
@@ -820,6 +823,11 @@ namespace SGAP.Forms
             cmbTipoReclamacao.DisplayMember = "descricao";
             cmbTipoReclamacao.ValueMember = "id";
             cmbTipoReclamacao.DataSource = contexto.TipoReclamacao.ToList().OrderBy(p => p.descricao).ToList();
+        }
+
+        private void DgvAtendimento_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            trocaCorCIP();
         }
     }
 }

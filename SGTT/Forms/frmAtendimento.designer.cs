@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -224,6 +224,7 @@
             this.dgvAtendimento.Size = new System.Drawing.Size(653, 438);
             this.dgvAtendimento.TabIndex = 16;
             this.dgvAtendimento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAtendimento_CellClick);
+            this.dgvAtendimento.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvAtendimento_DataBindingComplete);
             this.dgvAtendimento.DoubleClick += new System.EventHandler(this.dgvAtendimento_DoubleClick);
             // 
             // id
@@ -348,9 +349,9 @@
             // 
             this.dataInicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataInicio.DataPropertyName = "dataInicio";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataInicio.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataInicio.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataInicio.HeaderText = "Início";
             this.dataInicio.Name = "dataInicio";
             this.dataInicio.ReadOnly = true;
@@ -361,9 +362,9 @@
             // 
             this.dataEncerramento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataEncerramento.DataPropertyName = "dataEncerramento";
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataEncerramento.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataEncerramento.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataEncerramento.HeaderText = "Encerramento";
             this.dataEncerramento.Name = "dataEncerramento";
             this.dataEncerramento.ReadOnly = true;
@@ -484,11 +485,11 @@
             // 
             this.lblExpandirDescricao.AutoSize = true;
             this.lblExpandirDescricao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblExpandirDescricao.Font = new System.Drawing.Font("Decker", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpandirDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpandirDescricao.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblExpandirDescricao.Location = new System.Drawing.Point(131, 456);
             this.lblExpandirDescricao.Name = "lblExpandirDescricao";
-            this.lblExpandirDescricao.Size = new System.Drawing.Size(136, 16);
+            this.lblExpandirDescricao.Size = new System.Drawing.Size(142, 16);
             this.lblExpandirDescricao.TabIndex = 91;
             this.lblExpandirDescricao.Text = "Expandir descrição";
             this.lblExpandirDescricao.Click += new System.EventHandler(this.lblExpandirDescricao_Click);
