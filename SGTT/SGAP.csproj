@@ -157,6 +157,12 @@
     <Compile Include="Forms\frmFornecedor.designer.cs">
       <DependentUpon>frmFornecedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmRelatorioMensalAtividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRelatorioMensalAtividades.Designer.cs">
+      <DependentUpon>frmRelatorioMensalAtividades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmFornecedor.resx">
       <DependentUpon>frmFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRelatorioMensalAtividades.resx">
+      <DependentUpon>frmRelatorioMensalAtividades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>

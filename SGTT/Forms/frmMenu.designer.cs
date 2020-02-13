@@ -37,14 +37,15 @@
             this.tipoReclamaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoAtendimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.problemaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prazoFornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restaurarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tssUser = new System.Windows.Forms.ToolStripStatusLabel();
-            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prazoFornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mensalDeAtividadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -133,6 +134,22 @@
             this.problemaPrincipalToolStripMenuItem.Text = "Problema Principal";
             this.problemaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.problemaPrincipalToolStripMenuItem_Click);
             // 
+            // relatóriosToolStripMenuItem
+            // 
+            this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.prazoFornecedorToolStripMenuItem,
+            this.mensalDeAtividadesToolStripMenuItem});
+            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
+            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(107, 29);
+            this.relatóriosToolStripMenuItem.Text = "Relatórios";
+            // 
+            // prazoFornecedorToolStripMenuItem
+            // 
+            this.prazoFornecedorToolStripMenuItem.Name = "prazoFornecedorToolStripMenuItem";
+            this.prazoFornecedorToolStripMenuItem.Size = new System.Drawing.Size(243, 30);
+            this.prazoFornecedorToolStripMenuItem.Text = "Prazo fornecedor";
+            this.prazoFornecedorToolStripMenuItem.Click += new System.EventHandler(this.prazoFornecedorToolStripMenuItem_Click);
+            // 
             // backupToolStripMenuItem
             // 
             this.backupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -182,20 +199,13 @@
             this.tssUser.Size = new System.Drawing.Size(53, 20);
             this.tssUser.Text = "Usuário: ";
             // 
-            // relatóriosToolStripMenuItem
+            // mensalDeAtividadesToolStripMenuItem
             // 
-            this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.prazoFornecedorToolStripMenuItem});
-            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(107, 29);
-            this.relatóriosToolStripMenuItem.Text = "Relatórios";
-            // 
-            // prazoFornecedorToolStripMenuItem
-            // 
-            this.prazoFornecedorToolStripMenuItem.Name = "prazoFornecedorToolStripMenuItem";
-            this.prazoFornecedorToolStripMenuItem.Size = new System.Drawing.Size(230, 30);
-            this.prazoFornecedorToolStripMenuItem.Text = "Prazo fornecedor";
-            this.prazoFornecedorToolStripMenuItem.Click += new System.EventHandler(this.prazoFornecedorToolStripMenuItem_Click);
+            this.mensalDeAtividadesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.mensalDeAtividadesToolStripMenuItem.Name = "mensalDeAtividadesToolStripMenuItem";
+            this.mensalDeAtividadesToolStripMenuItem.Size = new System.Drawing.Size(243, 30);
+            this.mensalDeAtividadesToolStripMenuItem.Text = "Mensal de Atividades";
+            this.mensalDeAtividadesToolStripMenuItem.Click += new System.EventHandler(this.mensalDeAtividadesToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -246,5 +256,6 @@
         private System.Windows.Forms.ToolStripStatusLabel tssUser;
         private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prazoFornecedorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mensalDeAtividadesToolStripMenuItem;
     }
 }

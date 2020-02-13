@@ -181,5 +181,12 @@ namespace SGAP.Forms
         {
             Funcoes.Relatorios.prazoFornecedor();
         }
+
+        private void mensalDeAtividadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelatorioMensalAtividades frm = new frmRelatorioMensalAtividades();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
